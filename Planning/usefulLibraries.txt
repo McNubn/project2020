@@ -1,0 +1,9 @@
+What libraries will I need for this?
+
+pandas - dataframes
+matplotlib - plotting dataset onto graphs and charts 
+
+What libraries should I consider?
+scikit-learn - https://en.wikipedia.org/wiki/Scikit-learn
+    Seems to be associated with datasets such as Fisher's Irish data set.
+    Need to learn more about when to use it and how.

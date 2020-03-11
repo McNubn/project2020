@@ -1,0 +1,58 @@
+Aim - Create a program that will analyse the Fisher's Irish data set. 
+
+Three main parts:
+    1. Research the data set online and write a summary about it in the README (using markdown for formatting).
+    2. Download the data set and add it to the repo.
+    3. Write a program called analysis.py that:
+        a. outputs a summary of each file to a single text file,
+        b. saves a histogram of each variable to png files,
+        c. outputs a scatter plot of each pair of variables.
+    
+Deadline - April 30th 2020 (last commit must be made on this date)
+
+Minimum Viable Project:
+    Stanard repo that contains a README, a Python script, a summary text file and images. 
+    The README should contain a summary of the data set and my investigations into it.
+    It should also clearly document how to run the Python code and what the code does.
+    Remember to referece everything - e.g. where I found a code snippet.
+
+Better Project:
+    Well organised with detailed explanations.
+    Well conceived analysis, and discussion of examples of interesting analyses carried by others (with references).
+
+GamePlan
+    Week 1 (ending Sunday March 15th) - Setup
+        Repo is set up.
+        Quality version of the data set is found, and added to repo.
+        Started getting data set into Pandas data frames, ready for plotting and manipulation.
+   
+    Week 2 (ending Sunday March 22nd) - Plotting
+        Histograms and Scatterplots are setup and working. 
+        Begin formatting these to make them clear to read.
+        Start pushing some analyses to the text file.
+   
+    Week 3 (ending Sunday March 29th) - MVP achieved & next steps
+        Achieve the Minimum Viable Project conditions.
+        Research other analyses of this data set.
+        Consider other methods of plotting or analysing this data set.
+        Consider other libraries that might help here.
+    
+    Week 4 (ending Sunday April 5th) - Further analyses
+        Utilise research from week 3 in new plots.
+        Ensure README accounts for this research.
+        Ensure commenting in the files is descriptive and accurate.
+
+    Week 5 (ending Sunday April 12th) - Ready to ship
+        Ensure everything is in a state of completion.
+        Make any late adjustments corrects.
+        Pinpoint any final areas that need to be worked on.
+
+    Week 6 (ending Sunday April 19th) - Completed & in Beijing
+        Ensure everything is submitted by Tuesday April 14th.
+        When arrived in Beijing, ensure VPN and other access requirements are working.
+        Aim is to have the project in a stage of completion by this date just in case I can no longer access.
+    
+    Week 7 (ending Sunday April 26th) - Only cosmetic changes
+        Everything should be more or less complete by Tuesday April 14th.
+        Anything done from here are minor or comestic changes, or additional features that won't take away from the quality of work.
+        

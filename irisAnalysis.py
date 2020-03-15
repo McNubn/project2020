@@ -25,4 +25,7 @@ from matplotlib import pyplot as plt
 df = pd.read_csv("iris_csv.csv", index_col = "class")
 
 plt.scatter(df['sepallength'],df['sepalwidth'])
-plt.show()
+plt.xlabel("Sepal Length (cm)")
+plt.ylabel("Sepal Width (cm)")
+plt.title("Sepal Length vs Sepal Width (cm)")
+plt.savefig("sepalLengthVsWidth.png")

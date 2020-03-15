@@ -2,6 +2,7 @@ What libraries will I need for this?
 
 pandas - dataframes
 matplotlib - plotting dataset onto graphs and charts 
+numpy 
 
 What libraries should I consider?
 scikit-learn - https://en.wikipedia.org/wiki/Scikit-learn

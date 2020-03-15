@@ -11,7 +11,7 @@ Three main parts:
 Deadline - April 30th 2020 (last commit must be made on this date)
 
 Minimum Viable Project:
-    Stanard repo that contains a README, a Python script, a summary text file and images. 
+    Standard repo that contains a README, a Python script, a summary text file and images. 
     The README should contain a summary of the data set and my investigations into it.
     It should also clearly document how to run the Python code and what the code does.
     Remember to referece everything - e.g. where I found a code snippet.

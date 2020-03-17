@@ -20,9 +20,11 @@
 
 import pandas as pd
 from matplotlib import pyplot as plt
+# Setting csv to be a global variable, will mean program can be adapted to other files.
+csv = 'iris_csv.csv'
 
 # Save the csv to a pandas data frame. I'm setting the index to be the class column.
-df = pd.read_csv("iris_csv.csv", index_col = "class")
+df = pd.read_csv(csv, index_col = "class")
 
 plt.scatter(df['sepallength'],df['sepalwidth'])
 plt.xlabel("Sepal Length (cm)")
@@ -59,30 +61,10 @@ plt.title("Sepal Width vs Petal Width (cm)")
 plt.savefig("sepalWidthVsPetalWidth.png")
 plt.clf()
 
-plt.hist(df['sepalwidth'])
-plt.xlabel("Sepal Width (cm)")
-plt.ylabel("Frequency")
-plt.title("Histogram of Sepal Width Frequency")
-plt.savefig("sepalWidthHist.png")
-plt.clf()
-
-plt.hist(df['sepallength'])
-plt.xlabel("Sepal Length (cm)")
-plt.ylabel("Frequency")
-plt.title("Histogram of Sepal Length Frequency")
-plt.savefig("sepalLengthHist.png")
-plt.clf()
-
-plt.hist(df['petalwidth'])
-plt.xlabel("Petal Width (cm)")
-plt.ylabel("Frequency")
-plt.title("Histogram of Petal Width Frequency")
-plt.savefig("petalWidthHist.png")
-plt.clf()
-
-plt.hist(df['petallength'])
-plt.xlabel("Petal Length (cm)")
-plt.ylabel("Frequency")
-plt.title("Histogram of Petal Length Frequency")
-plt.savefig("petalLengthHist.png")
-plt.clf()
+for measurement in df.columns:
+    plt.hist(df[measurement])
+    plt.xlabel(measurement + '(cm')
+    plt.ylabel ("Frequency)")
+    plt.title("Histogram of " + measurement + "Frequency")
+    plt.savefig(measurement +"Hist.png")
+    plt.clf()

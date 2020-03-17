@@ -1,0 +1,11 @@
+Working out how I can iterate through each of the columns to create scatter plots.
+
+I have 4 variables to plot - Sepal Length, Sepal Width, Petal Length, Petal Width
+
+I therefore need:
+Sepal Length v Sepal Width
+Sepal Length v Petal Length
+Sepal Length v Petal Width
+Sepal Width v Petal Length
+Sepald Width v Petal Width
+Petal Length v Petal Width

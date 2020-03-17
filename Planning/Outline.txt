@@ -21,7 +21,7 @@ Better Project:
     Well conceived analysis, and discussion of examples of interesting analyses carried by others (with references).
 
 GamePlan
-    Week 1 (ending Sunday March 15th) - Setup
+    Week 1 (ending Sunday March 15th) - Setup - Done
         Repo is set up.
         Quality version of the data set is found, and added to repo.
         Started getting data set into Pandas data frames, ready for plotting and manipulation.

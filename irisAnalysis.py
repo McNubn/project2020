@@ -4,8 +4,8 @@
   #  2. Download the data set and add it to the repo. - Done
   #  3. Write a program called analysis.py that:
       #  a. outputs a summary of each file to a single text file,
-      #  b. saves a histogram of each variable to png files,
-      #  c. outputs a scatter plot of each pair of variables.
+      #  b. saves a histogram of each variable to png files, - Done
+      #  c. outputs a scatter plot of each pair of variables. - Done
 
 # Minimum Viable Project:
     # Standard repo that contains a README, a Python script, a summary text file and images. 

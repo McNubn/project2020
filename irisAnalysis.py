@@ -26,41 +26,6 @@ csv = 'iris_csv.csv'
 # Save the csv to a pandas data frame. I'm setting the index to be the class column.
 df = pd.read_csv(csv, index_col = "class")
 
-plt.scatter(df['sepallength'],df['sepalwidth'])
-plt.xlabel("Sepal Length (cm)")
-plt.ylabel("Sepal Width (cm)")
-plt.title("Sepal Length vs Sepal Width (cm)")
-plt.savefig("sepalLengthVsWidth.png")
-plt.clf()
-
-plt.scatter(df['sepallength'],df['petallength'])
-plt.xlabel("Sepal Length (cm)")
-plt.ylabel("Petal Length (cm)")
-plt.title("Sepal Length vs Petal Length (cm)")
-plt.savefig("sepalLengthVsPetalLength.png")
-plt.clf()
-
-plt.scatter(df['sepallength'],df['petalwidth'])
-plt.xlabel("Sepal Length (cm)")
-plt.ylabel("Petal Width (cm)")
-plt.title("Sepal Length vs Petal Width (cm)")
-plt.savefig("sepalLengthVsPetalwidth.png")
-plt.clf()
-
-plt.scatter(df['sepalwidth'],df['petallength'])
-plt.xlabel("Sepal Width (cm)")
-plt.ylabel("Petal Length (cm)")
-plt.title("Sepal Width vs Petal Length (cm)")
-plt.savefig("sepalWidthVsPetalLength.png")
-plt.clf()
-
-plt.scatter(df['sepalwidth'],df['petalwidth'])
-plt.xlabel("Sepal Width (cm)")
-plt.ylabel("Petal Width (cm)")
-plt.title("Sepal Width vs Petal Width (cm)")
-plt.savefig("sepalWidthVsPetalWidth.png")
-plt.clf()
-
 # Got the idea to iterate through column names from https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list/#3_Get_Column_Names_by_Iterating_of_the_Columns
 # Column names without the space looks odd. Figure if I can get past the "l" in Sepal and Petal, and split it into 2 strings with a space in the middle, it'll look neater.
 for measurement in df.columns:
@@ -74,3 +39,41 @@ for measurement in df.columns:
     plt.title("Histogram of " + name + " Frequency")
     plt.savefig(measurement +"Hist.png")
     plt.clf()
+
+
+print(df.columns[0])
+
+x = 0
+y = 1
+z = len(df.columns)
+
+
+# I was getting an error because y was becoming greater than the number of columns. For now I will use a try and except to get past this, as its expected.
+try:
+    while x < z:
+        if y < z:
+                #put code here
+            xaxis = df.columns[x]
+            yaxis = df.columns[y]
+            plt.scatter(df[xaxis],df[yaxis])
+            plt.xlabel(xaxis + " (cm)")
+            plt.ylabel(yaxis + " (cm)")
+            plt.title(xaxis + " vs " + yaxis + " (cm)")
+            plt.savefig(xaxis + yaxis + ".png")
+            plt.clf()
+            y += 1
+        elif y == z:
+            x += 1
+            y = x + 1
+            # put code here
+            xaxis = df.columns[x]
+            yaxis = df.columns[y]
+            plt.scatter(df[xaxis],df[yaxis])
+            plt.xlabel(xaxis + " (cm)")
+            plt.ylabel(yaxis + " (cm)")
+            plt.title(xaxis + " vs " + yaxis + " (cm)")
+            plt.savefig(xaxis + yaxis + ".png")
+            plt.clf()
+            y += 1
+except:
+    pass

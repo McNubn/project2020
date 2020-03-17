@@ -61,10 +61,16 @@ plt.title("Sepal Width vs Petal Width (cm)")
 plt.savefig("sepalWidthVsPetalWidth.png")
 plt.clf()
 
+# Got the idea to iterate through column names from https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list/#3_Get_Column_Names_by_Iterating_of_the_Columns
+# Column names without the space looks odd. Figure if I can get past the "l" in Sepal and Petal, and split it into 2 strings with a space in the middle, it'll look neater.
 for measurement in df.columns:
     plt.hist(df[measurement])
-    plt.xlabel(measurement + '(cm')
+    space = measurement.find("l") + 1
+    firsthalf = measurement[:space]
+    secondhalf = measurement[space:]
+    name = firsthalf.capitalize() + " " + secondhalf.capitalize()
+    plt.xlabel(name + ' (cm)')
     plt.ylabel ("Frequency)")
-    plt.title("Histogram of " + measurement + "Frequency")
+    plt.title("Histogram of " + name + " Frequency")
     plt.savefig(measurement +"Hist.png")
     plt.clf()

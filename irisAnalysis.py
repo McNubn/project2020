@@ -28,52 +28,55 @@ df = pd.read_csv(csv, index_col = "class")
 
 # Got the idea to iterate through column names from https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list/#3_Get_Column_Names_by_Iterating_of_the_Columns
 # Column names without the space looks odd. Figure if I can get past the "l" in Sepal and Petal, and split it into 2 strings with a space in the middle, it'll look neater.
+# Since I'll need this again later, I'm turning it into a function called nameFormat.
+
+def nameFormat(name):
+    space = name.find("l") + 1
+    firsthalf = name[:space]
+    secondhalf = name[space:]
+    name = firsthalf.capitalize() + " " + secondhalf.capitalize()
+    return name
+
 for measurement in df.columns:
     plt.hist(df[measurement])
-    space = measurement.find("l") + 1
-    firsthalf = measurement[:space]
-    secondhalf = measurement[space:]
-    name = firsthalf.capitalize() + " " + secondhalf.capitalize()
+    name = nameFormat(measurement)
     plt.xlabel(name + ' (cm)')
     plt.ylabel ("Frequency)")
     plt.title("Histogram of " + name + " Frequency")
     plt.savefig(measurement +"Hist.png")
     plt.clf()
 
-
-print(df.columns[0])
-
 x = 0
 y = 1
 z = len(df.columns)
 
+# Since my while loop was reusing this code, I've made scatter into a function.
+def scatter(x,y):
+    xaxis = df.columns[x]
+    yaxis = df.columns[y]
+    plt.scatter(df[xaxis],df[yaxis])
+    xaxisName = nameFormat(xaxis)
+    yaxisName = nameFormat(yaxis)
+    plt.xlabel(xaxisName + " (cm)")
+    plt.ylabel(yaxisName + " (cm)")
+    plt.title(xaxisName + " Vs " + yaxisName + " (cm)")
+    plt.savefig(xaxis + "Vs" + yaxis + ".png")
+    plt.clf()
 
 # I was getting an error because y was becoming greater than the number of columns. For now I will use a try and except to get past this, as its expected.
+# Learned about using pass in the except section here - https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
 try:
     while x < z:
         if y < z:
                 #put code here
-            xaxis = df.columns[x]
-            yaxis = df.columns[y]
-            plt.scatter(df[xaxis],df[yaxis])
-            plt.xlabel(xaxis + " (cm)")
-            plt.ylabel(yaxis + " (cm)")
-            plt.title(xaxis + " vs " + yaxis + " (cm)")
-            plt.savefig(xaxis + yaxis + ".png")
-            plt.clf()
+            scatter(x,y)
             y += 1
         elif y == z:
             x += 1
             y = x + 1
             # put code here
-            xaxis = df.columns[x]
-            yaxis = df.columns[y]
-            plt.scatter(df[xaxis],df[yaxis])
-            plt.xlabel(xaxis + " (cm)")
-            plt.ylabel(yaxis + " (cm)")
-            plt.title(xaxis + " vs " + yaxis + " (cm)")
-            plt.savefig(xaxis + yaxis + ".png")
-            plt.clf()
+            scatter(x,y)
             y += 1
 except:
     pass
+

@@ -31,6 +31,7 @@ df = pd.read_csv(csv, index_col = "class")
 # Since I'll need this again later, I'm turning it into a function called nameFormat.
 
 def nameFormat(name):
+    """ Edits the name of the column so that it is properly formatted with a space between the words, and each word capitalized."""
     space = name.find("l") + 1
     firsthalf = name[:space]
     secondhalf = name[space:]
@@ -38,13 +39,14 @@ def nameFormat(name):
     return name
 
 for measurement in df.columns:
-    plt.hist(df[measurement])
+    fig, ax = plt.subplots()
+    ax.hist(df[measurement])
     name = nameFormat(measurement)
-    plt.xlabel(name + ' (cm)')
-    plt.ylabel ("Frequency)")
-    plt.title("Histogram of " + name + " Frequency")
-    plt.savefig(measurement +"Hist.png")
-    plt.clf()
+    ax.set_xlabel(name + ' (cm)')
+    ax.set_ylabel ("Frequency")
+    ax.set_title("Histogram of " + name + " Frequency")
+    fig.savefig(measurement +"Hist.png")
+    fig.clf()
 
 x = 0
 y = 1
@@ -52,16 +54,18 @@ z = len(df.columns)
 
 # Since my while loop was reusing this code, I've made scatter into a function.
 def scatter(x,y):
+    """ Plots the columns x and y onto a scatter plot, while adding text to the axis and title."""
+    fig, ax = plt.subplpots()
     xaxis = df.columns[x]
     yaxis = df.columns[y]
-    plt.scatter(df[xaxis],df[yaxis])
+    ax.scatter(df[xaxis],df[yaxis])
     xaxisName = nameFormat(xaxis)
     yaxisName = nameFormat(yaxis)
-    plt.xlabel(xaxisName + " (cm)")
-    plt.ylabel(yaxisName + " (cm)")
-    plt.title(xaxisName + " Vs " + yaxisName + " (cm)")
-    plt.savefig(xaxis + "Vs" + yaxis + ".png")
-    plt.clf()
+    ax.set_xlabel(xaxisName + " (cm)")
+    ax.set_ylabel(yaxisName + " (cm)")
+    ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
+    fig.savefig(xaxis + "Vs" + yaxis + ".png")
+    fig.clf()
 
 # I was getting an error because y was becoming greater than the number of columns. For now I will use a try and except to get past this, as its expected.
 # Learned about using pass in the except section here - https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed

@@ -55,7 +55,7 @@ z = len(df.columns)
 # Since my while loop was reusing this code, I've made scatter into a function.
 def scatter(x,y):
     """ Plots the columns x and y onto a scatter plot, while adding text to the axis and title."""
-    fig, ax = plt.subplpots()
+    fig, ax = plt.subplots()
     xaxis = df.columns[x]
     yaxis = df.columns[y]
     ax.scatter(df[xaxis],df[yaxis])

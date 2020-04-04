@@ -31,28 +31,27 @@ GamePlan
         Begin formatting these to make them clear to read.
         Start pushing some analyses to the text file.
    
-    Week 3 (ending Sunday March 29th) - MVP achieved & next steps
+    Week 4 (ending Sunday April 5th) - MVP achieved & next steps
         Achieve the Minimum Viable Project conditions.
         Research other analyses of this data set.
         Consider other methods of plotting or analysing this data set.
         Consider other libraries that might help here.
     
-    Week 4 (ending Sunday April 5th) - Further analyses
+    Week 5 (ending Sunday April 12th) - Further analyses
         Utilise research from week 3 in new plots.
         Ensure README accounts for this research.
         Ensure commenting in the files is descriptive and accurate.
 
-    Week 5 (ending Sunday April 12th) - Ready to ship
+    Week 6 (ending Sunday April 19th) - Ready to ship
         Ensure everything is in a state of completion.
         Make any late adjustments corrects.
         Pinpoint any final areas that need to be worked on.
 
-    Week 6 (ending Sunday April 19th) - Completed & in Beijing
+    Week 7 (ending Sunday April 26th) - Completed
         Ensure everything is submitted by Tuesday April 14th.
-        When arrived in Beijing, ensure VPN and other access requirements are working.
-        Aim is to have the project in a stage of completion by this date just in case I can no longer access.
+        No longer in Beijing - use extra time for improvements.
     
-    Week 7 (ending Sunday April 26th) - Only cosmetic changes
-        Everything should be more or less complete by Tuesday April 14th.
+    Week 7 (deadline April 30th) - Only cosmetic changes
+        Everything should be more or less complete by Tuesday April 26th.
         Anything done from here are minor or comestic changes, or additional features that won't take away from the quality of work.
         

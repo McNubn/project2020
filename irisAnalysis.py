@@ -51,12 +51,19 @@ x = 0
 y = 1
 z = len(df.columns)
 
-#txtfile = 'analysis.txt'
+# Using https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html 
+# This is providing some data points I can ouput from the columns, e.g. median, mean.
 
 f = open("analysis.txt","w")
+f.write ("Data Points Summary\n")
 for measurement in df.columns:
     name = nameFormat(measurement)
-    f.write("The median measurement of " + name + " is " + str(df[measurement].median()) + ".\n")
+    f.write("\n" + name + " Summary\n"
+        "The median measurement of " + name + " is " + str(df[measurement].median()) + ".\n"
+        "The minimum measurement of " + name + " is " + str(df[measurement].min()) + ".\n"
+        "The maximum measurement of " + name + " is " + str(df[measurement].max()) + ".\n"
+        "The standard deviation of " + name + " is " + str(round(df[measurement].std(), 2)) + ".\n"
+        "The mean of " + name + " is " + str(round(df[measurement].mean(),2)) + ".\n")
 f.close()
 
 # Since my while loop was reusing this code, I've made scatter into a function.

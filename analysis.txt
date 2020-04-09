@@ -1,1 +1,4 @@
 The median measurement of Sepal Length is 5.8.
+The median measurement of Sepal Width is 3.0.
+The median measurement of Petal Length is 4.35.
+The median measurement of Petal Width is 1.3.

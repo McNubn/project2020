@@ -54,7 +54,9 @@ z = len(df.columns)
 #txtfile = 'analysis.txt'
 
 f = open("analysis.txt","w")
-f.write("The median measurement of Sepal Length is " + str(df['sepallength'].median()) + ".")
+for measurement in df.columns:
+    name = nameFormat(measurement)
+    f.write("The median measurement of " + name + " is " + str(df[measurement].median()) + ".\n")
 f.close()
 
 # Since my while loop was reusing this code, I've made scatter into a function.

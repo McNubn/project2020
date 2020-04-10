@@ -20,6 +20,7 @@
 
 import pandas as pd
 from matplotlib import pyplot as plt
+import seaborn as sns
 # Setting csv to be a global variable, will mean program can be adapted to other files.
 csv = 'iris_csv.csv'
 
@@ -104,3 +105,15 @@ box_plot_data = [df['sepallength'],df['sepalwidth'],df['petallength'],df['petalw
 plt.boxplot(box_plot_data,patch_artist = True, labels = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width'])
 plt.savefig("boxplot.png")
 plt.clf()
+
+#tip picked up from median blog
+iris_setosa=df.loc["Iris-setosa"]
+iris_virginica=df.loc["Iris-virginica"]
+iris_versicolor=df.loc["Iris-versicolor"]
+
+fig, ax = plt.subplots()
+ax.hist(iris_setosa['sepallength'], color='b')
+ax.hist(iris_virginica['sepallength'], color='g')
+ax.hist(iris_versicolor['sepallength'], color='r')
+fig.savefig("typesepallength.png")
+fig.clf()

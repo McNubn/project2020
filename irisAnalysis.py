@@ -111,9 +111,15 @@ iris_setosa=df.loc["Iris-setosa"]
 iris_virginica=df.loc["Iris-virginica"]
 iris_versicolor=df.loc["Iris-versicolor"]
 
-fig, ax = plt.subplots()
-ax.hist(iris_setosa['sepallength'], color='b')
-ax.hist(iris_virginica['sepallength'], color='g')
-ax.hist(iris_versicolor['sepallength'], color='r')
-fig.savefig("typesepallength.png")
-fig.clf()
+for measurement in df.columns:
+    fig, ax = plt.subplots()
+    ax.hist(iris_setosa[measurement], color='b', label='Setosa')
+    ax.hist(iris_virginica[measurement], color='g', label = 'Virginica')
+    ax.hist(iris_versicolor[measurement], color='r', label = 'Versicolor')
+    name = nameFormat(measurement)
+    ax.set_xlabel(name + ' (cm)')
+    ax.set_ylabel ("Frequency")
+    ax.set_title("Histogram of " + name + " Frequency for each Iris Type")
+    ax.legend()
+    fig.savefig("separated" + measurement + "Hist.png")
+    fig.clf()

@@ -39,15 +39,15 @@ def nameFormat(name):
     name = firsthalf.capitalize() + " " + secondhalf.capitalize()
     return name
 
-for measurement in df.columns:
-    fig, ax = plt.subplots()
-    ax.hist(df[measurement])
-    name = nameFormat(measurement)
-    ax.set_xlabel(name + ' (cm)')
-    ax.set_ylabel ("Frequency")
-    ax.set_title("Histogram of " + name + " Frequency")
-    fig.savefig(measurement +"Hist.png")
-    fig.clf()
+#for measurement in df.columns:
+   # fig, ax = plt.subplots()
+   # ax.hist(df[measurement])
+   # name = nameFormat(measurement)
+   # ax.set_xlabel(name + ' (cm)')
+   # ax.set_ylabel ("Frequency")
+   # ax.set_title("Histogram of " + name + " Frequency")
+   # fig.savefig(measurement +"Hist.png")
+   # fig.clf()
 
 x = 0
 y = 1
@@ -69,36 +69,36 @@ for measurement in df.columns:
 f.close()
 
 # Since my while loop was reusing this code, I've made scatter into a function.
-def scatter(x,y):
-    """ Plots the columns x and y onto a scatter plot, while adding text to the axis and title."""
-    fig, ax = plt.subplots()
-    xaxis = df.columns[x]
-    yaxis = df.columns[y]
-    ax.scatter(df[xaxis],df[yaxis])
-    xaxisName = nameFormat(xaxis)
-    yaxisName = nameFormat(yaxis)
-    ax.set_xlabel(xaxisName + " (cm)")
-    ax.set_ylabel(yaxisName + " (cm)")
-    ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
-    fig.savefig(xaxis + "Vs" + yaxis + ".png")
-    fig.clf()
+#def scatter(x,y):
+ #   """ Plots the columns x and y onto a scatter plot, while adding text to the axis and title."""
+  #  fig, ax = plt.subplots()
+   # xaxis = df.columns[x]
+    #yaxis = df.columns[y]
+    #ax.scatter(df[xaxis],df[yaxis])
+  #  xaxisName = nameFormat(xaxis)
+ #   yaxisName = nameFormat(yaxis)
+ #   ax.set_xlabel(xaxisName + " (cm)")
+  #  ax.set_ylabel(yaxisName + " (cm)")
+ #   ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
+  #  fig.savefig(xaxis + "Vs" + yaxis + ".png")
+  #  fig.clf()
 
 # I was getting an error because y was becoming greater than the number of columns. For now I will use a try and except to get past this, as its expected.
 # Learned about using pass in the except section here - https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
-try:
-    while x < z:
-        if y < z:
+#try:
+    #while x < z:
+      #  if y < z:
                 #put code here
-            scatter(x,y)
-            y += 1
-        elif y == z:
-            x += 1
-            y = x + 1
+        #    scatter(x,y)
+        #    y += 1
+      #  elif y == z:
+       #     x += 1
+       #     y = x + 1
             # put code here
-            scatter(x,y)
-            y += 1
-except:
-    pass
+        #    scatter(x,y)
+       #     y += 1
+#except:
+  #  pass
 
 #box plots - guide found http://www.datasciencemadesimple.com/box-plot-in-python/
 box_plot_data = [df['sepallength'],df['sepalwidth'],df['petallength'],df['petalwidth']]
@@ -123,3 +123,45 @@ for measurement in df.columns:
     ax.legend()
     fig.savefig("separated" + measurement + "Hist.png")
     fig.clf()
+
+x = 0
+y = 1
+z = len(df.columns)
+
+def scatter2(x,y):
+    """ Like Scatter above, but separate colours for the 3 types of Iris"""
+    fig, ax = plt.subplots()
+    xaxis = iris_setosa.columns[x]
+    yaxis = iris_setosa.columns[y]
+    setosa_x = iris_setosa.columns[x]
+    setosa_y = iris_setosa.columns[y]
+    virginica_x = iris_virginica.columns[x]
+    virginica_y = iris_virginica.columns[y]
+    versicolor_x = iris_versicolor.columns[x]
+    versicolor_y = iris_versicolor.columns[y]
+    ax.scatter(iris_setosa[setosa_x],iris_setosa[setosa_y], color='b', label='Setosa')
+    ax.scatter(iris_virginica[virginica_x],iris_virginica[virginica_y], color='g', label = 'Virginica')
+    ax.scatter(iris_versicolor[versicolor_x],iris_versicolor[versicolor_y], color='r', label = 'Versicolor')
+    xaxisName = nameFormat(xaxis)
+    yaxisName = nameFormat(yaxis)
+    ax.set_xlabel(xaxisName + " (cm)")
+    ax.set_ylabel(yaxisName + " (cm)")
+    ax.legend()
+    ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
+    fig.savefig("separated" + xaxis + "Vs" + yaxis + ".png")
+    fig.clf()
+
+try:
+    while x < z:
+        if y < z:
+                #put code here
+            scatter2(x,y)
+            y += 1
+        elif y == z:
+            x += 1
+            y = x + 1
+            # put code here
+            scatter2(x,y)
+            y += 1
+except:
+    pass

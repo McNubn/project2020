@@ -191,8 +191,11 @@ plt.close()
 
 
 #box plot wasn't allowing me to savefig, so using this https://stackoverflow.com/questions/35839980/how-to-save-picture-boxplot-seaborn
-fig, ax = plt.subplots()
-sns.boxplot(x = "type", y = "sepallength", data = df2, ax = ax)
-plt.savefig("sepallengthboxplot.png")
-plt.clf()
-plt.close()
+for measurement in df2.columns:
+    name = df2[measurement].name
+    if name != "type":
+        fig, ax = plt.subplots()
+        sns.boxplot(x = "type", y = measurement, data = df2, ax = ax)
+        plt.savefig(measurement + "boxplot.png")
+        plt.clf()
+        plt.close()

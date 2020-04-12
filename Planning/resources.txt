@@ -1,1 +1,6 @@
 https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
+
+https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data
+
+https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
+

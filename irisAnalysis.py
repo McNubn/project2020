@@ -175,10 +175,14 @@ except:
 df2 = df.reset_index()
 
 # using seaborn documentation - https://seaborn.pydata.org/tutorial/distributions.html
-sns_plot = sns.catplot(x="type", y="sepallength", data=df2)
-sns_plot.savefig("sepallengthcatplot.png")
-plt.clf()
-plt.close()
+for measurement in df2.columns:
+    name = df2[measurement].name
+    if name != "type":
+        sns_plot = sns.catplot(x="type", y=measurement, data=df2)
+        sns_plot.savefig(measurement + "catplot.png")
+        plt.clf()
+        plt.close()
+
 
 sns_plot2 = sns.pairplot(df2, hue = "type")
 sns_plot2.savefig("seabornpairplot.png")

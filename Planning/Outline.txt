@@ -26,19 +26,19 @@ GamePlan
         Quality version of the data set is found, and added to repo.
         Started getting data set into Pandas data frames, ready for plotting and manipulation.
    
-    Week 2 (ending Sunday March 22nd) - Plotting
+    Week 2 (ending Sunday March 22nd) - Plotting - done
         Histograms and Scatterplots are setup and working. 
         Begin formatting these to make them clear to read.
         Start pushing some analyses to the text file.
    
     Week 4 (ending Sunday April 5th) - MVP achieved & next steps
         Achieve the Minimum Viable Project conditions.
-        Research other analyses of this data set.
-        Consider other methods of plotting or analysing this data set.
-        Consider other libraries that might help here.
+        Research other analyses of this data set - started
+        Consider other methods of plotting or analysing this data set - started
+        Consider other libraries that might help here - started
     
     Week 5 (ending Sunday April 12th) - Further analyses
-        Utilise research from week 3 in new plots.
+        Utilise research from week 3 in new plots - started
         Ensure README accounts for this research.
         Ensure commenting in the files is descriptive and accurate.
 

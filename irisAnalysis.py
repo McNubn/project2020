@@ -20,12 +20,14 @@
 
 import pandas as pd
 from matplotlib import pyplot as plt
+
 import seaborn as sns
+
 # Setting csv to be a global variable, will mean program can be adapted to other files.
 csv = 'iris_csv.csv'
 
 # Save the csv to a pandas data frame. I'm setting the index to be the class column.
-df = pd.read_csv(csv, index_col = "class")
+df = pd.read_csv(csv, index_col = "type")
 
 # Got the idea to iterate through column names from https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list/#3_Get_Column_Names_by_Iterating_of_the_Columns
 # Column names without the space looks odd. Figure if I can get past the "l" in Sepal and Petal, and split it into 2 strings with a space in the middle, it'll look neater.
@@ -100,12 +102,6 @@ f.close()
 #except:
   #  pass
 
-#box plots - guide found http://www.datasciencemadesimple.com/box-plot-in-python/
-box_plot_data = [df['sepallength'],df['sepalwidth'],df['petallength'],df['petalwidth']]
-plt.boxplot(box_plot_data,patch_artist = True, labels = ['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width'])
-plt.savefig("boxplot.png")
-plt.clf()
-
 #tip picked up from median blog
 iris_setosa=df.loc["Iris-setosa"]
 iris_virginica=df.loc["Iris-virginica"]
@@ -165,3 +161,14 @@ try:
             y += 1
 except:
     pass
+
+
+#trying seaborn plots now
+# df2 workaround bassed off of https://stackoverflow.com/questions/49834883/scatter-plot-form-dataframe-with-index-on-x-axis
+df2 = df.reset_index()
+
+
+#sns.catplot(x="type", y="sepallength", data=df2)
+#ax.set_title("Catplot of Sepal Length for each Irish Type")
+fig.savefig("sepallengthcatplot.png")
+plt.show()

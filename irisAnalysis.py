@@ -3,7 +3,7 @@
    # 1. Research the data set online and write a summary about it in the README (using markdown for formatting).
   #  2. Download the data set and add it to the repo. - Done
   #  3. Write a program called analysis.py that:
-      #  a. outputs a summary of each file to a single text file,
+      #  a. outputs a summary of each file to a single text file - done
       #  b. saves a histogram of each variable to png files, - Done
       #  c. outputs a scatter plot of each pair of variables. - Done
 
@@ -13,14 +13,19 @@
     # It should also clearly document how to run the Python code and what the code does.
     # Remember to referece everything - e.g. where I found a code snippet.
 
-#     Week 2 (ending Sunday March 22nd) - Plotting
-       # Histograms and Scatterplots are setup and working. 
-       # Begin formatting these to make them clear to read.
-       # Start pushing some analyses to the text file.
+ #Week 4 (ending Sunday April 5th) - MVP achieved & next steps
+      #  Achieve the Minimum Viable Project conditions.
+     #   Research other analyses of this data set - started
+      #  Consider other methods of plotting or analysing this data set - started
+      #  Consider other libraries that might help here - started
+    
+ #   Week 5 (ending Sunday April 12th) - Further analyses
+    #    Utilise research from week 3 in new plots - started
+    #    Ensure README accounts for this research.
+    #    Ensure commenting in the files is descriptive and accurate.
 
 import pandas as pd
 from matplotlib import pyplot as plt
-
 import seaborn as sns
 
 # Setting csv to be a global variable, will mean program can be adapted to other files.

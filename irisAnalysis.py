@@ -118,7 +118,8 @@ for measurement in df.columns:
     ax.set_title("Histogram of " + name + " Frequency for each Iris Type")
     ax.legend()
     fig.savefig("separated" + measurement + "Hist.png")
-    fig.clf()
+    plt.clf()
+    plt.close()
 
 x = 0
 y = 1
@@ -145,7 +146,8 @@ def scatter2(x,y):
     ax.legend()
     ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
     fig.savefig("separated" + xaxis + "Vs" + yaxis + ".png")
-    fig.clf()
+    plt.clf()
+    plt.close()
 
 try:
     while x < z:
@@ -167,8 +169,13 @@ except:
 # df2 workaround bassed off of https://stackoverflow.com/questions/49834883/scatter-plot-form-dataframe-with-index-on-x-axis
 df2 = df.reset_index()
 
+# using seaborn documentation - https://seaborn.pydata.org/tutorial/distributions.html
+sns_plot = sns.catplot(x="type", y="sepallength", data=df2)
+sns_plot.savefig("sepallengthcatplot.png")
+plt.clf()
+plt.close()
 
-#sns.catplot(x="type", y="sepallength", data=df2)
-#ax.set_title("Catplot of Sepal Length for each Irish Type")
-fig.savefig("sepallengthcatplot.png")
-plt.show()
+sns_plot = sns.pairplot(df2, hue = "type")
+sns_plot.savefig("seabornpairplot.png")
+plt.clf()
+plt.close()

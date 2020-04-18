@@ -34,11 +34,11 @@ GamePlan
     Week 4 (ending Sunday April 5th) - MVP achieved & next steps
         Achieve the Minimum Viable Project conditions.
         Research other analyses of this data set - started
-        Consider other methods of plotting or analysing this data set - started
-        Consider other libraries that might help here - started
+        Consider other methods of plotting or analysing this data set - done
+        Consider other libraries that might help here - done
     
     Week 5 (ending Sunday April 12th) - Further analyses
-        Utilise research from week 3 in new plots - started
+        Utilise research from week 3 in new plots - done
         Ensure README accounts for this research.
         Ensure commenting in the files is descriptive and accurate.
 

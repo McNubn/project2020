@@ -185,7 +185,9 @@ for measurement in df2.columns:
     if name != "type":
         measurementname = nameFormat(measurement)
         sns_plot = sns.catplot(x="type", y=measurement, data=df2)
+        # found how to label axes on facetgrids here - https://seaborn.pydata.org/generated/seaborn.FacetGrid.html
         sns_plot.set_axis_labels("Iris Type", measurementname + " (cm)")
+        # title workaround found here - https://stackoverflow.com/questions/40113860/why-doesnt-set-titles-produced-a-title-seaborn-and-factorplot
         sns_plot.ax.set_title("Catplot of " + measurementname + " for each Iris type")
         sns_plot.savefig(measurement + "catplot.png")
         plt.clf()

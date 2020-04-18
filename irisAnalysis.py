@@ -183,7 +183,10 @@ df2 = df.reset_index()
 for measurement in df2.columns:
     name = df2[measurement].name
     if name != "type":
+        measurementname = nameFormat(measurement)
         sns_plot = sns.catplot(x="type", y=measurement, data=df2)
+        sns_plot.set_axis_labels("Iris Type", measurementname + " (cm)")
+        sns_plot.ax.set_title("Catplot of " + measurementname + " for each Iris type")
         sns_plot.savefig(measurement + "catplot.png")
         plt.clf()
         plt.close()

@@ -114,9 +114,8 @@ iris_virginica=df.loc["Iris-virginica"]
 iris_versicolor=df.loc["Iris-versicolor"]
 
 for measurement in df.columns:
-    lower = df[measurement].min()
     upper = df[measurement].max()
-    binsizes = np.arange(lower, upper + 0.5, 0.25)
+    binsizes = np.arange(0, round(upper) + 0.5, 0.25)
     fig, ax = plt.subplots()
     ax.hist(iris_setosa[measurement], color='b', label='Setosa', alpha =0.3, bins=binsizes)
     ax.hist(iris_virginica[measurement], color='g', label = 'Virginica', alpha = 0.3, bins = binsizes)

@@ -204,3 +204,13 @@ for measurement in df2.columns:
         plt.savefig(measurement + "boxplot.png")
         plt.clf()
         plt.close()
+
+# attempting violin plot - https://seaborn.pydata.org/generated/seaborn.violinplot.html#seaborn.violinplot
+for measurement in df2.columns:
+    name = df2[measurement].name
+    if name != "type":
+        fig, ax = plt.subplots()
+        sns.violinplot(x = "type", y = measurement, data = df2, ax = ax)
+        plt.savefig(measurement + "violinplot.png")
+        plt.clf()
+        plt.close()

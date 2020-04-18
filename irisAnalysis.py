@@ -17,7 +17,7 @@
       #  Achieve the Minimum Viable Project conditions.
      #   Research other analyses of this data set - started
       #  Consider other methods of plotting or analysing this data set - started
-      #  Consider other libraries that might help here - started
+      #  Consider other libraries that might help here - done
     
  #   Week 5 (ending Sunday April 12th) - Further analyses
     #    Utilise research from week 3 in new plots - started
@@ -46,15 +46,15 @@ def nameFormat(name):
     name = firsthalf.capitalize() + " " + secondhalf.capitalize()
     return name
 
-#for measurement in df.columns:
-   # fig, ax = plt.subplots()
-   # ax.hist(df[measurement])
-   # name = nameFormat(measurement)
-   # ax.set_xlabel(name + ' (cm)')
-   # ax.set_ylabel ("Frequency")
-   # ax.set_title("Histogram of " + name + " Frequency")
-   # fig.savefig(measurement +"Hist.png")
-   # fig.clf()
+for measurement in df.columns:
+    fig, ax = plt.subplots()
+    ax.hist(df[measurement], bins=30, facecolor = 'blue', edgecolor='black')
+    name = nameFormat(measurement)
+    ax.set_xlabel(name + ' (cm)')
+    ax.set_ylabel ("Frequency")
+    ax.set_title("Histogram of " + name + " Frequency")
+    fig.savefig(measurement +"Hist.png")
+    fig.clf()
 
 x = 0
 y = 1

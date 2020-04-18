@@ -199,8 +199,12 @@ plt.close()
 for measurement in df2.columns:
     name = df2[measurement].name
     if name != "type":
+        measurementname = nameFormat(measurement)
         fig, ax = plt.subplots()
         sns.boxplot(x = "type", y = measurement, data = df2, ax = ax)
+        ax.set_xlabel("Iris Type")
+        ax.set_ylabel(measurementname + " (cm)")
+        ax.set_title("Boxplot of " + measurementname + " for each Iris type")
         plt.savefig(measurement + "boxplot.png")
         plt.clf()
         plt.close()
@@ -211,6 +215,9 @@ for measurement in df2.columns:
     if name != "type":
         fig, ax = plt.subplots()
         sns.violinplot(x = "type", y = measurement, data = df2, ax = ax)
+        ax.set_xlabel("Iris Type")
+        ax.set_ylabel(measurementname + " (cm)")
+        ax.set_title("Violin Plot of " + measurementname + " for each Iris type")
         plt.savefig(measurement + "violinplot.png")
         plt.clf()
         plt.close()

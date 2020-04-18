@@ -27,6 +27,7 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
+import numpy as np
 
 # Setting csv to be a global variable, will mean program can be adapted to other files.
 csv = 'iris_csv.csv'
@@ -113,10 +114,13 @@ iris_virginica=df.loc["Iris-virginica"]
 iris_versicolor=df.loc["Iris-versicolor"]
 
 for measurement in df.columns:
+    low = df[measurement].min()
+    upper = df[measurement].max
+    binsizes = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8]
     fig, ax = plt.subplots()
-    ax.hist(iris_setosa[measurement], color='b', label='Setosa', alpha =0.3)
-    ax.hist(iris_virginica[measurement], color='g', label = 'Virginica', alpha = 0.3)
-    ax.hist(iris_versicolor[measurement], color='r', label = 'Versicolor', alpha = 0.3)
+    ax.hist(iris_setosa[measurement], color='b', label='Setosa', alpha =0.3, bins=binsizes)
+    ax.hist(iris_virginica[measurement], color='g', label = 'Virginica', alpha = 0.3, bins = binsizes)
+    ax.hist(iris_versicolor[measurement], color='r', label = 'Versicolor', alpha = 0.3, bins = binsizes)
     name = nameFormat(measurement)
     ax.set_xlabel(name + ' (cm)')
     ax.set_ylabel ("Frequency")

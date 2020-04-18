@@ -114,9 +114,9 @@ iris_versicolor=df.loc["Iris-versicolor"]
 
 for measurement in df.columns:
     fig, ax = plt.subplots()
-    ax.hist(iris_setosa[measurement], color='b', label='Setosa')
-    ax.hist(iris_virginica[measurement], color='g', label = 'Virginica')
-    ax.hist(iris_versicolor[measurement], color='r', label = 'Versicolor')
+    ax.hist(iris_setosa[measurement], color='b', label='Setosa', alpha =0.3)
+    ax.hist(iris_virginica[measurement], color='g', label = 'Virginica', alpha = 0.3)
+    ax.hist(iris_versicolor[measurement], color='r', label = 'Versicolor', alpha = 0.3)
     name = nameFormat(measurement)
     ax.set_xlabel(name + ' (cm)')
     ax.set_ylabel ("Frequency")

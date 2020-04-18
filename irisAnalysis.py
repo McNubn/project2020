@@ -48,8 +48,10 @@ def nameFormat(name):
     return name
 
 for measurement in df.columns:
+    upper = df[measurement].max()
+    binsizes = np.arange(0, round(upper) + 0.5, 0.25)
     fig, ax = plt.subplots()
-    ax.hist(df[measurement], bins=30, facecolor = 'blue', edgecolor='black')
+    ax.hist(df[measurement], bins=binsizes, facecolor = 'blue', edgecolor='black')
     name = nameFormat(measurement)
     ax.set_xlabel(name + ' (cm)')
     ax.set_ylabel ("Frequency")

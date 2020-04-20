@@ -5,8 +5,17 @@
 This repo contains the famous Fisher's Iris Data set (iris_csv.csv), a program that will create a number of plots (the .png files) alongside summary statistics (analysis.txt), and the aforementioned files created by the program.
 
 ## How to use this GitHub repository?
-- this README will introduce you to the data set, my observations from the plots I have performed, as well as referencing research on this data set by others.
-- [how to run the program and navigate]
+
+This GitHub repository contains Brian Doheny's project for the Programming and Scripting module for 2020. 
+
+The root folder contains the following files
+* iris_csv.csv - A CSV file containing Fisher's Iris data set. This file contains 5 columns containg the sepal length, sepal width, petal length, petal width and type for 150 Iris flowers.
+* irisAnalysis.py - A Python program that loads iris_csv.csv into a dataframe, and performs numerous plots. You can find tehse plots in the "plots" folder.
+* analysis.txt - A text file containing summary statistics from iris_csv.csv. Here you'll find the mean, median, minimum, maximum and standard deviation for each of the four measurements in the CSV file.
+* LICENSE - An MIT license for this Github Repository.
+* README.md - You are currently reading this file.
+
+(include steps on how to download a repo and execute the program)
 
 ## What is Fisher's Iris Data set?
 
@@ -39,6 +48,7 @@ Scatter Plot - Total Date > Colouring by Iris type
 Boxplots - 
 Catplot - 
 Pairplot - 
+Violin Plot
 
 Mention use of for loops, if statements, dataframe slicing (to create the 3 categories of Iris), function (nameFormat & scatter), file management (writing to analysis.txt). Discuss why I used these for this purpose.
 

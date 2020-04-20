@@ -33,12 +33,12 @@ import numpy as np
 csv = 'iris_csv.csv'
 
 # Save the csv to a pandas data frame. I'm setting the index to be the class column.
+# This is so that I can iterate over the other columns a bit more easily. 
+# I'll reset the index later for Seaborn.
 df = pd.read_csv(csv, index_col = "type")
 
-# Got the idea to iterate through column names from https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list/#3_Get_Column_Names_by_Iterating_of_the_Columns
-# Column names without the space looks odd. Figure if I can get past the "l" in Sepal and Petal, and split it into 2 strings with a space in the middle, it'll look neater.
-# Since I'll need this again later, I'm turning it into a function called nameFormat.
-
+# Creating a function to format the column names so that they can be used for titles etc. 
+# First word in each column ends with "l", so I can use that to separate the two words.
 def nameFormat(name):
     """ Edits the name of the column so that it is properly formatted with a space between the words, and each word capitalized."""
     space = name.find("l") + 1
@@ -49,9 +49,12 @@ def nameFormat(name):
 
 fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
 n = 0
+# Got the idea to iterate through column names from: 
+# https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list/#3_Get_Column_Names_by_Iterating_of_the_Columns
 for measurement in df.columns:
     binsizes = np.arange(0, 8, 0.25)
-    # ax.flatten() picked up from https://stackoverflow.com/questions/37967786/axes-from-plt-subplots-is-a-numpy-ndarray-object-and-has-no-attribute-plot
+    # ax.flatten() picked up from:
+    # https://stackoverflow.com/questions/37967786/axes-from-plt-subplots-is-a-numpy-ndarray-object-and-has-no-attribute-plot
     ax = ax.flatten()
     ax[n].hist(df[measurement], bins=binsizes, facecolor = 'blue', edgecolor='black')
     name = nameFormat(measurement)
@@ -64,16 +67,23 @@ fig.savefig("plots/originalHistograms.png")
 fig.clf()
 
 
-#tip picked up from median blog
+# Splitting the dataframe up by Iris type. This allows me to differentiate between them on the plots.
+# Picked up this tip from:
+# https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d
 iris_setosa=df.loc["Iris-setosa"]
 iris_virginica=df.loc["Iris-virginica"]
 iris_versicolor=df.loc["Iris-versicolor"]
 
+
+# Doing Histograms again, but now with different colours for each Iris type. 
+# This will let us see the differences between each type and their respective trends.
 fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
 n = 0
 for measurement in df.columns:
     binsizes = np.arange(0, 8, 0.25)
     ax = ax.flatten()
+    # Going to give each flower its own colour, add an edgecolor to make the boundaries clearer to see
+    # and used alpha to make them translucent so that we can see overlaps.
     ax[n].hist(iris_setosa[measurement], facecolor='b', edgecolor = 'k', label='Setosa', alpha =0.3, bins=binsizes)
     ax[n].hist(iris_virginica[measurement], facecolor='g', edgecolor = 'k', label = 'Virginica', alpha = 0.3, bins = binsizes)
     ax[n].hist(iris_versicolor[measurement], facecolor='r', edgecolor = 'k', label = 'Versicolor', alpha = 0.3, bins = binsizes)
@@ -88,9 +98,9 @@ fig.savefig("plots/seperatedHistograms.png")
 plt.clf()
 plt.close()
 
+# Outputting some summary statistics of the dataframe to a text file.
 # Using https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html 
 # This is providing some data points I can ouput from the columns, e.g. median, mean.
-
 f = open("analysis.txt","w")
 f.write ("Data Points Summary\n")
 for measurement in df.columns:
@@ -103,11 +113,15 @@ for measurement in df.columns:
         "The mean of " + name + " is " + str(round(df[measurement].mean(),2)) + ".\n")
 f.close()
 
+# I'll now be doing scatter plots with each measurement plotted against each other.
+# To do this, I've devised a WHILE loop with IF conditions.
+# First I'll need to define three variables for the the above mentioned loop.
 x = 0
 y = 1
 z = len(df.columns)
 
- #Since my while loop was reusing this code, I've made scatter into a function.
+#Since my while loop was reusing this code, I've made scatter into a function.
+#This means that at as x and y are changed in the next loop, it'll do a scatter plot of df.columns[x] vx df.columns[y].
 def scatter(x,y):
     """ Plots the columns x and y onto a scatter plot, while adding text to the axis and title."""
     fig, ax = plt.subplots()
@@ -122,8 +136,10 @@ def scatter(x,y):
     fig.savefig('plots/' + xaxis + "Vs" + yaxis + ".png")
     fig.clf()
 
- #I was getting an error because y was becoming greater than the number of columns. For now I will use a try and except to get past this, as its expected.
- #Learned about using pass in the except section here - https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
+#I was getting an error because y was becoming greater than the number of columns. 
+# For now I will use a try and except to get past this, as its expected.
+#Learned about using pass in the except section here: 
+# https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
 try:
     while x < z:
         if y < z:
@@ -137,7 +153,8 @@ try:
 except:
     pass
 
-
+# I'll now be doing the same scatter plots, but using the three dataframe slices from before.
+# This means that each iris type will now have its own colour on the scatter plot.
 x = 0
 y = 1
 z = len(df.columns)
@@ -153,9 +170,9 @@ def scatter2(x,y):
     virginica_y = iris_virginica.columns[y]
     versicolor_x = iris_versicolor.columns[x]
     versicolor_y = iris_versicolor.columns[y]
-    ax.scatter(iris_setosa[setosa_x],iris_setosa[setosa_y], color='b', label='Setosa')
-    ax.scatter(iris_virginica[virginica_x],iris_virginica[virginica_y], color='g', label = 'Virginica')
-    ax.scatter(iris_versicolor[versicolor_x],iris_versicolor[versicolor_y], color='r', label = 'Versicolor')
+    ax.scatter(iris_setosa[setosa_x],iris_setosa[setosa_y], color='b', label='Setosa', alpha = 0.3)
+    ax.scatter(iris_virginica[virginica_x],iris_virginica[virginica_y], color='g', label = 'Virginica', alpha = 0.3)
+    ax.scatter(iris_versicolor[versicolor_x],iris_versicolor[versicolor_y], color='r', label = 'Versicolor', alpha = 0.3)
     xaxisName = nameFormat(xaxis)
     yaxisName = nameFormat(yaxis)
     ax.set_xlabel(xaxisName + " (cm)")
@@ -169,13 +186,11 @@ def scatter2(x,y):
 try:
     while x < z:
         if y < z:
-                #put code here
             scatter2(x,y)
             y += 1
         elif y == z:
             x += 1
             y = x + 1
-            # put code here
             scatter2(x,y)
             y += 1
 except:

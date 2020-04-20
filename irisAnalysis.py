@@ -50,8 +50,8 @@ def nameFormat(name):
 fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
 n = 0
 for measurement in df.columns:
-    upper = df[measurement].max()
     binsizes = np.arange(0, 8, 0.25)
+    # ax.flatten() picked up from https://stackoverflow.com/questions/37967786/axes-from-plt-subplots-is-a-numpy-ndarray-object-and-has-no-attribute-plot
     ax = ax.flatten()
     ax[n].hist(df[measurement], bins=binsizes, facecolor = 'blue', edgecolor='black')
     name = nameFormat(measurement)
@@ -63,9 +63,30 @@ fig.tight_layout()
 fig.savefig("plots/originalHistograms.png")
 fig.clf()
 
-x = 0
-y = 1
-z = len(df.columns)
+
+#tip picked up from median blog
+iris_setosa=df.loc["Iris-setosa"]
+iris_virginica=df.loc["Iris-virginica"]
+iris_versicolor=df.loc["Iris-versicolor"]
+
+fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
+n = 0
+for measurement in df.columns:
+    binsizes = np.arange(0, 8, 0.25)
+    ax = ax.flatten()
+    ax[n].hist(iris_setosa[measurement], facecolor='b', edgecolor = 'k', label='Setosa', alpha =0.3, bins=binsizes)
+    ax[n].hist(iris_virginica[measurement], facecolor='g', edgecolor = 'k', label = 'Virginica', alpha = 0.3, bins = binsizes)
+    ax[n].hist(iris_versicolor[measurement], facecolor='r', edgecolor = 'k', label = 'Versicolor', alpha = 0.3, bins = binsizes)
+    name = nameFormat(measurement)
+    ax[n].set_xlabel(name + ' (cm)')
+    ax[n].set_ylabel ("Frequency")
+    ax[n].set_title("Histogram of " + name + " Frequency")
+    ax[n].legend()
+    n +=1
+fig.tight_layout()
+fig.savefig("plots/seperatedHistograms.png")
+plt.clf()
+plt.close()
 
 # Using https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html 
 # This is providing some data points I can ouput from the columns, e.g. median, mean.
@@ -81,6 +102,10 @@ for measurement in df.columns:
         "The standard deviation of " + name + " is " + str(round(df[measurement].std(), 2)) + ".\n"
         "The mean of " + name + " is " + str(round(df[measurement].mean(),2)) + ".\n")
 f.close()
+
+x = 0
+y = 1
+z = len(df.columns)
 
  #Since my while loop was reusing this code, I've made scatter into a function.
 def scatter(x,y):
@@ -112,26 +137,6 @@ try:
 except:
     pass
 
-#tip picked up from median blog
-iris_setosa=df.loc["Iris-setosa"]
-iris_virginica=df.loc["Iris-virginica"]
-iris_versicolor=df.loc["Iris-versicolor"]
-
-for measurement in df.columns:
-    upper = df[measurement].max()
-    binsizes = np.arange(0, round(upper) + 0.5, 0.25)
-    fig, ax = plt.subplots()
-    ax.hist(iris_setosa[measurement], facecolor='b', edgecolor = 'k', label='Setosa', alpha =0.3, bins=binsizes)
-    ax.hist(iris_virginica[measurement], facecolor='g', edgecolor = 'k', label = 'Virginica', alpha = 0.3, bins = binsizes)
-    ax.hist(iris_versicolor[measurement], facecolor='r', edgecolor = 'k', label = 'Versicolor', alpha = 0.3, bins = binsizes)
-    name = nameFormat(measurement)
-    ax.set_xlabel(name + ' (cm)')
-    ax.set_ylabel ("Frequency")
-    ax.set_title("Histogram of " + name + " Frequency for each Iris Type")
-    ax.legend()
-    fig.savefig("plots/separated" + measurement + "Hist.png")
-    plt.clf()
-    plt.close()
 
 x = 0
 y = 1

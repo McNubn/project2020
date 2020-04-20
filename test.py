@@ -24,7 +24,6 @@ def nameFormat(name):
 fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
 n = 0
 for measurement in df.columns:
-    upper = df[measurement].max()
     binsizes = np.arange(0, 8, 0.25)
     ax = ax.flatten()
     ax[n].hist(df[measurement], bins=binsizes, facecolor = 'blue', edgecolor='black')
@@ -36,3 +35,26 @@ for measurement in df.columns:
 fig.tight_layout()
 fig.savefig(measurement +"Hist.png")
 fig.clf()
+
+iris_setosa=df.loc["Iris-setosa"]
+iris_virginica=df.loc["Iris-virginica"]
+iris_versicolor=df.loc["Iris-versicolor"]
+
+fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
+n = 0
+for measurement in df.columns:
+    binsizes = np.arange(0, 8, 0.25)
+    ax = ax.flatten()
+    ax[n].hist(iris_setosa[measurement], facecolor='b', edgecolor = 'k', label='Setosa', alpha =0.3, bins=binsizes)
+    ax[n].hist(iris_virginica[measurement], facecolor='g', edgecolor = 'k', label = 'Virginica', alpha = 0.3, bins = binsizes)
+    ax[n].hist(iris_versicolor[measurement], facecolor='r', edgecolor = 'k', label = 'Versicolor', alpha = 0.3, bins = binsizes)
+    name = nameFormat(measurement)
+    ax[n].set_xlabel(name + ' (cm)')
+    ax[n].set_ylabel ("Frequency")
+    ax[n].set_title("Histogram of " + name + " Frequency")
+    ax[n].legend()
+    n +=1
+fig.tight_layout()
+fig.savefig("separated" + measurement + "Hist.png")
+plt.clf()
+plt.close()

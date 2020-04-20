@@ -41,17 +41,8 @@ GamePlan
         Utilise research from week 3 in new plots - done
         Ensure README accounts for this research.
         Ensure commenting in the files is descriptive and accurate. - done
-
-    Week 6 (ending Sunday April 19th) - Ready to ship
-        Ensure everything is in a state of completion.
-        Make any late adjustments corrects.
-        Pinpoint any final areas that need to be worked on.
-
-    Week 7 (ending Sunday April 26th) - Completed
-        Ensure everything is submitted by Tuesday April 14th.
-        No longer in Beijing - use extra time for improvements.
     
-    Week 7 (deadline April 30th) - Only cosmetic changes
+    Week 6 & 7 (deadline April 30th) - Only cosmetic changes
         Everything should be more or less complete by Tuesday April 26th.
         Anything done from here are minor or comestic changes, or additional features that won't take away from the quality of work.
         

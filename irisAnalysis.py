@@ -47,17 +47,21 @@ def nameFormat(name):
     name = firsthalf.capitalize() + " " + secondhalf.capitalize()
     return name
 
+fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
+n = 0
 for measurement in df.columns:
     upper = df[measurement].max()
-    binsizes = np.arange(0, round(upper) + 0.5, 0.25)
-    fig, ax = plt.subplots()
-    ax.hist(df[measurement], bins=binsizes, facecolor = 'blue', edgecolor='black')
+    binsizes = np.arange(0, 8, 0.25)
+    ax = ax.flatten()
+    ax[n].hist(df[measurement], bins=binsizes, facecolor = 'blue', edgecolor='black')
     name = nameFormat(measurement)
-    ax.set_xlabel(name + ' (cm)')
-    ax.set_ylabel ("Frequency")
-    ax.set_title("Histogram of " + name + " Frequency")
-    fig.savefig('plots/' + measurement +"Hist.png")
-    fig.clf()
+    ax[n].set_xlabel(name + ' (cm)')
+    ax[n].set_ylabel ("Frequency")
+    ax[n].set_title("Histogram of " + name + " Frequency")
+    n += 1
+fig.tight_layout()
+fig.savefig("plots/originalHistograms.png")
+fig.clf()
 
 x = 0
 y = 1
@@ -224,3 +228,6 @@ for measurement in df2.columns:
         plt.savefig('plots/'+ measurement + "violinplot.png")
         plt.clf()
         plt.close()
+
+
+

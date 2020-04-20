@@ -56,7 +56,7 @@ for measurement in df.columns:
     ax.set_xlabel(name + ' (cm)')
     ax.set_ylabel ("Frequency")
     ax.set_title("Histogram of " + name + " Frequency")
-    fig.savefig(measurement +"Hist.png")
+    fig.savefig('plots/' + measurement +"Hist.png")
     fig.clf()
 
 x = 0
@@ -78,37 +78,35 @@ for measurement in df.columns:
         "The mean of " + name + " is " + str(round(df[measurement].mean(),2)) + ".\n")
 f.close()
 
-# Since my while loop was reusing this code, I've made scatter into a function.
-#def scatter(x,y):
- #   """ Plots the columns x and y onto a scatter plot, while adding text to the axis and title."""
-  #  fig, ax = plt.subplots()
-   # xaxis = df.columns[x]
-    #yaxis = df.columns[y]
-    #ax.scatter(df[xaxis],df[yaxis])
-  #  xaxisName = nameFormat(xaxis)
- #   yaxisName = nameFormat(yaxis)
- #   ax.set_xlabel(xaxisName + " (cm)")
-  #  ax.set_ylabel(yaxisName + " (cm)")
- #   ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
-  #  fig.savefig(xaxis + "Vs" + yaxis + ".png")
-  #  fig.clf()
+ #Since my while loop was reusing this code, I've made scatter into a function.
+def scatter(x,y):
+    """ Plots the columns x and y onto a scatter plot, while adding text to the axis and title."""
+    fig, ax = plt.subplots()
+    xaxis = df.columns[x]
+    yaxis = df.columns[y]
+    ax.scatter(df[xaxis],df[yaxis])
+    xaxisName = nameFormat(xaxis)
+    yaxisName = nameFormat(yaxis)
+    ax.set_xlabel(xaxisName + " (cm)")
+    ax.set_ylabel(yaxisName + " (cm)")
+    ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
+    fig.savefig('plots/' + xaxis + "Vs" + yaxis + ".png")
+    fig.clf()
 
-# I was getting an error because y was becoming greater than the number of columns. For now I will use a try and except to get past this, as its expected.
-# Learned about using pass in the except section here - https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
-#try:
-    #while x < z:
-      #  if y < z:
-                #put code here
-        #    scatter(x,y)
-        #    y += 1
-      #  elif y == z:
-       #     x += 1
-       #     y = x + 1
-            # put code here
-        #    scatter(x,y)
-       #     y += 1
-#except:
-  #  pass
+ #I was getting an error because y was becoming greater than the number of columns. For now I will use a try and except to get past this, as its expected.
+ #Learned about using pass in the except section here - https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
+try:
+    while x < z:
+        if y < z:
+            scatter(x,y)
+            y += 1
+        elif y == z:
+            x += 1
+            y = x + 1
+            scatter(x,y)
+            y += 1
+except:
+    pass
 
 #tip picked up from median blog
 iris_setosa=df.loc["Iris-setosa"]
@@ -127,7 +125,7 @@ for measurement in df.columns:
     ax.set_ylabel ("Frequency")
     ax.set_title("Histogram of " + name + " Frequency for each Iris Type")
     ax.legend()
-    fig.savefig("separated" + measurement + "Hist.png")
+    fig.savefig("plots/separated" + measurement + "Hist.png")
     plt.clf()
     plt.close()
 
@@ -155,7 +153,7 @@ def scatter2(x,y):
     ax.set_ylabel(yaxisName + " (cm)")
     ax.legend()
     ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
-    fig.savefig("separated" + xaxis + "Vs" + yaxis + ".png")
+    fig.savefig("plots/separated" + xaxis + "Vs" + yaxis + ".png")
     plt.clf()
     plt.close()
 
@@ -189,13 +187,13 @@ for measurement in df2.columns:
         sns_plot.set_axis_labels("Iris Type", measurementname + " (cm)")
         # title workaround found here - https://stackoverflow.com/questions/40113860/why-doesnt-set-titles-produced-a-title-seaborn-and-factorplot
         sns_plot.ax.set_title("Catplot of " + measurementname + " for each Iris type")
-        sns_plot.savefig(measurement + "catplot.png")
+        sns_plot.savefig('plots/' + measurement + "catplot.png")
         plt.clf()
         plt.close()
 
 
 sns_plot2 = sns.pairplot(df2, hue = "type")
-sns_plot2.savefig("seabornpairplot.png")
+sns_plot2.savefig("plots/seabornpairplot.png")
 plt.clf()
 plt.close()
 
@@ -210,7 +208,7 @@ for measurement in df2.columns:
         ax.set_xlabel("Iris Type")
         ax.set_ylabel(measurementname + " (cm)")
         ax.set_title("Boxplot of " + measurementname + " for each Iris type")
-        plt.savefig(measurement + "boxplot.png")
+        plt.savefig('plots/'+ measurement + "boxplot.png")
         plt.clf()
         plt.close()
 
@@ -223,6 +221,6 @@ for measurement in df2.columns:
         ax.set_xlabel("Iris Type")
         ax.set_ylabel(measurementname + " (cm)")
         ax.set_title("Violin Plot of " + measurementname + " for each Iris type")
-        plt.savefig(measurement + "violinplot.png")
+        plt.savefig('plots/'+ measurement + "violinplot.png")
         plt.clf()
         plt.close()

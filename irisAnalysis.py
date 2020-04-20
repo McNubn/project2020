@@ -16,13 +16,9 @@
  #Week 4 (ending Sunday April 5th) - MVP achieved & next steps
       #  Achieve the Minimum Viable Project conditions.
      #   Research other analyses of this data set - started
-      #  Consider other methods of plotting or analysing this data set - done
-      #  Consider other libraries that might help here - done
     
  #   Week 5 (ending Sunday April 12th) - Further analyses
-    #    Utilise research from week 3 in new plots - done
     #    Ensure README accounts for this research.
-    #    Ensure commenting in the files is descriptive and accurate.
 
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -197,32 +193,40 @@ except:
     pass
 
 
-#trying seaborn plots now
-# df2 workaround bassed off of https://stackoverflow.com/questions/49834883/scatter-plot-form-dataframe-with-index-on-x-axis
+# I'll now be trying some Seaborn plots.
+# I was encountering errors with some of the seaborn plots as I was attempting to plot against the index - "type".
+# df2 workaround bassed off of: 
+# https://stackoverflow.com/questions/49834883/scatter-plot-form-dataframe-with-index-on-x-axis
 df2 = df.reset_index()
 
-# using seaborn documentation - https://seaborn.pydata.org/tutorial/distributions.html
+# Using seaborn documentation to create catplots 
+# https://seaborn.pydata.org/tutorial/distributions.html
 for measurement in df2.columns:
     name = df2[measurement].name
+    # The "type" column was causing errors, so will only plot if its not "type"
     if name != "type":
         measurementname = nameFormat(measurement)
         sns_plot = sns.catplot(x="type", y=measurement, data=df2)
-        # found how to label axes on facetgrids here - https://seaborn.pydata.org/generated/seaborn.FacetGrid.html
+        # Found how to label axes on facetgrids on Seaborn's documentation 
+        # https://seaborn.pydata.org/generated/seaborn.FacetGrid.html
         sns_plot.set_axis_labels("Iris Type", measurementname + " (cm)")
-        # title workaround found here - https://stackoverflow.com/questions/40113860/why-doesnt-set-titles-produced-a-title-seaborn-and-factorplot
+        # Title workaround found here: 
+        # https://stackoverflow.com/questions/40113860/why-doesnt-set-titles-produced-a-title-seaborn-and-factorplot
         sns_plot.ax.set_title("Catplot of " + measurementname + " for each Iris type")
         sns_plot.savefig('plots/' + measurement + "catplot.png")
         plt.clf()
         plt.close()
 
-
+# Seaborn pairplot shows histograms as well as scatter plots.
+# Recreates my first 100 or so lines of code much more efficiently.
+# Will keep in my original plotting as well in order to highlight that I can do it.
 sns_plot2 = sns.pairplot(df2, hue = "type")
 sns_plot2.savefig("plots/seabornpairplot.png")
 plt.clf()
 plt.close()
 
 
-#box plot wasn't allowing me to savefig, so using this https://stackoverflow.com/questions/35839980/how-to-save-picture-boxplot-seaborn
+# Seaborn Boxplots to show the range, median and quartiles for each iris type against each measurement type.
 for measurement in df2.columns:
     name = df2[measurement].name
     if name != "type":
@@ -236,7 +240,8 @@ for measurement in df2.columns:
         plt.clf()
         plt.close()
 
-# attempting violin plot - https://seaborn.pydata.org/generated/seaborn.violinplot.html#seaborn.violinplot
+# Adding Seaborn Violin plot by using their documentation: 
+# https://seaborn.pydata.org/generated/seaborn.violinplot.html#seaborn.violinplot
 for measurement in df2.columns:
     name = df2[measurement].name
     if name != "type":

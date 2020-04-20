@@ -4,3 +4,4 @@ https://www.researchgate.net/publication/237010807_What_should_we_know_about_the
 
 https://www.geeksforgeeks.org/box-plot-and-histogram-exploration-on-iris-data/
 
+https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list/#3_Get_Column_Names_by_Iterating_of_the_Columns

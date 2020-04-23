@@ -132,29 +132,6 @@ def scatter(x,y):
     fig.savefig('plots/' + xaxis + "Vs" + yaxis + ".png")
     fig.clf()
 
-#I was getting an error because y was becoming greater than the number of columns. 
-# For now I will use a try and except to get past this, as its expected.
-#Learned about using pass in the except section here: 
-# https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
-try:
-    while x < z:
-        if y < z:
-            scatter(x,y)
-            y += 1
-        elif y == z:
-            x += 1
-            y = x + 1
-            scatter(x,y)
-            y += 1
-except:
-    pass
-
-# I'll now be doing the same scatter plots, but using the three dataframe slices from before.
-# This means that each iris type will now have its own colour on the scatter plot.
-x = 0
-y = 1
-z = len(df.columns)
-
 def scatter2(x,y):
     """ Like Scatter above, but separate colours for the 3 types of Iris"""
     fig, ax = plt.subplots()
@@ -179,18 +156,32 @@ def scatter2(x,y):
     plt.clf()
     plt.close()
 
+#I was getting an error because y was becoming greater than the number of columns. 
+# For now I will use a try and except to get past this, as its expected.
+#Learned about using pass in the except section here: 
+# https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
 try:
     while x < z:
         if y < z:
+            scatter(x,y)
             scatter2(x,y)
             y += 1
         elif y == z:
             x += 1
             y = x + 1
+            scatter(x,y)
             scatter2(x,y)
             y += 1
 except:
     pass
+
+# I'll now be doing the same scatter plots, but using the three dataframe slices from before.
+# This means that each iris type will now have its own colour on the scatter plot.
+x = 0
+y = 1
+z = len(df.columns)
+
+
 
 
 # I'll now be trying some Seaborn plots.

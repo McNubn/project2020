@@ -109,13 +109,6 @@ for measurement in df.columns:
         "The mean of " + name + " is " + str(round(df[measurement].mean(),2)) + ".\n")
 f.close()
 
-# I'll now be doing scatter plots with each measurement plotted against each other.
-# To do this, I've devised a WHILE loop with IF conditions.
-# First I'll need to define three variables for the the above mentioned loop.
-x = 0
-y = 1
-z = len(df.columns)
-
 #Since my while loop was reusing this code, I've made scatter into a function.
 #This means that at as x and y are changed in the next loop, it'll do a scatter plot of df.columns[x] vx df.columns[y].
 def scatter(x,y):
@@ -156,6 +149,13 @@ def scatter2(x,y):
     plt.clf()
     plt.close()
 
+# I'll now be doing scatter plots with each measurement plotted against each other.
+# To do this, I've devised a WHILE loop with IF conditions.
+# First I'll need to define three variables for the the above mentioned loop.
+x = 0
+y = 1
+z = len(df.columns)
+
 #I was getting an error because y was becoming greater than the number of columns. 
 # For now I will use a try and except to get past this, as its expected.
 #Learned about using pass in the except section here: 
@@ -175,20 +175,12 @@ try:
 except:
     pass
 
-# I'll now be doing the same scatter plots, but using the three dataframe slices from before.
-# This means that each iris type will now have its own colour on the scatter plot.
-x = 0
-y = 1
-z = len(df.columns)
-
-
-
-
 # I'll now be trying some Seaborn plots.
 # I was encountering errors with some of the seaborn plots as I was attempting to plot against the index - "type".
 # df2 workaround bassed off of: 
 # https://stackoverflow.com/questions/49834883/scatter-plot-form-dataframe-with-index-on-x-axis
 df2 = df.reset_index()
+
 
 # Using seaborn documentation to create catplots 
 # https://seaborn.pydata.org/tutorial/distributions.html

@@ -140,7 +140,7 @@ This article, [available here on Medium](https://medium.com/@avulurivenkatasaire
 
 ![original hist](plots/histograms/originalHistograms.png)
 
-![separate hist](plots/histograms/separatedHistograms.png)
+![separate hist](plots/histograms/seperatedHistograms.png)
 
 From analysis.txt:
 Sepal Length Summary
@@ -173,18 +173,18 @@ The mean of Petal Width is 1.2.
 
 ### Scatter Plots
 
-![sepallvspetall](plots/scatterplots/sepallegnthVspetallength.png)
+![sepallvspetall](plots/scatterplots/sepallengthVspetallength.png)
 ![petallvspetalw](plots/scatterplots/petallengthVspetalwidth.png)
 ![sepallvspetalw](plots/scatterplots/sepallengthVspetalwidth.png)
 ![sepallvssepalw](plots/scatterplots/sepallengthVssepalwidth.png)
-![sepalwvspetalw](plots/scatterplots/sepaldwidthVspetalwidth.png)
+![sepalwvspetalw](plots/scatterplots/sepalwidthVspetalwidth.png)
 ![sepalwvspetall](plots/scatterplots/sepalwidthVspetallength.png)
 
-![sepsepallvspetall](plots/scatterplots/separatedsepallegnthVspetallength.png)
+![sepsepallvspetall](plots/scatterplots/separatedsepallengthVspetallength.png)
 ![seppetallvspetalw](plots/scatterplots/separatedpetallengthVspetalwidth.png)
 ![sepsepallvspetalw](plots/scatterplots/separatedsepallengthVspetalwidth.png)
 ![sepsepallvssepalw](plots/scatterplots/separatedsepallengthVssepalwidth.png)
-![sepsepalwvspetalw](plots/scatterplots/separatedsepaldwidthVspetalwidth.png)
+![sepsepalwvspetalw](plots/scatterplots/separatedsepalwidthVspetalwidth.png)
 ![sepsepalwvspetall](plots/scatterplots/separatedsepalwidthVspetallength.png)
 
 ### Pairplot
@@ -193,17 +193,25 @@ The mean of Petal Width is 1.2.
 
 ### Box Plots, Violin Plots & Cat Plots
 
+#### Petal Length
+
 ![petallbox](plots/boxViolinCat/petallengthboxplot.png)
 ![petallviolin](plots/boxViolinCat/petallengthviolinplot.png)
 ![petallcat](plots/boxViolinCat/petallengthcatplot.png)
+
+#### Petal Width
 
 ![petalwbox](plots/boxViolinCat/petalwidthboxplot.png)
 ![petalwviolin](plots/boxViolinCat/petalwidthviolinplot.png)
 ![petalwcat](plots/boxViolinCat/petalwidthcatplot.png)
 
+#### Sepal Length
+
 ![sepallbox](plots/boxViolinCat/sepallengthboxplot.png)
 ![sepallviolin](plots/boxViolinCat/sepallengthviolinplot.png)
 ![sepallcat](plots/boxViolinCat/sepallengthcatplot.png)
+
+#### Sepal Width
 
 ![sepalwbox](plots/boxViolinCat/sepalwidthboxplot.png)
 ![sepalwviolin](plots/boxViolinCat/sepalwidthviolinplot.png)

@@ -134,19 +134,86 @@ This article, [available here on Medium](https://medium.com/@avulurivenkatasaire
 
 # Analysis - Findings
 
-## Various plots and what we can read from them
+## Plots and Summary Statistics
 
-### Histograms
+### Histograms & Summary Statistics
 
 ![original hist](plots/histograms/originalHistograms.png)
 
 ![separate hist](plots/histograms/separatedHistograms.png)
 
+From analysis.txt:
+Sepal Length Summary
+The median measurement of Sepal Length is 5.8.
+The minimum measurement of Sepal Length is 4.3.
+The maximum measurement of Sepal Length is 7.9.
+The standard deviation of Sepal Length is 0.83.
+The mean of Sepal Length is 5.84.
+
+Sepal Width Summary
+The median measurement of Sepal Width is 3.0.
+The minimum measurement of Sepal Width is 2.0.
+The maximum measurement of Sepal Width is 4.4.
+The standard deviation of Sepal Width is 0.43.
+The mean of Sepal Width is 3.05.
+
+Petal Length Summary
+The median measurement of Petal Length is 4.35.
+The minimum measurement of Petal Length is 1.0.
+The maximum measurement of Petal Length is 6.9.
+The standard deviation of Petal Length is 1.76.
+The mean of Petal Length is 3.76.
+
+Petal Width Summary
+The median measurement of Petal Width is 1.3.
+The minimum measurement of Petal Width is 0.1.
+The maximum measurement of Petal Width is 2.5.
+The standard deviation of Petal Width is 0.76.
+The mean of Petal Width is 1.2.
+
 ### Scatter Plots
+
+![sepallvspetall](plots/scatterplots/sepallegnthVspetallength.png)
+![petallvspetalw](plots/scatterplots/petallengthVspetalwidth.png)
+![sepallvspetalw](plots/scatterplots/sepallengthVspetalwidth.png)
+![sepallvssepalw](plots/scatterplots/sepallengthVssepalwidth.png)
+![sepalwvspetalw](plots/scatterplots/sepaldwidthVspetalwidth.png)
+![sepalwvspetall](plots/scatterplots/sepalwidthVspetallength.png)
+
+![sepsepallvspetall](plots/scatterplots/separatedsepallegnthVspetallength.png)
+![seppetallvspetalw](plots/scatterplots/separatedpetallengthVspetalwidth.png)
+![sepsepallvspetalw](plots/scatterplots/separatedsepallengthVspetalwidth.png)
+![sepsepallvssepalw](plots/scatterplots/separatedsepallengthVssepalwidth.png)
+![sepsepalwvspetalw](plots/scatterplots/separatedsepaldwidthVspetalwidth.png)
+![sepsepalwvspetall](plots/scatterplots/separatedsepalwidthVspetallength.png)
+
+### Pairplot
+
+![pairplot](plots/seabornpairplot.png)
 
 ### Box Plots, Violin Plots & Cat Plots
 
+![petallbox](plots/boxViolinCat/petallengthboxplot.png)
+![petallviolin](plots/boxViolinCat/petallengthviolinplot.png)
+![petallcat](plots/boxViolinCat/petallengthcatplot.png)
+
+![petalwbox](plots/boxViolinCat/petalwidthboxplot.png)
+![petalwviolin](plots/boxViolinCat/petalwidthviolinplot.png)
+![petalwcat](plots/boxViolinCat/petalwidthcatplot.png)
+
+![sepallbox](plots/boxViolinCat/sepallengthboxplot.png)
+![sepallviolin](plots/boxViolinCat/sepallengthviolinplot.png)
+![sepallcat](plots/boxViolinCat/sepallengthcatplot.png)
+
+![sepalwbox](plots/boxViolinCat/sepalwidthboxplot.png)
+![sepalwviolin](plots/boxViolinCat/sepalwidthviolinplot.png)
+![sepalwcat](plots/boxViolinCat/sepalwidthcatplot.png)
+
 ### Heat Maps
+
+![setosaheat](plots/heatmaps/setosaHeatmap.png)
+![versicolorheat](plots/heatmaps/versicolorHeatmap.png)
+![virginicaheat](plots/heatmaps/virginicaHeatmap.png)
 
 ## Summary of overall picture from above points
 

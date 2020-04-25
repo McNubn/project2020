@@ -102,18 +102,45 @@ Along with the PNG files containing each of my plots, my program also creates th
 The summary statisics provided for each of the variables are the mean, median, minimum, maximum and standard deviation.
 
 
-## References and resources used for this
+## References and Resources
 
-Medium post - 
-StackOverflow - 
-Geekforgeeks - 
-DataCamp - name courses
+### Official Documentation
+For this project, I made ample use of the various libraries' documentation, as linked above on each of the various plots. 
+
+### DataCamp
+In order to support the content covered in this module, I've also been conducting a lot of study on Datacamp.com. Data Camp is an online learning platform specifically aimed at Data Analysts and Data Scientists, and covers a wide range of subjects involve SQL, Python and R. It is therefore through many of the following courses that I learned how to apply various plots, slices and loops in my code:
+* [Introduction to Data Science in Python](https://learn.datacamp.com/courses/introduction-to-data-science-in-python)
+* [Intermediate Python](https://learn.datacamp.com/courses/intermediate-python)
+* [Python Data Science Toolbox Part 1](https://learn.datacamp.com/courses/python-data-science-toolbox-part-1)
+* [Introduction to Importing Data in Python](https://learn.datacamp.com/courses/introduction-to-importing-data-in-python)
+* [Intermediate Importing Data in Python](https://learn.datacamp.com/courses/intermediate-importing-data-in-python)
+* [Cleaning Data in Python](https://learn.datacamp.com/courses/cleaning-data-in-python)
+* [Pandas Foundations](https://learn.datacamp.com/courses/pandas-foundations)
+* [Manipulating Dataframes in Pandas](https://learn.datacamp.com/courses/manipulating-dataframes-with-pandas)
+* [Introduction to Data Visualization in Python](https://learn.datacamp.com/courses/introduction-to-data-visualization-in-python)
+
+### StackOverflow
+While writing this program, I occassionaly encounted unexpected errors and such. While my first attempt was always the official documentation, I did sometimes encounter workarounds from StackOverflow. Where such a workaround has been implemented, I have linked the StackOverflow thread in a comment.
+
+
+### GeekForGeeks
+Alongside official documentation, I have also used guides from [GeekforGeeks Python articles](https://www.geeksforgeeks.org/python-programming-language/?ref=leftbar) to see more examples of implementations, as well as how customisation options (such as alpha) influence the plots.
+
+### Exploratory Data Analysis of IRIS Data Set Using Python
+
+This article, [available here on Medium](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d), was found while I was researching other people's analysis on this data set, and it did spur me on to try plots that I was otherwise unaware of, specifically the box plots and violin plots. This article also opened my eyes to the possibility of slicing the dataframe into different Iris types in order to differentiate the colours of scatter plots.
 
 # Analysis - Findings
 
 ## Various plots and what we can read from them
 
-Talk through each plot and what it shows. Highlight what we see in the initial histograms and scatter plots versus the newer ones.
+### Histograms
+
+### Scatter Plots
+
+### Box Plots, Violin Plots & Cat Plots
+
+### Heat Maps
 
 ## Summary of overall picture from above points
 

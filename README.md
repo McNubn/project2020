@@ -15,7 +15,13 @@ The root folder contains the following files
 * LICENSE - An MIT license for this Github Repository.
 * README.md - You are currently reading this file.
 
-(include steps on how to download a repo and execute the program)
+You can download this GitHub repository to your local device and run the program by following these steps:
+1. On the righthand side of this repository, you'll find the "Clone or download" button. Click this, then copy the HTTPS URL (this can be done by clicking the clipboard icon).
+![image](https://screenshot.click/25_52-djbyn-68e17.jpg)
+2. In your command line interface (e.g. Terminal on a Mac), navigate to the directoy where you'd like to download the repository to.
+3. While in the desired directory, type "git clone [paste the URL here]"
+4. Hit enter and the repository will be downloaded into that directory.
+5. You can then run the irisAnalysis.py program by typing "python irisAnalysis.py" while in the directory that contains the irisAnalysis.py program. (Note: You will need to have Python 3.7 installed, along with matplotlib, pandas, seaborn and numpy. All of these are available in the [Anaconda package available here](https://www.anaconda.com/products/individual))
 
 ## What is Fisher's Iris Data set?
 

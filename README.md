@@ -136,6 +136,8 @@ This article, [available here on Medium](https://medium.com/@avulurivenkatasaire
 
 ### Histograms
 
+![test](plots/originalHistograms.png)
+
 ### Scatter Plots
 
 ### Box Plots, Violin Plots & Cat Plots

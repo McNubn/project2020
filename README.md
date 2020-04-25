@@ -1,10 +1,39 @@
 # Fisher's Iris Data Set Analysis
 
+# Contents
+[1. Introduction](#introduction)
+
+[1.1 How to use this GitHub Repository](##how-to-use-this-github-repository)
+
+[1.2 What is Fisher's Iris Data Set?](##what-is-fishers-iris-data-set)
+
+[1.3 Why is this data set used?](##why-is-this-data-set-used)
+
+[1.4 Any controversies regarding this data set?](##any-controversies-regarding-this-data-set)
+
+[2. Creation of the Program](#creation-of-the-program)
+
+[2.1 Libraries Used in this Program](##libraries-used-in-this-program)
+
+[2.2 Plots Used in this Program](##plots-used-in-this-program)
+
+[2.3 References and Resources](##references-and-resources)
+
+[3. Analysis - Findings](#analysis-findings)
+
+[3.1 Plots and Summary Statistics](##plots-and-summary-statistics)
+
+[3.2 Summary and Conclusions](##summary-and-conclusions)
+
+[4.0 External Research conducted by Others](#external-research-conducted-by-others)
+
+[4.1 External Conclusions and Alignment with Mine](##external-conclusions-and-alignment-with-mine)
+
 # Introduction
 
 This repo contains the famous Fisher's Iris Data set (iris_csv.csv), a program that will create a number of plots (the .png files) alongside summary statistics (analysis.txt), and the aforementioned files created by the program.
 
-## How to use this GitHub repository?
+## How to use this GitHub Repository
 
 This GitHub repository contains Brian Doheny's project for the Programming and Scripting module for 2020. 
 
@@ -25,7 +54,7 @@ You can download this GitHub repository to your local device and run the program
 4. Hit enter and the repository will be downloaded into that directory.
 5. You can then run the irisAnalysis.py program by typing "python irisAnalysis.py" while in the directory that contains the irisAnalysis.py program. (Note: You will need to have Python 3.7 installed, along with matplotlib, pandas, seaborn and numpy. All of these are available in the [Anaconda package available here](https://www.anaconda.com/products/individual))
 
-## What is Fisher's Iris Data set?
+## What is Fisher's Iris Data Set?
 
 Fisher's Iris Data Set is a set of data that contains the measurements of the sepeal length, sepal width, petal length and petal width of three types of Iris flower - Iris Setosa, Iris Virginica and Iris Versicolor. Although this data set was made famous by Ronald Fisher's paper "The use of multiple measurements in taxonomic problems", it was actually gathered by Edgar Anderson. The data set contains the aforementioned measurements for 150 Iris flowers, with 50 in each of the 3 Iris categories.
 
@@ -39,7 +68,7 @@ While studying this data set, it became apparently that there is some mild contr
 
 # Creation of the program
 
-## Libraries used & why
+## Libraries Used in this Program
 
 For this project, I have used the following Python Libraries:
 
@@ -49,7 +78,7 @@ For this project, I have used the following Python Libraries:
 
 
 
-## Plots used & evolution of those plots in my program
+## Plots Used in this Program
 
 ### Histograms 
 Histograms are used to show the frequency with which observations fall within specified ranges ("bins"). In the case of this data set, bins were specified at ever 0.25cm, and the number of measurements (the observations) that fell within a given range is counted. For example how many Petal Lengths are between 1.75 and 2 cm.
@@ -223,11 +252,11 @@ The mean of Petal Width is 1.2.
 ![versicolorheat](plots/heatmaps/versicolorHeatmap.png)
 ![virginicaheat](plots/heatmaps/virginicaHeatmap.png)
 
-## Summary of overall picture from above points
+## Summary and Conclusions
 
 What do all of these tell us? How can we be sure we're looking at a particular type of Iris.
 
-# Research conducted by others
+# External Research conducted by others
 
-## Their findings & how it aligns/doesn't with mine
+## External Conclusions and Alignment with Mine
 

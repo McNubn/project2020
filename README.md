@@ -8,12 +8,14 @@ This repo contains the famous Fisher's Iris Data set (iris_csv.csv), a program t
 
 This GitHub repository contains Brian Doheny's project for the Programming and Scripting module for 2020. 
 
-The root folder contains the following files
+The root folder contains the following files and folders
 * iris_csv.csv - A CSV file containing Fisher's Iris data set. This file contains 5 columns containg the sepal length, sepal width, petal length, petal width and type for 150 Iris flowers.
 * irisAnalysis.py - A Python program that loads iris_csv.csv into a dataframe, and performs numerous plots. You can find tehse plots in the "plots" folder.
 * analysis.txt - A text file containing summary statistics from iris_csv.csv. Here you'll find the mean, median, minimum, maximum and standard deviation for each of the four measurements in the CSV file.
 * LICENSE - An MIT license for this Github Repository.
 * README.md - You are currently reading this file.
+* plots/ - This folder and subsequent folders contains all of the png created by irisAnalysis.py. Each type of plot has its own subfolder based on its type - histograms (plots/histograms/), scatter plots (plots/scatterplots/), heatmaps (plots/heatmaps/) and cat, box and violin plots (/plots/boxViolinCat/)
+* Planning/ - This folder contains my notes and plans for this project, along with the specifications for the project as outlined in the project document shared with us. I've also included a timeline for my own use, although COVID-19 related disruptions meant the original timeline could not be met.
 
 You can download this GitHub repository to your local device and run the program by following these steps:
 1. On the righthand side of this repository, you'll find the "Clone or download" button. Click this, then copy the HTTPS URL (this can be done by clicking the clipboard icon).
@@ -136,7 +138,9 @@ This article, [available here on Medium](https://medium.com/@avulurivenkatasaire
 
 ### Histograms
 
-![test](plots/originalHistograms.png)
+![original hist](plots/histograms/originalHistograms.png)
+
+![separate hist](plots/histograms/separatedHistograms.png)
 
 ### Scatter Plots
 

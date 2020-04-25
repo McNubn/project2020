@@ -70,7 +70,6 @@ iris_setosa=df.loc["Iris-setosa"]
 iris_virginica=df.loc["Iris-virginica"]
 iris_versicolor=df.loc["Iris-versicolor"]
 
-
 # Doing Histograms again, but now with different colours for each Iris type. 
 # This will let us see the differences between each type and their respective trends.
 fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
@@ -107,6 +106,10 @@ for measurement in df.columns:
         "The maximum measurement of " + name + " is " + str(df[measurement].max()) + ".\n"
         "The standard deviation of " + name + " is " + str(round(df[measurement].std(), 2)) + ".\n"
         "The mean of " + name + " is " + str(round(df[measurement].mean(),2)) + ".\n")
+f.write("\nPearson Correlation Coefficients\n"
+    "Iris Setosa\n" + str(iris_setosa.corr()))
+f.write("\n\nIris Veriscolor\n" + str(iris_versicolor.corr()))
+f.write("\n\nIris Virginica\n" + str(iris_virginica.corr()))
 f.close()
 
 #Since my while loop was reusing this code, I've made scatter into a function.
@@ -239,16 +242,28 @@ for measurement in df2.columns:
 
 
 
-print(iris_setosa.corr(method='pearson'))
 
 # Heatmap idea from https://levelup.gitconnected.com/pearson-coefficient-of-correlation-using-pandas-ca68ce678c04
 # https://seaborn.pydata.org/generated/seaborn.heatmap.html
-
 fig, ax = plt.subplots(figsize = (10,10))
 ax = sns.heatmap(iris_setosa.corr(), annot=True, ax = ax)
 # Seems matplotlib introduced an issue for heatmaps whereby half the y axis can get cut off.
-# Workaround picked up from : https://stackoverflow.com/questions/56942670/matplotlib-seaborn-first-and-last-row-cut-in-half-of-heatmap-plot
+# Workaround picked up from : https://stackoverflow.com/questions/56942670/matplotlib-seaborn-first-and-last-row-cut-in-half-of-heatmap-plot 
 ax.set_ylim(0, 4)
-plt.savefig("irisSetosaHeatmap.png")
+plt.savefig("plots/setosaHeatmap.png")
+plt.clf()
+plt.close()
+
+fig, ax = plt.subplots(figsize = (10,10))
+ax = sns.heatmap(iris_virginica.corr(), annot=True, ax = ax)
+ax.set_ylim(0, 4)
+plt.savefig("plots/virginicaHeatmap.png")
+plt.clf()
+plt.close()
+
+fig, ax = plt.subplots(figsize = (10,10))
+ax = sns.heatmap(iris_versicolor.corr(), annot=True, ax = ax)
+ax.set_ylim(0, 4)
+plt.savefig("plots/versicolorHeatmap.png")
 plt.clf()
 plt.close()

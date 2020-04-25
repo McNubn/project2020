@@ -59,7 +59,7 @@ for measurement in df.columns:
     ax[n].set_title("Histogram of " + name + " Frequency")
     n += 1
 fig.tight_layout()
-fig.savefig("plots/originalHistograms.png")
+fig.savefig("plots/histograms/originalHistograms.png")
 fig.clf()
 
 
@@ -89,7 +89,7 @@ for measurement in df.columns:
     ax[n].legend()
     n +=1
 fig.tight_layout()
-fig.savefig("plots/seperatedHistograms.png")
+fig.savefig("plots/histograms/seperatedHistograms.png")
 plt.clf()
 plt.close()
 
@@ -125,7 +125,7 @@ def scatter(x,y):
     ax.set_xlabel(xaxisName + " (cm)")
     ax.set_ylabel(yaxisName + " (cm)")
     ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
-    fig.savefig('plots/' + xaxis + "Vs" + yaxis + ".png")
+    fig.savefig('plots/scatterplots/' + xaxis + "Vs" + yaxis + ".png")
     fig.clf()
 
 def scatter2(x,y):
@@ -148,7 +148,7 @@ def scatter2(x,y):
     ax.set_ylabel(yaxisName + " (cm)")
     ax.legend()
     ax.set_title(xaxisName + " Vs " + yaxisName + " (cm)")
-    fig.savefig("plots/separated" + xaxis + "Vs" + yaxis + ".png")
+    fig.savefig("plots/scatterplots/separated" + xaxis + "Vs" + yaxis + ".png")
     plt.clf()
     plt.close()
 
@@ -199,7 +199,7 @@ for measurement in df2.columns:
         # Title workaround found here: 
         # https://stackoverflow.com/questions/40113860/why-doesnt-set-titles-produced-a-title-seaborn-and-factorplot
         sns_plot.ax.set_title("Catplot of " + measurementname + " for each Iris type")
-        sns_plot.savefig('plots/' + measurement + "catplot.png")
+        sns_plot.savefig('plots/boxViolinCat/' + measurement + "catplot.png")
         plt.clf()
         plt.close()
 
@@ -222,7 +222,7 @@ for measurement in df2.columns:
         ax.set_xlabel("Iris Type")
         ax.set_ylabel(measurementname + " (cm)")
         ax.set_title("Boxplot of " + measurementname + " for each Iris type")
-        plt.savefig('plots/'+ measurement + "boxplot.png")
+        plt.savefig('plots/boxViolinCat/'+ measurement + "boxplot.png")
         plt.clf()
         plt.close()
 
@@ -236,7 +236,7 @@ for measurement in df2.columns:
         ax.set_xlabel("Iris Type")
         ax.set_ylabel(measurementname + " (cm)")
         ax.set_title("Violin Plot of " + measurementname + " for each Iris type")
-        plt.savefig('plots/'+ measurement + "violinplot.png")
+        plt.savefig('plots/boxViolinCat/'+ measurement + "violinplot.png")
         plt.clf()
         plt.close()
 
@@ -250,20 +250,20 @@ ax = sns.heatmap(iris_setosa.corr(), annot=True, ax = ax)
 # Seems matplotlib introduced an issue for heatmaps whereby half the y axis can get cut off.
 # Workaround picked up from : https://stackoverflow.com/questions/56942670/matplotlib-seaborn-first-and-last-row-cut-in-half-of-heatmap-plot 
 ax.set_ylim(0, 4)
-plt.savefig("plots/setosaHeatmap.png")
+plt.savefig("plots/heatmaps/setosaHeatmap.png")
 plt.clf()
 plt.close()
 
 fig, ax = plt.subplots(figsize = (10,10))
 ax = sns.heatmap(iris_virginica.corr(), annot=True, ax = ax)
 ax.set_ylim(0, 4)
-plt.savefig("plots/virginicaHeatmap.png")
+plt.savefig("plots/heatmaps/virginicaHeatmap.png")
 plt.clf()
 plt.close()
 
 fig, ax = plt.subplots(figsize = (10,10))
 ax = sns.heatmap(iris_versicolor.corr(), annot=True, ax = ax)
 ax.set_ylim(0, 4)
-plt.savefig("plots/versicolorHeatmap.png")
+plt.savefig("plots/heatmaps/versicolorHeatmap.png")
 plt.clf()
 plt.close()

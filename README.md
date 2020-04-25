@@ -3,31 +3,31 @@
 # Contents
 [1. Introduction](#introduction)
 
-[1.1 How to use this GitHub Repository](##how-to-use-this-github-repository)
+[1.1 How to use this GitHub Repository](#how-to-use-this-github-repository)
 
-[1.2 What is Fisher's Iris Data Set?](##what-is-fishers-iris-data-set)
+[1.2 What is Fisher's Iris Data Set?](#what-is-fishers-iris-data-set)
 
-[1.3 Why is this data set used?](##why-is-this-data-set-used)
+[1.3 Why is this data set used?](#why-is-this-data-set-used)
 
-[1.4 Any controversies regarding this data set?](##any-controversies-regarding-this-data-set)
+[1.4 Any controversies regarding this data set?](#any-controversies-regarding-this-data-set)
 
 [2. Creation of the Program](#creation-of-the-program)
 
-[2.1 Libraries Used in this Program](##libraries-used-in-this-program)
+[2.1 Libraries Used in this Program](#libraries-used-in-this-program)
 
-[2.2 Plots Used in this Program](##plots-used-in-this-program)
+[2.2 Plots Used in this Program](#plots-used-in-this-program)
 
-[2.3 References and Resources](##references-and-resources)
+[2.3 References and Resources](#references-and-resources)
 
 [3. Analysis - Findings](#analysis-findings)
 
-[3.1 Plots and Summary Statistics](##plots-and-summary-statistics)
+[3.1 Plots and Summary Statistics](#plots-and-summary-statistics)
 
-[3.2 Summary and Conclusions](##summary-and-conclusions)
+[3.2 Summary and Conclusions](#summary-and-conclusions)
 
 [4.0 External Research conducted by Others](#external-research-conducted-by-others)
 
-[4.1 External Conclusions and Alignment with Mine](##external-conclusions-and-alignment-with-mine)
+[4.1 External Conclusions and Alignment with Mine](#external-conclusions-and-alignment-with-mine)
 
 # Introduction
 

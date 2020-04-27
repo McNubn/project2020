@@ -326,7 +326,15 @@ As for versicolor and virginica, we see the same trends whereby virginica is jus
 
 ## Summary and Conclusions
 
-What do all of these tell us? How can we be sure we're looking at a particular type of Iris.
+From all of these plots, we can make a few assumptions as to how to differentiate between the three iris types:
+* An iris with longer petals and sepals, and wider petals than other variations is likely to be a virginica.
+* An iris with shorter petals and sepals, thinner petals but the widest sepals is likely to be a setosa.
+* An iris that comes up in the middle of each of these four measurements is likely to be a versicolor.
+
+We can also make some conclusions on the relationship between each measurement for each iris type:
+* For Setosas, the sepal width and petal width are closely related, where as one increases the other likely will too. The lengths of the petals and sepals have a much weaker influence on the other measurements of the Iris.
+* For Versicolors, all four measurements are strongly related with either moderate or strong relationships across the board. Thefore as any one measurement increases the others are likely to follow suit, especially in the case of petal width and petal length, and petal length and sepal length.
+* For Virginicas, as petal length increases, so does the sepal length and vice versa. Meanwhile the petal width and sepal width also share a moderately strong relationship. As these two pairings are separate (e.g. petal width and petal length have a much weaker correlation), that could mean a virginica with wide petals and sepals, that are also short, and vice versa. Unlike the versicolor that grows more consistently on all four measures at once.
 
 # External Research conducted by others
 

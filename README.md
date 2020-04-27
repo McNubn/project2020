@@ -259,6 +259,8 @@ Overall we can see that the petal length or width for Iris Setosa has little to 
 
 ![pairplot](plots/seabornpairplot.png)
 
+This pairplot shows the histograms and scatter plots outlined above, but with them all on one figure. This makes it easier to see that the Iris Setosa is generally smaller on every measure exception the sepal width, and that the smaller petal lengths and widths mean there's little correlation for the Setosa points on each of the scatter plots. Meanwhile the closer relationships seem on the Iris Virginica and Iris Versicolor outlined above are easier to observe, with the petal length and width being the key measurements for Iris Versicolor and Iris Virginica.
+
 ### Box Plots, Violin Plots & Cat Plots
 
 #### Petal Length

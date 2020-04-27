@@ -175,7 +175,8 @@ Here we can see that sepal lengths are spread between 4cm and 8cm, with the medi
 
 Petal length is a lot more dispersed, ranging from 1cm to 6.9cm, and the gap between 2cm and 3cm does suggest that one of the Iris types might have shorter petals than the others. Petal Width is concentrated between 0.1cm and 2.5cm, and the fact that 0.2 cm has a clear spike, followed by consistent frequencies at the higher end of the range (around 2cm) also suggests that one iris type might have shorter and thinner petals than the other two types.
 
-We can see the summary statistics for the entire data set in analysis.txt:
+We can see these oberservations supported by the summary statistics for the entire data set in analysis.txt:
+
     Sepal Length Summary
     The median measurement of Sepal Length is 5.8.
     The minimum measurement of Sepal Length is 4.3.

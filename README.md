@@ -293,6 +293,12 @@ Iris Virginica has a wider total range and wider quartile range of measurements 
 ![sepallviolin](plots/boxViolinCat/sepallengthviolinplot.png)
 ![sepallcat](plots/boxViolinCat/sepallengthcatplot.png)
 
+Unlike the petal measurements, the sepal length of Iris Setosa has a wider range, going from 4.3cm to 5.9cm, with the three quartiles at 4.8cm, 5cm and 5.2cm respectively. This shows there's a bit more variation in the sepal lengths then we saw with the petal measurements, although the violin plot and cat plot display a concentration of points around the 5cm mark, which explains the tight interquartile range of 0.4cm.
+
+Iris Versicolor has a range of 4.9cm to 7cm, with the three quartiles at 5.6cm, 6cm and 6.4cm. This wider interquartile range is also shown in the violin plot, has the width is less pronounced than that of the setosa, thus illustrating that there is more of a spread of measurements.
+
+Iris Virginica has a range from 5.6cm to 7.9cm, with the quartiles at 6.4 cm, 6.5cm and 6.9cm. Whereas the minimum Virginica measurements for petal length and petal width were larger than 75% of versicolor and all setosa measurements, here the minimum virginica sepal length is larger than just 25% of versicolor sepal lengths. That said, there is one outlier measurement for virginica at just 5cm, and as this is so far away from the other measurements, the boxplot is flagging it as an outlier. Likewise the violin plot has a very sharp tip pointing towards it, and we can see it standing alone on the cat plot. Outside of this outlier, the spread of sepal lenth measurements is fairly evenly distributed along the range.
+
 #### Sepal Width
 
 ![sepalwbox](plots/boxViolinCat/sepalwidthboxplot.png)

@@ -305,6 +305,10 @@ Iris Virginica has a range from 5.6cm to 7.9cm, with the quartiles at 6.4 cm, 6.
 ![sepalwviolin](plots/boxViolinCat/sepalwidthviolinplot.png)
 ![sepalwcat](plots/boxViolinCat/sepalwidthcatplot.png)
 
+Due to the overlaps in the histograms earlier, it wasn't immediately clear that Iris Setosa tends to have the wider sepal widths, but we can see this quite plainly in these three plots. The boxplot tells us that the range for setosa sepal widths is from 2.3cm to 4.4cm, meaning that Setosa's also have the widest range of the three iris types - unlike the three other measurements where Setosa's were shown to be more consistent in their sizing. We can also see that the three quartiles for setosas are 3.1cm, 3.4cm and 3.7cm respectively, meaning that 75% of setosa sepals are wider than over 75% of virginica and versicolor sepals (versicolor's 75th percentile is at 3cm, meanwhile versicolor's 75th percentile is the same as setosa's 25th percentile on 3.1 cm). Therefore we now know that setosa's generally have the shortest and thinnest petals, with the shortest but widest sepals.
+
+As for versicolor and virginica, we see the same trends whereby virginica is just a bit bigger than versicolor again. Versicolor's range is from 2cm to 3.4 cm, whereas virginicas are at 2.5cm to 3.6cm (although it should be noted that here virginica has an outlier at either end, marked at 2.3cm and 3.8cm). As for their quartiles, versicolor's are at 2.5cm, 2.8cm and 3cm respectively, whereas the corresponding figures for virginica are 2.8cm, 3cm and 3.2cm. Thus the differences between virginica and versicolor measurements are a lot less pronounced, and both iris types have a similar spread of points along their ranges, as shown by the violint and cat plots.
+
 ### Heat Maps
 
 ![setosaheat](plots/heatmaps/setosaHeatmap.png)

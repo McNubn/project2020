@@ -220,12 +220,39 @@ From these histograms we can begin piecing together the observation that Irises 
 ![sepalwvspetalw](plots/scatterplots/sepalwidthVspetalwidth.png)
 ![sepalwvspetall](plots/scatterplots/sepalwidthVspetallength.png)
 
-![sepsepallvspetall](plots/scatterplots/separatedsepallengthVspetallength.png)
+Similarly to the histograms above, when all three Iris types are plotted together on a scatter plot, with no way of discerning which point is which type, we are somewhat limited in what we can conclude. From these we can see that Petal Length vs Petal Width, and Sepal Length vs Petal Length have quite clear relationships, as the points fall fairly linearly on a straight line up and to the right. This tells us that as the length of a petal increases on a an Iris, we can expect the petals to be wider, and the sepal to also be longer.
+
+Sepal Length vs Petal Width also suggests a slight relationship between the two measurements, as the points do still share that up and to the right trajectory, however the points do not fall quite as linearly. This suggests that while there is a relationship between petal length and petal width, it's not as close as the three aforementioned combinations.
+
+Meanwhile Sepal Length vs Sepal Width, Sepal Width vs Petal Length and Sepal Width vs Petal Width do not show clear relationships across the data set as a whole, however the gaps between the concentrations of points do suggest that there may be relationships for these measurements for each individual Iris type.
+
+When we differentiate the three Iris types by colour, we can see much closer relationships between the measumrents for each Iris individually.
+
 ![seppetallvspetalw](plots/scatterplots/separatedpetallengthVspetalwidth.png)
+
+Petal Length vs Petal Width shows a clear correlation between the two measurements, and that it is consistent among two of the three iris types. As petals get longer, they will also get wider, especially for Iris Virginica and Iris Versicolor. Iris Setosa's measurements show that the relationship for this particular Iris type is not as consistent, and so it is not possible to draw the same conclusion for setosas.
+
+![sepsepallvspetall](plots/scatterplots/separatedsepallengthVspetallength.png)
+
+Sepal Length vs Petal Length similarly shows a clearer relationship between these two measurements for Iris Virginica and Iris Versicolor, whereas Iris Setosa doesn't appear to have a clear relationship between Sepal Length and Petal Length. In the case of Iris Setosa, it would seem that petal length doesn't go above beyond 2cm, no matter how long the sepal is, whereas for the other two Iris types, the petal and sepal lengths go more hand in hand. 
+
 ![sepsepallvspetalw](plots/scatterplots/separatedsepallengthVspetalwidth.png)
+
+When we can see the three different Iris types on this scatter plot, the relationships are lot clearer. Whereas before the points looked quite unrelated, we can now see a slight relationship between sepal width and sepal length for Iris Versicolor, and no clear relationship for the Setosa or Virginica. Once again it seems that Iris Setosa's petal width wll remain between 0.1 and 0.6 cm regardless of the sepal width.
+
 ![sepsepallvssepalw](plots/scatterplots/separatedsepallengthVssepalwidth.png)
+
+This is another plot where the different colours for each Iris type make it easier to see a pattern. There's a strong relationship between the sepal length and sepal width for Iris Setosa, with a sharp incline up and to the right showing that as speal length increases, as does sepal width. For Iris Versicolor and Iris Virginica this relationship is a lot less pronounced with a number of outliers meaning the points are not as linear.
+
 ![sepsepalwvspetalw](plots/scatterplots/separatedsepalwidthVspetalwidth.png)
+
+Iris Versicolor appears to have a strong relationship between sepal width and petal width whereby as one increases as does the other. The correlation for Iris Virginica is less pronounced although there does appear to be some relationship as it still generally follows the up and to the right pattern. Meanwhile Iris Setosa against has the limited petal width which doesn't see much variation regardless of sepal width.
+
 ![sepsepalwvspetall](plots/scatterplots/separatedsepalwidthVspetallength.png)
+
+Similar to above, the sepal width and petal length show a strong correlation for Iris Versicolor, a weaker correlation for Iris Virginica, and no correlation for Iris Setosa.
+
+Overall we can see that the petal length or width for Iris Setosa has little to no bearing when compared to any of the other measurements, hoowever the sepal width and sepal length for the iris type have a strong correlation, as one grows so does the other. Meanwhile Iris Versicolor has much tighter relationships between each pairing with the exception of sepal length vs sepal width, thus suggestion that the size of the petals dictate the size of both petals and sepals. Iris Virginica has a strong correlation when looking at the two petal measurements together, however much looser relationships when petals and sepals are compared, and little to no relationshp when sepal length and width is compared to each other, and so this more loosely follows the Iris Versicolor trend of petals sizes being the key variables. 
 
 ### Pairplot
 

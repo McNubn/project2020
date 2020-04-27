@@ -230,6 +230,7 @@ for measurement in df2.columns:
 # https://seaborn.pydata.org/generated/seaborn.violinplot.html#seaborn.violinplot
 for measurement in df2.columns:
     name = df2[measurement].name
+    measurementname = nameFormat(measurement)
     if name != "type":
         fig, ax = plt.subplots()
         sns.violinplot(x = "type", y = measurement, data = df2, ax = ax)

@@ -14,11 +14,11 @@
     # Remember to referece everything - e.g. where I found a code snippet.
 
  #Week 4 (ending Sunday April 5th) - MVP achieved & next steps
-      #  Achieve the Minimum Viable Project conditions.
+      #  Achieve the Minimum Viable Project conditions. - done
      #   Research other analyses of this data set - started
     
  #   Week 5 (ending Sunday April 12th) - Further analyses
-    #    Ensure README accounts for this research.
+    #    Ensure README accounts for this research - done
 
 import pandas as pd
 from matplotlib import pyplot as plt

@@ -31,18 +31,18 @@ GamePlan
         Begin formatting these to make them clear to read. - done
         Start pushing some analyses to the text file. - done
    
-    Week 4 (ending Sunday April 5th) - MVP achieved & next steps
-        Achieve the Minimum Viable Project conditions.
+    Week 4 (ending Sunday April 5th) - MVP achieved & next steps - done
+        Achieve the Minimum Viable Project conditions.  done
         Research other analyses of this data set - done
         Consider other methods of plotting or analysing this data set - done
         Consider other libraries that might help here - done
     
     Week 5 (ending Sunday April 12th) - Further analyses
         Utilise research from week 3 in new plots - done
-        Ensure README accounts for this research.
+        Ensure README accounts for this research. - done
         Ensure commenting in the files is descriptive and accurate. - done
     
     Week 6 & 7 (deadline April 30th) - Only cosmetic changes
-        Everything should be more or less complete by Tuesday April 26th.
+        Everything should be more or less complete by Sunday April 26th.
         Anything done from here are minor or comestic changes, or additional features that won't take away from the quality of work.
         

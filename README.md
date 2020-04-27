@@ -169,36 +169,47 @@ This article, [available here on Medium](https://medium.com/@avulurivenkatasaire
 
 ![original hist](plots/histograms/originalHistograms.png)
 
+When all three iris types are plotted together on a histogram (with no way of differentiating which is which), the conclusions we can draw are somewhat limited. 
+
+Here we can see that sepal lengths are spread between 4cm and 8cm, with the median sitting around 5.8cm, meanwhile the sepal widths are a lot more concentrated between 2cm and 4.4cm, with 3cm showing a clear concentration of measurements. 
+
+Petal length is a lot more dispersed, ranging from 1cm to 6.9cm, and the gap between 2cm and 3cm does suggest that one of the Iris types might have shorter petals than the others. Petal Width is concentrated between 0.1cm and 2.5cm, and the fact that 0.2 cm has a clear spike, followed by consistent frequencies at the higher end of the range (around 2cm) also suggests that one iris type might have shorter and thinner petals than the other two types.
+
+We can see the summary statistics for the entire data set in analysis.txt:
+    Sepal Length Summary
+    The median measurement of Sepal Length is 5.8.
+    The minimum measurement of Sepal Length is 4.3.
+    The maximum measurement of Sepal Length is 7.9.
+    The standard deviation of Sepal Length is 0.83.
+    The mean of Sepal Length is 5.84.
+
+    Sepal Width Summary
+    The median measurement of Sepal Width is 3.0.
+    The minimum measurement of Sepal Width is 2.0.
+    The maximum measurement of Sepal Width is 4.4.
+    The standard deviation of Sepal Width is 0.43.
+    The mean of Sepal Width is 3.05.
+
+    Petal Length Summary
+    The median measurement of Petal Length is 4.35.
+    The minimum measurement of Petal Length is 1.0.
+    The maximum measurement of Petal Length is 6.9.
+    The standard deviation of Petal Length is 1.76.
+    The mean of Petal Length is 3.76.
+
+    Petal Width Summary
+    The median measurement of Petal Width is 1.3.
+    The minimum measurement of Petal Width is 0.1.
+    The maximum measurement of Petal Width is 2.5.
+    The standard deviation of Petal Width is 0.76.
+    The mean of Petal Width is 1.2.
+
+
 ![separate hist](plots/histograms/seperatedHistograms.png)
 
-From analysis.txt:
-Sepal Length Summary
-The median measurement of Sepal Length is 5.8.
-The minimum measurement of Sepal Length is 4.3.
-The maximum measurement of Sepal Length is 7.9.
-The standard deviation of Sepal Length is 0.83.
-The mean of Sepal Length is 5.84.
+When we differentiate the three Iris types by colour, we can begin to pick out some trends among the histograms. The sepal length and sepal width histograms don't highlight any major differences, other than the fact setosa's have the shortest sepals, followed by versicolors, although all within a tight range of measurements. However when it comes to petal length and petal width we see a clear hierarchy that is consistent with the assumptions made on the overall histograms above. Iris Setosa has shorter and thinner petals than Iris Versicolor, which then in turn has shorter and thinner petals than Iris Virginica. 
 
-Sepal Width Summary
-The median measurement of Sepal Width is 3.0.
-The minimum measurement of Sepal Width is 2.0.
-The maximum measurement of Sepal Width is 4.4.
-The standard deviation of Sepal Width is 0.43.
-The mean of Sepal Width is 3.05.
-
-Petal Length Summary
-The median measurement of Petal Length is 4.35.
-The minimum measurement of Petal Length is 1.0.
-The maximum measurement of Petal Length is 6.9.
-The standard deviation of Petal Length is 1.76.
-The mean of Petal Length is 3.76.
-
-Petal Width Summary
-The median measurement of Petal Width is 1.3.
-The minimum measurement of Petal Width is 0.1.
-The maximum measurement of Petal Width is 2.5.
-The standard deviation of Petal Width is 0.76.
-The mean of Petal Width is 1.2.
+From these histograms we can begin piecing together the observation that Irises with short, thin petals and slightly shorter sepals are likely Iris Setosas, meanwhile the larger end of the scale is likely to be Iris Versicolor. Our next step is to see if there is a relationship between these measurements on a given Iris flower.
 
 ### Scatter Plots
 

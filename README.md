@@ -261,6 +261,20 @@ Overall we can see that the petal length or width for Iris Setosa has little to 
 
 This pairplot shows the histograms and scatter plots outlined above, but with them all on one figure. This makes it easier to see that the Iris Setosa is generally smaller on every measure exception the sepal width, and that the smaller petal lengths and widths mean there's little correlation for the Setosa points on each of the scatter plots. Meanwhile the closer relationships seem on the Iris Virginica and Iris Versicolor outlined above are easier to observe, with the petal length and width being the key measurements for Iris Versicolor and Iris Virginica.
 
+### Heat Maps
+
+![setosaheat](plots/heatmaps/setosaHeatmap.png)
+
+Here we can see that there's a strong correlation between sepal length and sepal width for Iris Setosa's, as a coefficient of 0.7 or more is typically accepted as having a strong correlation. Therefore we can assume that for Setosa's, as sepal width increases, so does its length. As for the other measurements, petal length and petal width have a correlation of coefficient of 0.31 which would make it a weak to moderate correlation. 
+
+![versicolorheat](plots/heatmaps/versicolorHeatmap.png)
+
+The versicolor heatmap suggests there's pretty correlation between each of the measurements. Petal length and petal width has the strongest at 0.79, followed closely by petal length and sepal length at 0.75, both falling into the strong correlation category of 0.7 and above. Meanwhile all the other measures are at least 0.53, which would be a moderate correlation. Therefore we can assume that as any of the four measurements increases, all of them will increase with particular accuracy when it comes to the petal length's relationship with the petal width and sepal length.
+
+![virginicaheat](plots/heatmaps/virginicaHeatmap.png)
+
+The virginica heatmap includes the strongest correlation of any of the measurements across all three iris types, as we can see that petal length and sepal length have a pearson's correlation coefficient of 0.86 - well above the 0.7 that is generally considered a strong correlation. Therefore we can assume with good certainty that as the petals on virginica's get longer, so do their sepals, and vice versa. Sepal width and petal width also share a moderate correlation at 0.54, whereas the other measurements are in the weak-moderate correlation band as they are from 0.28 through to 0.46.
+
 ### Box Plots, Violin Plots & Cat Plots
 
 #### Petal Length
@@ -309,11 +323,6 @@ Due to the overlaps in the histograms earlier, it wasn't immediately clear that 
 
 As for versicolor and virginica, we see the same trends whereby virginica is just a bit bigger than versicolor again. Versicolor's range is from 2cm to 3.4 cm, whereas virginicas are at 2.5cm to 3.6cm (although it should be noted that here virginica has an outlier at either end, marked at 2.3cm and 3.8cm). As for their quartiles, versicolor's are at 2.5cm, 2.8cm and 3cm respectively, whereas the corresponding figures for virginica are 2.8cm, 3cm and 3.2cm. Thus the differences between virginica and versicolor measurements are a lot less pronounced, and both iris types have a similar spread of points along their ranges, as shown by the violint and cat plots.
 
-### Heat Maps
-
-![setosaheat](plots/heatmaps/setosaHeatmap.png)
-![versicolorheat](plots/heatmaps/versicolorHeatmap.png)
-![virginicaheat](plots/heatmaps/virginicaHeatmap.png)
 
 ## Summary and Conclusions
 

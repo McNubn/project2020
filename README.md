@@ -269,6 +269,12 @@ This pairplot shows the histograms and scatter plots outlined above, but with th
 ![petallviolin](plots/boxViolinCat/petallengthviolinplot.png)
 ![petallcat](plots/boxViolinCat/petallengthcatplot.png)
 
+As shown in the histograms and scatter plots, Iris Setosa's petal lengths are much shorter than that of versicolor and virginica. Similarly the range of measumrents for Iris Setosa is also very tight, with the longest being just 1.9, as evidenced by the 25th, 50th and 75th percentiles on the box plot all being within about 0.2 cm of each other. We can see from the violin plot that the bulk of the measurements for Iris Setosa are around 1.5 cm, which makes sense as the quartiles are all around that measure too.
+
+Iris Versicolor has a bit of a wider range of measurements, going from around 3.2cm to 5.1cm. As shown on the box plot, the 25th percentile is at 4cm, median is at 4.4 cm, and the 75th percentile is around 4.6 cm. The violin plot shows a more even distribution of measurements across the range, with a concentration between 4cm to 5cm, as supported by the cluster of points on the cat plot.
+
+As was shown in the histograms, Iris Virginica generally has the widest petals, with its range starting at  4.5cm, going up to 6.9 cm. The boxplot shows us that the 25th percentile is at 5.1 cm, so we know that 75% of the virginica petals were wider than the maximum versicolour measurement. The median is at 5.5 cm, and the 75th percentile is at 6.9cm. This interquartile range is the largest of the three, at 1.8 cm, and shows that there is a wider variation in Iris Virginica petal widths, then there are for Setosa or Versicolor petal widths, and we can see this by the more slender and consistent violin plot and cat plot points.
+
 #### Petal Width
 
 ![petalwbox](plots/boxViolinCat/petalwidthboxplot.png)

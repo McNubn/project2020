@@ -31,40 +31,40 @@
 
 # Introduction
 
-This repo contains the famous Fisher's Iris Data set (iris_csv.csv), a program that will create a number of plots (the .png files) alongside summary statistics (analysis.txt), and the aforementioned files created by the program.
+This GitHub repository contains Brian Doheny's project for the 2020 Programming and Scripting module at GMIT. 
+
+Here you'll find the famous Fisher's Iris Data Set (iris_csv.csv), a program (irisAnalysis.py) that will create a number of plots (found in the plots folder) alongside summary statistics (analysis.txt), and the aforementioned files created by the program.
 
 ## How to use this GitHub Repository
 
-This GitHub repository contains Brian Doheny's project for the Programming and Scripting module for 2020. 
-
 The root folder contains the following files and folders
-* iris_csv.csv - A CSV file containing Fisher's Iris data set. This file contains 5 columns containg the sepal length, sepal width, petal length, petal width and type for 150 Iris flowers.
-* irisAnalysis.py - A Python program that loads iris_csv.csv into a dataframe, and performs numerous plots. You can find tehse plots in the "plots" folder.
-* analysis.txt - A text file containing summary statistics from iris_csv.csv. Here you'll find the mean, median, minimum, maximum and standard deviation for each of the four measurements in the CSV file.
-* LICENSE - An MIT license for this Github Repository.
+* iris_csv.csv - A CSV file containing Fisher's Iris Data Set. This file contains 5 columns containing measurements of the sepal length, sepal width, petal length, petal width and iris type for 150 iris flowers.
+* irisAnalysis.py - A Python program that loads iris_csv.csv into a dataframe, and performs numerous plots. You can find these plots in the "plots" folder.
+* analysis.txt - A text file containing summary statistics from iris_csv.csv. Here you'll find the mean, median, minimum, maximum and standard deviation for each of the four measurements in the CSV file, along with the respective measurements for each type of iris flower, and Pearson's correlation coefficient for each measurement on each type of iris flower.
+* LICENSE - An MIT license for this Github repository.
 * README.md - You are currently reading this file.
-* plots/ - This folder and subsequent folders contains all of the png created by irisAnalysis.py. Each type of plot has its own subfolder based on its type - histograms (plots/histograms/), scatter plots (plots/scatterplots/), heatmaps (plots/heatmaps/) and cat, box and violin plots (/plots/boxViolinCat/)
-* Planning/ - This folder contains my notes and plans for this project, along with the specifications for the project as outlined in the project document shared with us. I've also included a timeline for my own use, although COVID-19 related disruptions meant the original timeline could not be met.
+* plots/ - This folder and subsequent folders contains all of the png files created by irisAnalysis.py. Each type of plot has its own subfolder based on its type - histograms (plots/histograms/), scatter plots (plots/scatterplots/), heatmaps (plots/heatmaps/) and cat, box and violin plots (/plots/boxViolinCat/)
+* planning/ - This folder contains my notes and plans for this project, along with the specifications for the project as outlined in the project document shared with us. I've also included a timeline for my own use, although COVID-19 related disruptions meant the original timeline could not be met.
 
 You can download this GitHub repository to your local device and run the program by following these steps:
-1. On the righthand side of this repository, you'll find the "Clone or download" button. Click this, then copy the HTTPS URL (this can be done by clicking the clipboard icon).
+1. On the right hand side of this repository, you'll find the "Clone or download" button. Click this, then copy the HTTPS URL (this can be done by clicking the clipboard icon).
 ![image](https://screenshot.click/25_52-djbyn-68e17.jpg)
-2. In your command line interface (e.g. Terminal on a Mac), navigate to the directoy where you'd like to download the repository to.
-3. While in the desired directory, type "git clone [paste the URL here]"
+2. In your command line interface (e.g. Terminal on a Mac), navigate to the directory where you'd like to download the repository to.
+3. While in the desired directory, type "git clone" and paste the url (i.e. "git clone [paste url here]").
 4. Hit enter and the repository will be downloaded into that directory.
-5. You can then run the irisAnalysis.py program by typing "python irisAnalysis.py" while in the directory that contains the irisAnalysis.py program. (Note: You will need to have Python 3.7 installed, along with matplotlib, pandas, seaborn and numpy. All of these are available in the [Anaconda package available here](https://www.anaconda.com/products/individual))
+5. You can then run the irisAnalysis.py program by typing "python irisAnalysis.py" while in the directory that contains the irisAnalysis.py program. (Note: You will need to have Python 3.7 installed, along with matplotlib, pandas, seaborn and numpy. All of these are available in the [Anaconda package which you find here](https://www.anaconda.com/products/individual))
 
 ## What is Fisher's Iris Data Set?
 
-Fisher's Iris Data Set is a set of data that contains the measurements of the sepeal length, sepal width, petal length and petal width of three types of Iris flower - Iris Setosa, Iris Virginica and Iris Versicolor. Although this data set was made famous by Ronald Fisher's paper "The use of multiple measurements in taxonomic problems", it was actually gathered by Edgar Anderson. The data set contains the aforementioned measurements for 150 Iris flowers, with 50 in each of the 3 Iris categories.
+Fisher's Iris Data Set is a set of data that contains the measurements of the sepal length, sepal width, petal length and petal width of three types of iris flower - Iris Setosa, Iris Virginica and Iris Versicolor. Although this data set was made famous by Ronald Fisher's paper "The use of multiple measurements in taxonomic problems", it was actually gathered by Edgar Anderson. The data set contains the aforementioned measurements for 150 iris flowers, with each of the three iris types represented by 50 observations each.
 
 ## Why is this data set used?
 
-This data set is often used to introduce students to multivariate data analysis, as well as for machine learning studies, as it is a relatively small data set at 150 observations, while still being just large enough for skills building. Meanwhile the limited number of variants (i.e. the four measurements on each flower) alongside the small set of categories (i.e. the three types of Iris flower measured) allow students to practice various plotting techniques with real data. Finally, Ronald Fisher himself was a well respected statistician and his impact on the field of statistics is still felt today.
+This data set is often used to introduce students to multivariate data analysis, as well as for machine learning studies, as it is a relatively small data set at 150 observations, while still being just large enough for skills building. Meanwhile the limited number of variants (i.e. the four measurements on each flower) alongside the small set of categories (i.e. the three types of iris flower that were measured) allow students to practice various plotting techniques with real data. Finally, Ronald Fisher himself was a well respected statistician and his impact on the field of statistics is still felt today, and this likely led to the initial popularity of this data set for teaching.
 
 ## Any controversies regarding this data set?
 
-While studying this data set, it became apparently that there is some mild controversy in the field of botany regarding the defintion of sepals and petals in the case of Iris flowers ([as can be seen here](https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data)). That said, this particular controversy does not spill over into the field of statistics, data analysis or machine learning, and so doesn't impact this particular project. 
+While studying this data set, it became apparent that there is some mild controversy in the field of botany regarding the definition of sepals and petals in the case of iris flowers ([as can be seen here](https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data)). That said, this particular controversy does not spill over into the field of statistics, data analysis or machine learning, and so doesn't impact this particular project. 
 
 # Creation of the program
 

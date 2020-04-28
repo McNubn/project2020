@@ -258,7 +258,7 @@ for measurement in df2.columns:
 
 # Heatmap idea from https://levelup.gitconnected.com/pearson-coefficient-of-correlation-using-pandas-ca68ce678c04
 # https://seaborn.pydata.org/generated/seaborn.heatmap.html
-fig, ax = plt.subplots(figsize = (10,10))
+fig, ax = plt.subplots(figsize = (8,8))
 ax = sns.heatmap(iris_setosa.corr(), annot=True, ax = ax)
 # Seems matplotlib introduced an issue for heatmaps whereby half the y axis can get cut off.
 # Workaround picked up from : https://stackoverflow.com/questions/56942670/matplotlib-seaborn-first-and-last-row-cut-in-half-of-heatmap-plot 
@@ -268,7 +268,7 @@ plt.savefig("plots/heatmaps/setosaHeatmap.png")
 plt.clf()
 plt.close()
 
-fig, ax = plt.subplots(figsize = (10,10))
+fig, ax = plt.subplots(figsize = (8,8))
 ax = sns.heatmap(iris_virginica.corr(), annot=True, ax = ax)
 ax.set_ylim(0, 4)
 ax.set_title("Iris Virginica Heat Map showing Pearson's Correlation Coefficient")
@@ -276,7 +276,7 @@ plt.savefig("plots/heatmaps/virginicaHeatmap.png")
 plt.clf()
 plt.close()
 
-fig, ax = plt.subplots(figsize = (10,10))
+fig, ax = plt.subplots(figsize = (8,8))
 ax = sns.heatmap(iris_versicolor.corr(), annot=True, ax = ax)
 ax.set_ylim(0, 4)
 ax.set_title("Iris Versicolor Heat Map showing Pearson's Correlation Coefficient")

@@ -110,13 +110,13 @@ for measurement in df.columns:
 # https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
 
 irisgrouped = df.groupby('type').agg(['median','min','max','std','mean'])
-f.write("\n Petal Length Summary Stastics by Iris Type\n" + 
+f.write("\n Petal Length Summary Statistics by Iris Type\n" + 
         str(irisgrouped['petallength']) + "\n")
-f.write("\n Petal Width Summary Stastics by Iris Type\n" + 
+f.write("\n Petal Width Summary Statistics by Iris Type\n" + 
         str(irisgrouped['petalwidth']) + "\n")
-f.write("\n Sepal Length Summary Stastics by Iris Type\n" + 
+f.write("\n Sepal Length Summary Statistics by Iris Type\n" + 
         str(irisgrouped['sepallength']) + "\n")
-f.write("\n Sepal Width Summary Stastics by Iris Type\n" + 
+f.write("\n Sepal Width Summary Statistics by Iris Type\n" + 
         str(irisgrouped['sepalwidth']) + "\n")
 f.write("\nPearson Correlation Coefficients\n"
     "Iris Setosa\n" + str(iris_setosa.corr()))

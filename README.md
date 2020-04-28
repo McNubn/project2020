@@ -73,7 +73,7 @@ While studying this data set, it became apparent that there is some mild controv
 For this project, I have used the following Python Libraries:
 
 * Pandas - Pandas is a library made specifically for creating and manipulating data frames in Python. These two dimensional data structures (i.e. they have rows as well as columns) allow data scientists to select and manipulate the data to their requirements. This allows for easier plotting, whether that be via Panda's own plotting functionality, or via other libraries. In this project, Pandas has been used to create a data frame from the iris_csv.csv file, and then structure the data frame so that I could make the desired plots.
-* Matplotlib.pyplot - Matplotlib is the most popular library for creating plots in Python, and in fact numerous other libraries for plotting are based off the functionality of Matplotlib. In this project I have used matplotlib.pyplot to create histograms and scatter plots for the various measurements in the data set.
+* Matplotlib.pyplot - Matplotlib is the most popular library for creating plots in Python, and in fact numerous other libraries for plotting are based on the functionality of Matplotlib. In this project I have used matplotlib.pyplot to create histograms and scatter plots for the various measurements in the data set.
 * Seaborn - Seaborn is another popular library for creating plots in Python, and is based on the functionality introduced by Matplotlib. Seaborn introduces a few new plot types, as well as some more aesthetically pleasing default settings for those plots. In this project I've used Seaborn for Cat Plots, Box Plots, Violin Plots, Heat Maps and a Pair Plot.
 
 
@@ -122,7 +122,7 @@ The cat plots in this program involve the same categories and variables as the b
 ### Heat Maps
 Heat maps highlight whether two variables have a correlation (i.e. that one measurement influences the other). In the case of the heat maps created by my program, the paler the colour of the box, the more of a correlation there is, and thus the greater likelihood that the two variables influence each other. 
 
-For my heat maps, I used Pearson's Correlation Coefficient ([you can find out about this here](https://www.spss-tutorials.com/pearson-correlation-coefficient/)) and so a coefficient close to 1 means that the two variables are positively related (i.e. as one increases, so does the other). Likewise, a coefficient closer to -1 would mean the two variables are negatively related (i.e. as one increase the other decreases). A coefficient closer to 0 suggests no correlation, and thus the two variables are not related.
+For my heat maps, I used Pearson's Correlation Coefficient ([you can find out about this here](https://www.spss-tutorials.com/pearson-correlation-coefficient/)) and so a coefficient close to 1 means that the two variables are positively related (i.e. as one increases, so does the other). Likewise, a coefficient closer to -1 would mean the two variables are negatively related (i.e. as one increases the other decreases). A coefficient closer to 0 suggests no correlation, and thus the two variables are not related.
 
 My program produces a heat map for each of the three iris types, with the heat map showing the correlation coefficients for each variable against each other. Seaborn was used to create these heat maps, the documentation for which can be [found here](https://seaborn.pydata.org/generated/seaborn.heatmap.html).
 
@@ -181,7 +181,7 @@ We can see these observations supported by the summary statistics for the entire
 
 When we differentiate the three iris types by colour, we can begin to pick out some trends among the histograms. The sepal length and sepal width histograms don't highlight any major differences, other than the fact setosas have the shortest sepals, followed by versicolors (although all are within a tight range of measurements). However, when it comes to petal length and petal width we see a clear hierarchy that is consistent with the assumptions made on the overall histograms above. Setosas have shorter and thinner petals than versicolors, which then in turn has shorter and thinner petals than virginicas. 
 
-From these histograms we can begin piecing together the observation that irises with short, thin petals and slightly shorter sepals are likely to be setosas. Meanwhile if the measurements are at larger end of the scale, it is likely to be a versicolor. This is also supported by the summary statistics found in analysis.txt
+From these histograms we can begin piecing together the observation that irises with short, thin petals and slightly shorter sepals are likely to be setosas. Meanwhile if the measurements are at the larger end of the scale, it is likely to be a versicolor. This is also supported by the summary statistics found in analysis.txt
 
     Petal Length Summary Stastics by Iris Type
                     median  min  max       std   mean
@@ -243,7 +243,7 @@ Sepal length vs petal length similarly shows a clearer relationship between thes
 
 ![sepsepallvspetalw](plots/scatterplots/separatedsepallengthVspetalwidth.png)
 
-When we can see the three different iris types on this scatter plot, the relationships are lot clearer. Whereas before the points looked quite unrelated, we can now see a slight relationship between sepal width and sepal length for versicolors, and no clear relationship for setosas or virginicas. Once again it seems that the petal width of setosas will remain between 0.1cm and 0.6cm regardless of the sepal width.
+When we can see the three different iris types on this scatter plot, the relationships are a lot clearer. Whereas before the points looked quite unrelated, we can now see a slight relationship between sepal width and sepal length for versicolors, and no clear relationship for setosas or virginicas. Once again it seems that the petal width of setosas will remain between 0.1cm and 0.6cm regardless of the sepal width.
 
 ![sepsepallvssepalw](plots/scatterplots/separatedsepallengthVssepalwidth.png)
 
@@ -257,7 +257,7 @@ This is another plot where the different colours for each iris type make it easi
 
 Similar to above, the sepal width and petal length show a strong correlation for versicolors, a weaker correlation for virginicas, and no correlation for setosas.
 
-Overall we can see that the petal length or width for setosas has little to no bearing when compared to any of the other measurements. However, the sepal width and sepal length for this iris type have a strong correlation, as one grows so does the other. Meanwhile, versicolors have much tighter relationships between each pairing with the exception of sepal length versus sepal width, thus suggesting that the size of the petals dictate the size of both petals and sepals. Virginicas have a strong correlation when looking at the two petal measurements together. However, it shows much looser relationships when petals and sepals are compared, and little to no relationshp when sepal length and width is compared to each other, and so this more loosely follows the versicolor trend of petals sizes being the key variables. 
+Overall we can see that the petal length or width for setosas has little to no bearing when compared to any of the other measurements. However, the sepal width and sepal length for this iris type have a strong correlation, as one grows so does the other. Meanwhile, versicolors have much tighter relationships between each pairing with the exception of sepal length versus sepal width, thus suggesting that the size of the petals dictate the size of both petals and sepals. Virginicas have a strong correlation when looking at the two petal measurements together. However, it shows much looser relationships when petals and sepals are compared, and little to no relationship when sepal length and width is compared to each other, and so this more loosely follows the versicolor trend of petals sizes being the key variables. 
 
 ### Pairplot
 
@@ -299,7 +299,7 @@ As was shown in the histograms, virginicas generally have the longest petals, wi
 ![petalwviolin](plots/boxViolinCat/petalwidthviolinplot.png)
 ![petalwcat](plots/boxViolinCat/petalwidthcatplot.png)
 
-Once again we can see the clear representation of the thinner petals found on setosas, and the small range of petal widths going from 0.1cm to 0.6cm. Interestingly here, the boxplot actually shows 0.4cm as the maximum measurement, with the 0.5cm and 0.6cm measurements being shown as outliers (as depicted by the diamonds). This is likely because they sit relatively far beyond the upper quartile which is 0.4cm. The boxplot also shows us that the lower quartile is at 0.3cm, although we cannot see the median due to the tight interquartile range on this plot. Therefore we must look to the violin plot where we see a clear cocentration of points around 0.2cm, suggesting that this is the median. The violin plot also shows why the 0.5cm and 0.6cm measurements appear as outliers on the box plot, as we see the sharp point up to 0.6cm showing that it is in fact an outlier (although hopefully not an erroneous measurement).
+Once again we can see the clear representation of the thinner petals found on setosas, and the small range of petal widths going from 0.1cm to 0.6cm. Interestingly here, the boxplot actually shows 0.4cm as the maximum measurement, with the 0.5cm and 0.6cm measurements being shown as outliers (as depicted by the diamonds). This is likely because they sit relatively far beyond the upper quartile which is 0.4cm. The box plot also shows us that the lower quartile is at 0.3cm, although we cannot see the median due to the tight interquartile range on this plot. Therefore we must look to the violin plot where we see a clear concentration of points around 0.2cm, suggesting that this is the median. The violin plot also shows why the 0.5cm and 0.6cm measurements appear as outliers on the box plot, as we see the sharp point up to 0.6cm showing that it is in fact an outlier (although hopefully not an erroneous measurement).
 
 The petal width of versicolors has a large range from 1cm to 1.7cm, with the three quartiles at 1.2cm, 1.3cm and 1.5cm, respectively. The violin plot for versicolor also shows that the maximum points are quite far from the bulk of the measurements, as illustrated by the sharp point at the top. Other than that the points are quite evenly spread from 1.2cm to 1.6cm, hence the quartile range of 1.2cm to 1.5cm mentioned above. 
 
@@ -323,7 +323,7 @@ Virginicas have a range from 5.6cm to 7.9cm, with the quartiles at 6.4cm, 6.5cm 
 ![sepalwviolin](plots/boxViolinCat/sepalwidthviolinplot.png)
 ![sepalwcat](plots/boxViolinCat/sepalwidthcatplot.png)
 
-Due to the overlaps in the histograms earlier, it wasn't immediately clear that setosas tend to have the wider sepal widths, but we can see this quite plainly in these three plots. The boxplot tells us that the range for setosa sepal widths is from 2.3cm to 4.4cm, meaning that setosas also have the widest range of the three iris types - unlike in the three other variables where setosas were shown to be more consistent in their sizing. We can also see that the three quartiles for setosas are 3.1cm, 3.4cm and 3.7cm respectively. This means that 75% of setosa sepals are wider than over 75% of virginica and versicolor sepals (the upper quartile for versicolors is 3cm, meanwhile the upper quartile for virginicas is 3.1 cm). Therefore we now know that setosas generally have the shortest and thinnest petals, with the shortest but widest sepals.
+Due to the overlaps in the histograms earlier, it wasn't immediately clear that setosas tend to have the wider sepal widths, but we can see this quite plainly in these three plots. The box plot tells us that the range for setosa sepal widths is from 2.3cm to 4.4cm, meaning that setosas also have the widest range of the three iris types - unlike in the three other variables where setosas were shown to be more consistent in their sizing. We can also see that the three quartiles for setosas are 3.1cm, 3.4cm and 3.7cm respectively. This means that 75% of setosa sepals are wider than over 75% of virginica and versicolor sepals (the upper quartile for versicolors is 3cm, meanwhile the upper quartile for virginicas is 3.1 cm). Therefore we now know that setosas generally have the shortest and thinnest petals, with the shortest but widest sepals.
 
 As for versicolor and virginica, we see the same trends whereby virginicas are just a bit bigger than versicolors again. The range for versicolors is from 2cm to 3.4 cm, whereas virginicas are at 2.5cm to 3.6cm (although it should be noted that virginica shows an outlier at either end, marked at 2.3cm and 3.8cm). As for their quartiles, versicolors are at 2.5cm, 2.8cm and 3cm respectively, whereas the corresponding figures for virginica are 2.8cm, 3cm and 3.2cm. Thus the differences between virginica and versicolor measurements are a lot less pronounced, and both iris types have a similar distribution of points along their ranges, as shown by the violin and cat plots.
 
@@ -344,11 +344,11 @@ We can also make some conclusions on the relationship between each measurement f
 
 ## External Conclusions and Alignment with Mine
 
-While thus far I have been performing my own analyses of the Iris data set, it's time to see what others have discovered from this data set, and what the logical next steps for any investigation should be.
+While thus far I have been performing my own analyses of the iris data set, it's time to see what others have discovered from this data set too, and what the logical next steps for any investigation should be.
 
-To begin with I the paper that made this data set famous - [The Use of Multiple Measurements in Taxonomic Problems by R.A. Fisher](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x) and while his use of statistics did provide some learning opportunities for me, there was little actionable context that would aid me in this project.
+To begin with I reviewed the paper that made this data set famous, [The Use of Multiple Measurements in Taxonomic Problems by R.A. Fisher](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x), and while his use of statistics did provide some learning opportunities for me, there was little actionable context that would aid me in this project.
 
-However I did find another statisical paper written on this data set - [Statistical Analysis of the Iris Flower Dataset, by Patrick S. Hoey, University of Massachusetts At Lowell](http://patrickhoey.com/downloads/Computer_Science/03_Patrick_Hoey_Data_Visualization_Dataset_paper.pdf). It was interesting to see that Hoey's conclusions matched mine, although he was more explicit on the actual measurements when determining one Iris type from another, as quote here:
+However I did find another statistical paper written on this data set, [Statistical Analysis of the Iris Flower Dataset, by Patrick S. Hoey, University of Massachusetts At Lowell](http://patrickhoey.com/downloads/Computer_Science/03_Patrick_Hoey_Data_Visualization_Dataset_paper.pdf). It was interesting to see that Hoey's conclusions matched mine, although he was more explicit on the actual measurements when determining one iris type from another, as quoted here:
     In summary of these results, I can build an
     objective predictor for a particular classification
     of Iris flowers. If the Iris flower has a long sepal
@@ -360,9 +360,9 @@ However I did find another statisical paper written on this data set - [Statisti
     between these two classifications is most likely
     an Iris-Versicolor. 
 
-And on the theme of adding more clarity to mt analyses, a Medium post titled [Exploratory Data Analysis: Uni-variate analysis of Iris Data set](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40) did open my eyes to the possibility of using the Pandas groupby function to generate summary statistics for each Iris type, rather than for the data set as a whole like I had initially. I have since gone back into my program, and added this method for showing summary statistics for each type of Iris, alongside the summary statistics I had before.
+And on the theme of adding more clarity to my analyses, a Medium post titled [Exploratory Data Analysis: Uni-variate analysis of Iris Data set](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40) did open my eyes to the possibility of using the Pandas groupby function to generate summary statistics for each iris type. Previously I had only provided such statistics for the data set as a whole. I have since gone back into my program, and added this method for showing summary statistics for each type of iris, alongside the summary statistics I had before, with all of them being written to analysis.txt.
 
-Meanwhile Nabriya's histograms include the Probability Density Function, to help visualise the differences in measurements between the three Iris types. The histograms and probabily density functions show that petal length and petal width can be used to differentiate Iris Setosa from Versicolor and Virginica, as they are much smaller, and there's a clear difference. Meanwhile these two variables can also help distinguise virginica from versicolor, with virginica generally having larger measurements. Also suggests a psuedo-code to decide which is which:
+Meanwhile Nabriya's histograms include the Probability Density Function (PDF), to help visualise the differences in measurements between the three iris types. The histograms and probability density functions show that petal length and petal width can be used to differentiate setosas from versicolors and virginicas, as they are much smaller, and there's a clear difference. Meanwhile these two variables can also help distinguish virginicas from versicolors, with virginicas generally having larger measurements. Nabriya also suggests a pseudo-code to determine what type of iris is being measured:
 
     If petal_length < 2.1
     then specie = ‘Setosa’
@@ -371,15 +371,15 @@ Meanwhile Nabriya's histograms include the Probability Density Function, to help
     else if petal_length > 4.8
     then specie = ‘Virginica’
 
-On the note of peudo-code algorithms to determine which Iris is which, the [Exploratory Data Analysis of IRIS Data Set Using Python](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d) Medium post also includes another version:
+This was not the only pseudo-code algorithm I came across, as the [Exploratory Data Analysis of IRIS Data Set Using Python](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d) Medium post also includes another version:
     
     if 0≤petal_length≤2 and 0≤petal_width≤0.7then setosa
     if 2≤petal_lenght≤5.2 and 1≤petal_length≤1.7 then versicolor
     else virginica
 
-I should also point out that it was this Medium post that made me aware of the possibility of slicing the dataframe into three smaller ones, one for each Iris type which I could then use for clearer plots. In my case I used this example to plot each iris type separately onto histograms and scatter plots, which different colours representing each iris type, thus making it easier to formulate conclusions. This post also made me aware of the existence of box plots and violin plots, which I was then able to study in more depth from Seaborn's documentation.
+I should also point out that it was this Medium post that made me aware of the possibility of slicing the data frame into three smaller ones, one for each iris type which I could then use for clearer plots. In my case I used this example to plot each iris type separately onto histograms and scatter plots. This allowed me to specify different colours for each iris type, thus making the visualisation of the relationship clearer and easier for us to formulate conclusions. This post also made me aware of the existence of box plots and violin plots, which I was then able to study in more depth from Seaborn's documentation.
 
-Outside of more specific summary statistics and pseudo-code algorithms for determining which type an Iris falls under, a large amount of investigation into this data set has involved machine learning. For the purposes of this project, I did not go in this direction, although it is a logical next step, and something for me to explore in future. In fact, I happened to stumble across a [previous GMIT student's](https://github.com/RitRa/Project2018-iris) investigation into this data set, whereby they used scikit-learn to predict what type an Iris might be if it had any suggested measurements. There are also numerous examples of R's machine learning capabilities being used on this data set, however as this project in Python, I did not explore them in depth.
+Outside of more specific summary statistics and pseudo-code algorithms for determining which type a given iris falls under, a large amount of investigation into this data set has involved machine learning. For the purposes of this project, I did not go in this direction, although it is a logical next step, and something for me to explore in future. In fact, I happened to stumble across a [previous GMIT student's](https://github.com/RitRa/Project2018-iris) investigation into this data set, whereby they used scikit-learn to predict what type a given iris might be if it had any user specified measurements. There are also numerous examples of R's machine learning capabilities being used on this data set, however as this project in Python, I did not explore them in depth.
 
 # References and Resources
 
@@ -390,7 +390,7 @@ For this project, I made ample use of the various libraries' documentation
 * [Seaborn](https://seaborn.pydata.org/)
 
 ### DataCamp
-In order to support the content covered in this module, I've also been conducting a lot of study on Datacamp.com. Data Camp is an online learning platform specifically aimed at Data Analysts and Data Scientists, and covers a wide range of subjects involve SQL, Python and R. It is therefore through many of the following courses that I learned how to apply various plots, slices and loops in my code:
+In order to support the content covered in this module, I've also been conducting a lot of study on Datacamp.com. DataCamp is an online learning platform specifically aimed at Data Analysts and Data Scientists, and covers a wide range of subjects involve SQL, Python and R. It is therefore through many of the following courses that I learned how to apply various plots, slices and loops in my code:
 * [Introduction to Data Science in Python](https://learn.datacamp.com/courses/introduction-to-data-science-in-python)
 * [Intermediate Python](https://learn.datacamp.com/courses/intermediate-python)
 * [Python Data Science Toolbox Part 1](https://learn.datacamp.com/courses/python-data-science-toolbox-part-1)
@@ -402,7 +402,7 @@ In order to support the content covered in this module, I've also been conductin
 * [Introduction to Data Visualization in Python](https://learn.datacamp.com/courses/introduction-to-data-visualization-in-python)
 
 ### StackOverflow
-While writing this program, I occassionaly encounted unexpected errors and such. While my first attempt was always the official documentation, I did sometimes encounter workarounds from StackOverflow. Where such a workaround has been implemented, I have linked the StackOverflow thread in a comment. I have also listed all the used links below.
+While writing this program, I occassionally encountered unexpected errors and such. While my first attempt was always to check the official documentation, I did sometimes encounter workarounds from StackOverflow. Where such a workaround has first been implemented in my program, I have linked the StackOverflow thread in a comment. I have also listed all the used StackOverflow threads below.
 
 * https://stackoverflow.com/questions/37967786/axes-from-plt-subplots-is-a-numpy-ndarray-object-and-has-no-attribute-plot
 * https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
@@ -411,11 +411,11 @@ While writing this program, I occassionaly encounted unexpected errors and such.
 * https://stackoverflow.com/questions/56942670/matplotlib-seaborn-first-and-last-row-cut-in-half-of-heatmap-plot 
 
 ### GeekForGeeks
-Alongside official documentation, I have also used guides from [GeekforGeeks Python articles](https://www.geeksforgeeks.org/python-programming-language/?ref=leftbar) to see more examples of implementations, as well as how customisation options (such as alpha) influence the plots.
+Alongside official documentation, I have also used guides from [GeekforGeeks' Python articles](https://www.geeksforgeeks.org/python-programming-language/?ref=leftbar) to see more examples of implementations, as well as how customisation options (such as alpha) influence the plots.
 
 ### Marsja.se
 
-From this website, I just used on how-to doc regarding getting column names from Pandas dataframes.
+From this website, I just used one how-to guide regarding getting column names from Pandas dataframes.
 
 * https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list
 

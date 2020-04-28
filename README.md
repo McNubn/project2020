@@ -132,35 +132,6 @@ Along with the PNG files containing each of my plots, my program also creates th
 
 The summary statisics provided for each of the variables are the mean, median, minimum, maximum and standard deviation.
 
-
-## References and Resources
-
-### Official Documentation
-For this project, I made ample use of the various libraries' documentation, as linked above on each of the various plots. 
-
-### DataCamp
-In order to support the content covered in this module, I've also been conducting a lot of study on Datacamp.com. Data Camp is an online learning platform specifically aimed at Data Analysts and Data Scientists, and covers a wide range of subjects involve SQL, Python and R. It is therefore through many of the following courses that I learned how to apply various plots, slices and loops in my code:
-* [Introduction to Data Science in Python](https://learn.datacamp.com/courses/introduction-to-data-science-in-python)
-* [Intermediate Python](https://learn.datacamp.com/courses/intermediate-python)
-* [Python Data Science Toolbox Part 1](https://learn.datacamp.com/courses/python-data-science-toolbox-part-1)
-* [Introduction to Importing Data in Python](https://learn.datacamp.com/courses/introduction-to-importing-data-in-python)
-* [Intermediate Importing Data in Python](https://learn.datacamp.com/courses/intermediate-importing-data-in-python)
-* [Cleaning Data in Python](https://learn.datacamp.com/courses/cleaning-data-in-python)
-* [Pandas Foundations](https://learn.datacamp.com/courses/pandas-foundations)
-* [Manipulating Dataframes in Pandas](https://learn.datacamp.com/courses/manipulating-dataframes-with-pandas)
-* [Introduction to Data Visualization in Python](https://learn.datacamp.com/courses/introduction-to-data-visualization-in-python)
-
-### StackOverflow
-While writing this program, I occassionaly encounted unexpected errors and such. While my first attempt was always the official documentation, I did sometimes encounter workarounds from StackOverflow. Where such a workaround has been implemented, I have linked the StackOverflow thread in a comment.
-
-
-### GeekForGeeks
-Alongside official documentation, I have also used guides from [GeekforGeeks Python articles](https://www.geeksforgeeks.org/python-programming-language/?ref=leftbar) to see more examples of implementations, as well as how customisation options (such as alpha) influence the plots.
-
-### Exploratory Data Analysis of IRIS Data Set Using Python
-
-This article, [available here on Medium](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d), was found while I was researching other people's analysis on this data set, and it did spur me on to try plots that I was otherwise unaware of, specifically the box plots and violin plots. This article also opened my eyes to the possibility of slicing the dataframe into different Iris types in order to differentiate the colours of scatter plots.
-
 # Analysis - Findings
 
 ## Plots and Summary Statistics
@@ -356,15 +327,9 @@ However I did find another statisical paper written on this data set - [Statisti
     between these two classifications is most likely
     an Iris-Versicolor. 
 
-And on the theme of adding more clarity to mt analyses, a Medium post titled [Exploratory Data Analysis: Uni-variate analysis of Iris Data set](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40) did open my eyes to the possibility of using the Pandas groupby function to generate summary statistics for each Iris type, rather than for the data set as a whole like I had initially.
+And on the theme of adding more clarity to mt analyses, a Medium post titled [Exploratory Data Analysis: Uni-variate analysis of Iris Data set](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40) did open my eyes to the possibility of using the Pandas groupby function to generate summary statistics for each Iris type, rather than for the data set as a whole like I had initially. I have since gone back into my program, and added this method for showing summary statistics for each type of Iris, alongside the summary statistics I had before.
 
-
-For this project, I did not delve into machine learning and its capabilities with this data set, although that is a logical next step. To do this, I would make use of sci-kit learn.
-Example from Kaggle - https://www.kaggle.com/xuhewen/iris-dataset-visualization-and-machine-learning
-
-I could have used the groupby method to create aggregate statistics, such as https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
-
-Probability Density Function shows us the probability that an observation will fall within its range. The histograms and probabily density functions show that petal length and petal width can be used to differentiate Iris Setosa from Versicolor and Virginica, as they are much smaller, and there's a clear difference. Meanwhile these two variables can also help distinguise virginica from versicolor, with virginica generally having larger measurements. Also suggests a psuedo-code to decide which is which
+Meanwhile Nabriya's histograms include the Probability Density Function, to help visualise the differences in measurements between the three Iris types. The histograms and probabily density functions show that petal length and petal width can be used to differentiate Iris Setosa from Versicolor and Virginica, as they are much smaller, and there's a clear difference. Meanwhile these two variables can also help distinguise virginica from versicolor, with virginica generally having larger measurements. Also suggests a psuedo-code to decide which is which:
 
     If petal_length < 2.1
     then specie = ‘Setosa’
@@ -373,10 +338,40 @@ Probability Density Function shows us the probability that an observation will f
     else if petal_length > 4.8
     then specie = ‘Virginica’
 
-https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d Has a more in depth psuedo-code to decide which is which
-
+On the note of peudo-code algorithms to determine which Iris is which, the [Exploratory Data Analysis of IRIS Data Set Using Python](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d) Medium post also includes another version:
+    
     if 0≤petal_length≤2 and 0≤petal_width≤0.7then setosa
-    if 2≤petal_lenght≤5.2 and 1≤petal_length≤1.7 then versicolor and
+    if 2≤petal_lenght≤5.2 and 1≤petal_length≤1.7 then versicolor
     else virginica
 
-A former GMIT student introduces how they applied scikit-learn to this data set - https://github.com/RitRa/Project2018-iris
+I should also point out that it was this Medium post that made me aware of the possibility of slicing the dataframe into three smaller ones, one for each Iris type which I could then use for clearer plots. In my case I used this example to plot each iris type separately onto histograms and scatter plots, which different colours representing each iris type, thus making it easier to formulate conclusions. This post also made me aware of the existence of box plots and violin plots, which I was then able to study in more depth from Seaborn's documentation.
+
+Outside of more specific summary statistics and pseudo-code algorithms for determining which type an Iris falls under, a large amount of investigation into this data set has involved machine learning. For the purposes of this project, I did not go in this direction, although it is a logical next step, and something for me to explore in future. In fact, I happened to stumble across a [previous GMIT student's](https://github.com/RitRa/Project2018-iris) investigation into this data set, whereby they used scikit-learn to predict what type an Iris might be if it had any suggested measurements. There are also numerous examples of R's machine learning capabilities being used on this data set, however as this project in Python, I did not explore them in depth.
+
+## References and Resources
+
+### Official Documentation
+For this project, I made ample use of the various libraries' documentation, as linked above on each of the various plots. 
+
+### DataCamp
+In order to support the content covered in this module, I've also been conducting a lot of study on Datacamp.com. Data Camp is an online learning platform specifically aimed at Data Analysts and Data Scientists, and covers a wide range of subjects involve SQL, Python and R. It is therefore through many of the following courses that I learned how to apply various plots, slices and loops in my code:
+* [Introduction to Data Science in Python](https://learn.datacamp.com/courses/introduction-to-data-science-in-python)
+* [Intermediate Python](https://learn.datacamp.com/courses/intermediate-python)
+* [Python Data Science Toolbox Part 1](https://learn.datacamp.com/courses/python-data-science-toolbox-part-1)
+* [Introduction to Importing Data in Python](https://learn.datacamp.com/courses/introduction-to-importing-data-in-python)
+* [Intermediate Importing Data in Python](https://learn.datacamp.com/courses/intermediate-importing-data-in-python)
+* [Cleaning Data in Python](https://learn.datacamp.com/courses/cleaning-data-in-python)
+* [Pandas Foundations](https://learn.datacamp.com/courses/pandas-foundations)
+* [Manipulating Dataframes in Pandas](https://learn.datacamp.com/courses/manipulating-dataframes-with-pandas)
+* [Introduction to Data Visualization in Python](https://learn.datacamp.com/courses/introduction-to-data-visualization-in-python)
+
+### StackOverflow
+While writing this program, I occassionaly encounted unexpected errors and such. While my first attempt was always the official documentation, I did sometimes encounter workarounds from StackOverflow. Where such a workaround has been implemented, I have linked the StackOverflow thread in a comment.
+
+
+### GeekForGeeks
+Alongside official documentation, I have also used guides from [GeekforGeeks Python articles](https://www.geeksforgeeks.org/python-programming-language/?ref=leftbar) to see more examples of implementations, as well as how customisation options (such as alpha) influence the plots.
+
+### Exploratory Data Analysis of IRIS Data Set Using Python
+
+This article, [available here on Medium](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d), was found while I was researching other people's analysis on this data set, and it did spur me on to try plots that I was otherwise unaware of, specifically the box plots and violin plots. This article also opened my eyes to the possibility of slicing the dataframe into different Iris types in order to differentiate the colours of scatter plots.

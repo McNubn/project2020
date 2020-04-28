@@ -340,3 +340,43 @@ We can also make some conclusions on the relationship between each measurement f
 
 ## External Conclusions and Alignment with Mine
 
+While thus far I have been performing my own analyses of the Iris data set, it's time to see what others have discovered from this data set, and what the logical next steps for any investigation should be.
+
+To begin with I the paper that made this data set famous - [The Use of Multiple Measurements in Taxonomic Problems by R.A. Fisher](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x) and while his use of statistics did provide some learning opportunities for me, there was little actionable context that would aid me in this project.
+
+However I did find another statisical paper written on this data set - [Statistical Analysis of the Iris Flower Dataset, by Patrick S. Hoey, University of Massachusetts At Lowell](http://patrickhoey.com/downloads/Computer_Science/03_Patrick_Hoey_Data_Visualization_Dataset_paper.pdf). It was interesting to see that Hoey's conclusions matched mine, although he was more explicit on the actual measurements when determining one Iris type from another, as quote here:
+    In summary of these results, I can build an
+    objective predictor for a particular classification
+    of Iris flowers. If the Iris flower has a long sepal
+    (6-8cm), long petals (5-7cm) and wide petals
+    (1.5-2.5cm) then the Iris is most likely an IrisVirginica. If the Iris flower has a short sepal
+    (4.5-5.5cm), short petals(1-2cm) and very
+    narrow petals (.1-.5cm) then the Iris is most
+    likely an Iris-Setosa. Any Iris flower that falls in
+    between these two classifications is most likely
+    an Iris-Versicolor. 
+
+And on the theme of adding more clarity to mt analyses, a Medium post titled [Exploratory Data Analysis: Uni-variate analysis of Iris Data set](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40) did open my eyes to the possibility of using the Pandas groupby function to generate summary statistics for each Iris type, rather than for the data set as a whole like I had initially.
+
+
+For this project, I did not delve into machine learning and its capabilities with this data set, although that is a logical next step. To do this, I would make use of sci-kit learn.
+Example from Kaggle - https://www.kaggle.com/xuhewen/iris-dataset-visualization-and-machine-learning
+
+I could have used the groupby method to create aggregate statistics, such as https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
+
+Probability Density Function shows us the probability that an observation will fall within its range. The histograms and probabily density functions show that petal length and petal width can be used to differentiate Iris Setosa from Versicolor and Virginica, as they are much smaller, and there's a clear difference. Meanwhile these two variables can also help distinguise virginica from versicolor, with virginica generally having larger measurements. Also suggests a psuedo-code to decide which is which
+
+    If petal_length < 2.1
+    then specie = ‘Setosa’
+    else if petal_length > 2.1 and petal_length < 4.8
+    then specie = ‘Versicolor’
+    else if petal_length > 4.8
+    then specie = ‘Virginica’
+
+https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d Has a more in depth psuedo-code to decide which is which
+
+    if 0≤petal_length≤2 and 0≤petal_width≤0.7then setosa
+    if 2≤petal_lenght≤5.2 and 1≤petal_length≤1.7 then versicolor and
+    else virginica
+
+A former GMIT student introduces how they applied scikit-learn to this data set - https://github.com/RitRa/Project2018-iris

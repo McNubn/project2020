@@ -28,28 +28,28 @@ The maximum measurement of Petal Width is 2.5.
 The standard deviation of Petal Width is 0.76.
 The mean of Petal Width is 1.2.
 
- Petal Length Summary Stastics by Iris Type
+ Petal Length Summary Statistics by Iris Type
                  median  min  max       std   mean
 type                                              
 Iris-setosa        1.50  1.0  1.9  0.173511  1.464
 Iris-versicolor    4.35  3.0  5.1  0.469911  4.260
 Iris-virginica     5.55  4.5  6.9  0.551895  5.552
 
- Petal Width Summary Stastics by Iris Type
+ Petal Width Summary Statistics by Iris Type
                  median  min  max       std   mean
 type                                              
 Iris-setosa         0.2  0.1  0.6  0.107210  0.244
 Iris-versicolor     1.3  1.0  1.8  0.197753  1.326
 Iris-virginica      2.0  1.4  2.5  0.274650  2.026
 
- Sepal Length Summary Stastics by Iris Type
+ Sepal Length Summary Statistics by Iris Type
                  median  min  max       std   mean
 type                                              
 Iris-setosa         5.0  4.3  5.8  0.352490  5.006
 Iris-versicolor     5.9  4.9  7.0  0.516171  5.936
 Iris-virginica      6.5  4.9  7.9  0.635880  6.588
 
- Sepal Width Summary Stastics by Iris Type
+ Sepal Width Summary Statistics by Iris Type
                  median  min  max       std   mean
 type                                              
 Iris-setosa         3.4  2.3  4.4  0.381024  3.418

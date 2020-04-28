@@ -17,8 +17,6 @@
 
 [2.2 Plots Used in this Program](#plots-used-in-this-program)
 
-[2.3 References and Resources](#references-and-resources)
-
 [3. Analysis - Findings](#analysis-findings)
 
 [3.1 Plots and Summary Statistics](#plots-and-summary-statistics)
@@ -28,6 +26,8 @@
 [4.0 External Research conducted by Others](#external-research-conducted-by-others)
 
 [4.1 External Conclusions and Alignment with Mine](#external-conclusions-and-alignment-with-mine)
+
+[5.0 References and Resources](#references-and-resources)
 
 # Introduction
 
@@ -348,10 +348,13 @@ I should also point out that it was this Medium post that made me aware of the p
 
 Outside of more specific summary statistics and pseudo-code algorithms for determining which type an Iris falls under, a large amount of investigation into this data set has involved machine learning. For the purposes of this project, I did not go in this direction, although it is a logical next step, and something for me to explore in future. In fact, I happened to stumble across a [previous GMIT student's](https://github.com/RitRa/Project2018-iris) investigation into this data set, whereby they used scikit-learn to predict what type an Iris might be if it had any suggested measurements. There are also numerous examples of R's machine learning capabilities being used on this data set, however as this project in Python, I did not explore them in depth.
 
-## References and Resources
+# References and Resources
 
 ### Official Documentation
-For this project, I made ample use of the various libraries' documentation, as linked above on each of the various plots. 
+For this project, I made ample use of the various libraries' documentation
+* [Pandas](https://pandas.pydata.org/docs/)
+* [MatPlotLib](https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.html)
+* [Seaborn](https://seaborn.pydata.org/)
 
 ### DataCamp
 In order to support the content covered in this module, I've also been conducting a lot of study on Datacamp.com. Data Camp is an online learning platform specifically aimed at Data Analysts and Data Scientists, and covers a wide range of subjects involve SQL, Python and R. It is therefore through many of the following courses that I learned how to apply various plots, slices and loops in my code:
@@ -366,12 +369,28 @@ In order to support the content covered in this module, I've also been conductin
 * [Introduction to Data Visualization in Python](https://learn.datacamp.com/courses/introduction-to-data-visualization-in-python)
 
 ### StackOverflow
-While writing this program, I occassionaly encounted unexpected errors and such. While my first attempt was always the official documentation, I did sometimes encounter workarounds from StackOverflow. Where such a workaround has been implemented, I have linked the StackOverflow thread in a comment.
+While writing this program, I occassionaly encounted unexpected errors and such. While my first attempt was always the official documentation, I did sometimes encounter workarounds from StackOverflow. Where such a workaround has been implemented, I have linked the StackOverflow thread in a comment. I have also listed all the used links below.
 
+* https://stackoverflow.com/questions/37967786/axes-from-plt-subplots-is-a-numpy-ndarray-object-and-has-no-attribute-plot
+* https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
+* https://stackoverflow.com/questions/49834883/scatter-plot-form-dataframe-with-index-on-x-axis
+* https://stackoverflow.com/questions/40113860/why-doesnt-set-titles-produced-a-title-seaborn-and-factorplot
+* https://stackoverflow.com/questions/56942670/matplotlib-seaborn-first-and-last-row-cut-in-half-of-heatmap-plot 
 
 ### GeekForGeeks
 Alongside official documentation, I have also used guides from [GeekforGeeks Python articles](https://www.geeksforgeeks.org/python-programming-language/?ref=leftbar) to see more examples of implementations, as well as how customisation options (such as alpha) influence the plots.
 
-### Exploratory Data Analysis of IRIS Data Set Using Python
+### Marsja.se
 
-This article, [available here on Medium](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d), was found while I was researching other people's analysis on this data set, and it did spur me on to try plots that I was otherwise unaware of, specifically the box plots and violin plots. This article also opened my eyes to the possibility of slicing the dataframe into different Iris types in order to differentiate the colours of scatter plots.
+From this website, I just used on how-to doc regarding getting column names from Pandas dataframes.
+
+* https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list
+
+### Analysis by others
+
+* [The Use of Multiple Measurements in Taxonomic Problems by R.A. Fisher](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x)
+* [Statistical Analysis of the Iris Flower Dataset, by Patrick S. Hoey, University of Massachusetts At Lowell](http://patrickhoey.com/downloads/Computer_Science/03_Patrick_Hoey_Data_Visualization_Dataset_paper.pdf)
+* [Exploratory Data Analysis: Uni-variate analysis of Iris Data set](https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40)
+* [Exploratory Data Analysis of IRIS Data Set Using Python](https://medium.com/@avulurivenkatasaireddy/exploratory-data-analysis-of-iris-data-set-using-python-823e54110d2d)
+* [Project2018-iris](https://github.com/RitRa/Project2018-iris)
+* [What should we know about the famous Iris data?](https://www.researchgate.net/publication/237010807_What_should_we_know_about_the_famous_Iris_data)

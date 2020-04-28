@@ -97,7 +97,7 @@ plt.close()
 # Using https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html 
 # This is providing some data points I can ouput from the columns, e.g. median, mean.
 f = open("analysis.txt","w")
-f.write ("Data Points Summary\n")
+f.write ("Summary Statistics for the Iris Data Set\n")
 for measurement in df.columns:
     name = nameFormat(measurement)
     f.write("\n" + name + " Summary\n"
@@ -106,6 +106,18 @@ for measurement in df.columns:
         "The maximum measurement of " + name + " is " + str(df[measurement].max()) + ".\n"
         "The standard deviation of " + name + " is " + str(round(df[measurement].std(), 2)) + ".\n"
         "The mean of " + name + " is " + str(round(df[measurement].mean(),2)) + ".\n")
+# Idea to get summary statistics from each flower type:
+# https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
+
+irisgrouped = df.groupby('type').agg(['median','min','max','std','mean'])
+f.write("\n Petal Length Summary Stastics by Iris Type\n" + 
+        str(irisgrouped['petallength']) + "\n")
+f.write("\n Petal Width Summary Stastics by Iris Type\n" + 
+        str(irisgrouped['petalwidth']) + "\n")
+f.write("\n Sepal Length Summary Stastics by Iris Type\n" + 
+        str(irisgrouped['sepallength']) + "\n")
+f.write("\n Sepal Width Summary Stastics by Iris Type\n" + 
+        str(irisgrouped['sepalwidth']) + "\n")
 f.write("\nPearson Correlation Coefficients\n"
     "Iris Setosa\n" + str(iris_setosa.corr()))
 f.write("\n\nIris Veriscolor\n" + str(iris_versicolor.corr()))

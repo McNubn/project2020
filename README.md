@@ -97,12 +97,12 @@ This was improved upon with the Scatter2 function, which required slicing the fu
 These scatter plots were created with matplotlib, the documentation for which can be [found here](https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.scatter.html).
 
 ### Pair Plot
-A pair plot is actually a series of plots on one figure, whereby each variable is plotted against each other on scatter plots, alongside histrograms of the individual variables. 
+A pair plot is actually a series of plots on one figure, whereby each variable is plotted against each other on scatter plots, alongside histograms of the individual variables. 
 
 Although the pair plot effectively does the work of all of my histograms and scatter plots in one figure, I left them my pre-existing code in the program so as to show that I wasn't fully reliant on Seaborn's pairplot for this analysis. The documentation for Seaborn's pairplot can be [found here](https://seaborn.pydata.org/generated/seaborn.pairplot.html)
 
 ### Box Plot
-A box plot allows us to see how measurements across various categories compare. The plot itself consists of a box with two "whiskers" either side of it. The limit of the top whisker shows the maximum measurement, while the limit of the bottom whisker shows the minimum measurement. Meanwhile the top edge of the box shows the upper quartile, the bottom edge shows the lower quartile, and the line intersecting the box shows the median. This means that in one simple illustration we can see the maximum, minimum, and the three quartile measurements inbetween. Any outliers or suspected erroneous measurements will appear as diamonds, beyond the end of either whisker.
+A box plot allows us to see how measurements across various categories compare. The plot itself consists of a box with two "whiskers" either side of it. The limit of the top whisker shows the maximum measurement, while the limit of the bottom whisker shows the minimum measurement. Meanwhile the top edge of the box shows the upper quartile, the bottom edge shows the lower quartile, and the line intersecting the box shows the median. This means that in one simple illustration we can see the maximum, minimum, and the three quartile measurements in between. Any outliers or suspected erroneous measurements will appear as diamonds, beyond the end of either whisker.
 
 For this data set I plotted each iris type against each of the four variables - Sepal Length, Sepal Width, Petal Length and Petal Width.
 
@@ -122,7 +122,7 @@ The cat plots in this program involve the same categories and variables as the b
 ### Heat Maps
 Heat maps highlight whether two variables have a correlation (i.e. that one measurement influences the other). In the case of the heat maps created by my program, the paler the colour of the box, the more of a correlation there is, and thus the greater likelihood that the two variables influence each other. 
 
-For my heat maps, I used Pearson's Correlation Coefficient ([you can find out about this here](https://www.spss-tutorials.com/pearson-correlation-coefficient/)) and so a coefficient close to 1 means that the two variables are positively related (i.e. as one increases, so does the other). Likewise, a coefficient closer to -1 would mean the two varaibles are negatively related (i.e. as one increase the other decreases). A coefficient closer to 0 suggests no correlation, and thus the two variables are not related.
+For my heat maps, I used Pearson's Correlation Coefficient ([you can find out about this here](https://www.spss-tutorials.com/pearson-correlation-coefficient/)) and so a coefficient close to 1 means that the two variables are positively related (i.e. as one increases, so does the other). Likewise, a coefficient closer to -1 would mean the two variables are negatively related (i.e. as one increase the other decreases). A coefficient closer to 0 suggests no correlation, and thus the two variables are not related.
 
 My program produces a heat map for each of the three iris types, with the heat map showing the correlation coefficients for each variable against each other. Seaborn was used to create these heat maps, the documentation for which can be [found here](https://seaborn.pydata.org/generated/seaborn.heatmap.html).
 
@@ -144,9 +144,9 @@ When all three iris types are plotted together on a histogram (with no way of di
 
 Here we can see that sepal lengths are spread between 4cm and 8cm, with the median sitting around 5.8cm, meanwhile the sepal widths are a lot more concentrated between 2cm and 4.4cm, with 3cm showing a clear concentration of measurements. 
 
-Petal length is a lot more dispersed, ranging from 1cm to 6.9cm, and the gap between 2cm and 3cm does suggest that one of the Iris types might have shorter petals than the others. Petal Width is concentrated between 0.1cm and 2.5cm, and the fact that 0.2 cm has a clear spike, followed by consistent frequencies at the higher end of the range (around 2cm) also suggests that one iris type might have shorter and thinner petals than the other two types.
+Petal length is a lot more dispersed, ranging from 1cm to 6.9cm, and the gap between 2cm and 3cm does suggest that one of the iris types might have shorter petals than the others. Petal width is concentrated between 0.1cm and 2.5cm, and the fact that 0.2 cm has a clear spike, followed by consistent frequencies at the higher end of the range (around 2cm) also suggests that one iris type might have shorter and thinner petals than the other two types.
 
-We can see these oberservations supported by the summary statistics for the entire data set in analysis.txt:
+We can see these observations supported by the summary statistics for the entire data set in analysis.txt:
 
     Sepal Length Summary
     The median measurement of Sepal Length is 5.8.
@@ -179,9 +179,40 @@ We can see these oberservations supported by the summary statistics for the enti
 
 ![separate hist](plots/histograms/seperatedHistograms.png)
 
-When we differentiate the three Iris types by colour, we can begin to pick out some trends among the histograms. The sepal length and sepal width histograms don't highlight any major differences, other than the fact setosa's have the shortest sepals, followed by versicolors, although all within a tight range of measurements. However when it comes to petal length and petal width we see a clear hierarchy that is consistent with the assumptions made on the overall histograms above. Iris Setosa has shorter and thinner petals than Iris Versicolor, which then in turn has shorter and thinner petals than Iris Virginica. 
+When we differentiate the three iris types by colour, we can begin to pick out some trends among the histograms. The sepal length and sepal width histograms don't highlight any major differences, other than the fact setosas have the shortest sepals, followed by versicolors (although all are within a tight range of measurements). However, when it comes to petal length and petal width we see a clear hierarchy that is consistent with the assumptions made on the overall histograms above. Setosas have shorter and thinner petals than versicolors, which then in turn has shorter and thinner petals than virginicas. 
 
-From these histograms we can begin piecing together the observation that Irises with short, thin petals and slightly shorter sepals are likely Iris Setosas, meanwhile the larger end of the scale is likely to be Iris Versicolor. Our next step is to see if there is a relationship between these measurements on a given Iris flower.
+From these histograms we can begin piecing together the observation that irises with short, thin petals and slightly shorter sepals are likely to be setosas. Meanwhile if the measurements are at larger end of the scale, it is likely to be a versicolor. This is also supported by the summary statistics found in analysis.txt
+
+    Petal Length Summary Stastics by Iris Type
+                    median  min  max       std   mean
+    type                                              
+    Iris-setosa        1.50  1.0  1.9  0.173511  1.464
+    Iris-versicolor    4.35  3.0  5.1  0.469911  4.260
+    Iris-virginica     5.55  4.5  6.9  0.551895  5.552
+
+    Petal Width Summary Stastics by Iris Type
+                    median  min  max       std   mean
+    type                                              
+    Iris-setosa         0.2  0.1  0.6  0.107210  0.244
+    Iris-versicolor     1.3  1.0  1.8  0.197753  1.326
+    Iris-virginica      2.0  1.4  2.5  0.274650  2.026
+
+    Sepal Length Summary Stastics by Iris Type
+                    median  min  max       std   mean
+    type                                              
+    Iris-setosa         5.0  4.3  5.8  0.352490  5.006
+    Iris-versicolor     5.9  4.9  7.0  0.516171  5.936
+    Iris-virginica      6.5  4.9  7.9  0.635880  6.588
+
+    Sepal Width Summary Stastics by Iris Type
+                    median  min  max       std   mean
+    type                                              
+    Iris-setosa         3.4  2.3  4.4  0.381024  3.418
+    Iris-versicolor     2.8  2.0  3.4  0.313798  2.770
+    Iris-virginica      3.0  2.2  3.8  0.322497  2.974
+
+
+Our next step is to see if there is a relationship between these measurements on a given iris flower.
 
 ### Scatter Plots
 
@@ -192,59 +223,61 @@ From these histograms we can begin piecing together the observation that Irises 
 ![sepalwvspetalw](plots/scatterplots/sepalwidthVspetalwidth.png)
 ![sepalwvspetall](plots/scatterplots/sepalwidthVspetallength.png)
 
-Similarly to the histograms above, when all three Iris types are plotted together on a scatter plot, with no way of discerning which point is which type, we are somewhat limited in what we can conclude. From these we can see that Petal Length vs Petal Width, and Sepal Length vs Petal Length have quite clear relationships, as the points fall fairly linearly on a straight line up and to the right. This tells us that as the length of a petal increases on a an Iris, we can expect the petals to be wider, and the sepal to also be longer.
+Similarly to the histograms above, when all three iris types are plotted together on a scatter plot, with no way of discerning which point is which type, we are somewhat limited in what we can conclude. 
 
-Sepal Length vs Petal Width also suggests a slight relationship between the two measurements, as the points do still share that up and to the right trajectory, however the points do not fall quite as linearly. This suggests that while there is a relationship between petal length and petal width, it's not as close as the three aforementioned combinations.
+From these we can see that petal length versus petal width, and sepal length versus petal length have quite clear relationships, as the points fall fairly linearly on a straight line going up and to the right. This tells us that as the length of a petal increases on an iris, we can expect the petals to be wider, and the sepal to also be longer.
 
-Meanwhile Sepal Length vs Sepal Width, Sepal Width vs Petal Length and Sepal Width vs Petal Width do not show clear relationships across the data set as a whole, however the gaps between the concentrations of points do suggest that there may be relationships for these measurements for each individual Iris type.
+Sepal length versus petal width also suggests a slight relationship between the two measurements, as the points do still share that up and to the right trajectory, however the points do not fall quite as linearly. This suggests that while there is a relationship between petal length and petal width, it's not as close as the two aforementioned combinations (petal length & petal width, petal length & sepal length).
 
-When we differentiate the three Iris types by colour, we can see much closer relationships between the measumrents for each Iris individually.
+Meanwhile sepal length versus sepal width, sepal width versus petal length, and sepal width versus petal width do not show clear relationships across the data set as a whole. However, the gaps between the concentrations of points do suggest that there may be relationships for these measurements for each individual iris type.
+
+When we differentiate the three iris types by adding separate colours, we can see much closer relationships between the measurements for each iris individually.
 
 ![seppetallvspetalw](plots/scatterplots/separatedpetallengthVspetalwidth.png)
 
-Petal Length vs Petal Width shows a clear correlation between the two measurements, and that it is consistent among two of the three iris types. As petals get longer, they will also get wider, especially for Iris Virginica and Iris Versicolor. Iris Setosa's measurements show that the relationship for this particular Iris type is not as consistent, and so it is not possible to draw the same conclusion for setosas.
+Petal length versus petal width shows a clear correlation between the two measurements, and that it is consistent among two of the three iris types. As petals get longer, they will also get wider, especially for virginica and versicolor. Setosa's measurements show that the relationship for this particular iris type is not as consistent, and so it is not possible to draw the same conclusion for setosas.
 
 ![sepsepallvspetall](plots/scatterplots/separatedsepallengthVspetallength.png)
 
-Sepal Length vs Petal Length similarly shows a clearer relationship between these two measurements for Iris Virginica and Iris Versicolor, whereas Iris Setosa doesn't appear to have a clear relationship between Sepal Length and Petal Length. In the case of Iris Setosa, it would seem that petal length doesn't go above beyond 2cm, no matter how long the sepal is, whereas for the other two Iris types, the petal and sepal lengths go more hand in hand. 
+Sepal length vs petal length similarly shows a clearer relationship between these two measurements for  virginica and versicolor, whereas setosa doesn't appear to have a clear relationship for this combination. In the case of setosas, it would seem that petal length doesn't grow beyond 2cm, no matter how long the sepal is, whereas for the other two iris types, the petal and sepal lengths go more hand in hand. 
 
 ![sepsepallvspetalw](plots/scatterplots/separatedsepallengthVspetalwidth.png)
 
-When we can see the three different Iris types on this scatter plot, the relationships are lot clearer. Whereas before the points looked quite unrelated, we can now see a slight relationship between sepal width and sepal length for Iris Versicolor, and no clear relationship for the Setosa or Virginica. Once again it seems that Iris Setosa's petal width wll remain between 0.1 and 0.6 cm regardless of the sepal width.
+When we can see the three different iris types on this scatter plot, the relationships are lot clearer. Whereas before the points looked quite unrelated, we can now see a slight relationship between sepal width and sepal length for versicolors, and no clear relationship for setosas or virginicas. Once again it seems that the petal width of setosas will remain between 0.1cm and 0.6cm regardless of the sepal width.
 
 ![sepsepallvssepalw](plots/scatterplots/separatedsepallengthVssepalwidth.png)
 
-This is another plot where the different colours for each Iris type make it easier to see a pattern. There's a strong relationship between the sepal length and sepal width for Iris Setosa, with a sharp incline up and to the right showing that as speal length increases, as does sepal width. For Iris Versicolor and Iris Virginica this relationship is a lot less pronounced with a number of outliers meaning the points are not as linear.
+This is another plot where the different colours for each iris type make it easier to see a pattern. There's a strong relationship between the sepal length and sepal width for setosas, with a sharp incline up and to the right showing that as sepal length increases, as does sepal width. For versicolors and virginicas this relationship is a lot less pronounced with a number of outliers meaning the points are not as linear.
 
 ![sepsepalwvspetalw](plots/scatterplots/separatedsepalwidthVspetalwidth.png)
 
-Iris Versicolor appears to have a strong relationship between sepal width and petal width whereby as one increases as does the other. The correlation for Iris Virginica is less pronounced although there does appear to be some relationship as it still generally follows the up and to the right pattern. Meanwhile Iris Setosa against has the limited petal width which doesn't see much variation regardless of sepal width.
+ Versicolors appear to have a strong relationship between sepal width and petal width whereby as one increases as does the other. The correlation for virginicas is less pronounced although there does appear to be some relationship as it still generally follows the up and to the right pattern. Meanwhile setosa again have the limited petal width which doesn't see much variation regardless of sepal width.
 
 ![sepsepalwvspetall](plots/scatterplots/separatedsepalwidthVspetallength.png)
 
-Similar to above, the sepal width and petal length show a strong correlation for Iris Versicolor, a weaker correlation for Iris Virginica, and no correlation for Iris Setosa.
+Similar to above, the sepal width and petal length show a strong correlation for versicolors, a weaker correlation for virginicas, and no correlation for setosas.
 
-Overall we can see that the petal length or width for Iris Setosa has little to no bearing when compared to any of the other measurements, hoowever the sepal width and sepal length for the iris type have a strong correlation, as one grows so does the other. Meanwhile Iris Versicolor has much tighter relationships between each pairing with the exception of sepal length vs sepal width, thus suggestion that the size of the petals dictate the size of both petals and sepals. Iris Virginica has a strong correlation when looking at the two petal measurements together, however much looser relationships when petals and sepals are compared, and little to no relationshp when sepal length and width is compared to each other, and so this more loosely follows the Iris Versicolor trend of petals sizes being the key variables. 
+Overall we can see that the petal length or width for setosas has little to no bearing when compared to any of the other measurements. However, the sepal width and sepal length for this iris type have a strong correlation, as one grows so does the other. Meanwhile, versicolors have much tighter relationships between each pairing with the exception of sepal length versus sepal width, thus suggesting that the size of the petals dictate the size of both petals and sepals. Virginicas have a strong correlation when looking at the two petal measurements together. However, it shows much looser relationships when petals and sepals are compared, and little to no relationshp when sepal length and width is compared to each other, and so this more loosely follows the versicolor trend of petals sizes being the key variables. 
 
 ### Pairplot
 
 ![pairplot](plots/seabornpairplot.png)
 
-This pairplot shows the histograms and scatter plots outlined above, but with them all on one figure. This makes it easier to see that the Iris Setosa is generally smaller on every measure exception the sepal width, and that the smaller petal lengths and widths mean there's little correlation for the Setosa points on each of the scatter plots. Meanwhile the closer relationships seem on the Iris Virginica and Iris Versicolor outlined above are easier to observe, with the petal length and width being the key measurements for Iris Versicolor and Iris Virginica.
+This pairplot shows the histograms and scatter plots outlined above, but with them all on one figure. This makes it easier to see that the setosas are generally smaller on every measure with the exception of the sepal width. We can also see that the smaller petal lengths and widths mean there's little correlation among the setosa points on each of the scatter plots. Meanwhile the closer relationships seen with the virginica and versicolor measurements outlined above are easier to observe, with the petal length and width being the key measurements for these two types.
 
 ### Heat Maps
 
 ![setosaheat](plots/heatmaps/setosaHeatmap.png)
 
-Here we can see that there's a strong correlation between sepal length and sepal width for Iris Setosa's, as a coefficient of 0.7 or more is typically accepted as having a strong correlation. Therefore we can assume that for Setosa's, as sepal width increases, so does its length. As for the other measurements, petal length and petal width have a correlation of coefficient of 0.31 which would make it a weak to moderate correlation. 
+Here we can see that there's a strong correlation between sepal length and sepal width for setosas, as a coefficient of 0.7 or more is typically accepted as having a strong correlation. Therefore we can assume that for setosas, as sepal width increases, so does its length. As for the other measurements, petal length and petal width have a correlation coefficient of 0.31 which would make it a weak to moderate correlation. 
 
 ![versicolorheat](plots/heatmaps/versicolorHeatmap.png)
 
-The versicolor heatmap suggests there's pretty correlation between each of the measurements. Petal length and petal width has the strongest at 0.79, followed closely by petal length and sepal length at 0.75, both falling into the strong correlation category of 0.7 and above. Meanwhile all the other measures are at least 0.53, which would be a moderate correlation. Therefore we can assume that as any of the four measurements increases, all of them will increase with particular accuracy when it comes to the petal length's relationship with the petal width and sepal length.
+The versicolor heat map suggests there is a correlation between each of the measurements. Petal length and petal width has the strongest at 0.79, followed closely by petal length and sepal length at 0.75, both falling into the strong correlation category of 0.7 and above. Meanwhile all the other measures are at least 0.53, which would be a moderate correlation. Therefore we can assume that as any of the four measurements increases all of them will increase, with particular accuracy when it comes to the petal length's relationship with the petal width and sepal length.
 
 ![virginicaheat](plots/heatmaps/virginicaHeatmap.png)
 
-The virginica heatmap includes the strongest correlation of any of the measurements across all three iris types, as we can see that petal length and sepal length have a pearson's correlation coefficient of 0.86 - well above the 0.7 that is generally considered a strong correlation. Therefore we can assume with good certainty that as the petals on virginica's get longer, so do their sepals, and vice versa. Sepal width and petal width also share a moderate correlation at 0.54, whereas the other measurements are in the weak-moderate correlation band as they are from 0.28 through to 0.46.
+The virginica heat map includes the strongest correlation of any of the measurements across all three iris types, as we can see that petal length and sepal length have a Pearson's correlation coefficient of 0.86 - well above the 0.7 that is generally considered a strong correlation. Therefore we can assume with good certainty that as the petals on virginicas get longer, so do their sepals, and vice versa. Sepal width and petal width also share a moderate correlation at 0.54, whereas the other measurements are in the weak-moderate correlation band as they are from 0.28 through to 0.46.
 
 ### Box Plots, Violin Plots & Cat Plots
 
@@ -254,11 +287,11 @@ The virginica heatmap includes the strongest correlation of any of the measureme
 ![petallviolin](plots/boxViolinCat/petallengthviolinplot.png)
 ![petallcat](plots/boxViolinCat/petallengthcatplot.png)
 
-As shown in the histograms and scatter plots, Iris Setosa's petal lengths are much shorter than that of versicolor and virginica. Similarly the range of measumrents for Iris Setosa is also very tight, with the longest being just 1.9, as evidenced by the 25th, 50th and 75th percentiles on the box plot all being within about 0.2 cm of each other. We can see from the violin plot that the bulk of the measurements for Iris Setosa are around 1.5 cm, which makes sense as the quartiles are all around that measure too.
+As shown in the histograms and scatter plots, setosa petal lengths are much shorter than that of versicolor and virginica. Similarly the range of measurements for setosas are also very tight, with the longest being just 1.9cm, as evidenced by the lower quartile, median and upper quartile on the box plot all being within 0.2cm of each other. We can see from the violin plot that the bulk of the measurements for setosas are around 1.5cm, which makes sense as the quartiles are all around that measure too.
 
-Iris Versicolor has a bit of a wider range of measurements, going from around 3.2cm to 5.1cm. As shown on the box plot, the 25th percentile is at 4cm, median is at 4.4 cm, and the 75th percentile is around 4.6 cm. The violin plot shows a more even distribution of measurements across the range, with a concentration between 4cm to 5cm, as supported by the cluster of points on the cat plot.
+Versicolors have a bit of a wider range of measurements, going from around 3.2cm to 5.1cm. As shown on the box plot, the lower quartile is at 4cm, the median is at 4.4cm, and the upper quartile is around 4.6cm. The violin plot shows a more even distribution of measurements across the range, with a concentration between 4cm to 5cm, as supported by the cluster of points on the cat plot.
 
-As was shown in the histograms, Iris Virginica generally has the longest petals, with its range starting at  4.5cm, going up to 6.9 cm. The boxplot shows us that the 25th percentile is at 5.1 cm, so we know that 75% of the virginica petals were longer than the maximum versicolour measurement. The median is at 5.5 cm, and the 75th percentile is at 6.9cm. This interquartile range is the largest of the three, at 1.8 cm, and shows that there is a wider variation in Iris Virginica petal lengths, then there are for Setosa or Versicolor petal lengths, and we can see this by the more slender and consistent violin plot and cat plot points.
+As was shown in the histograms, virginicas generally have the longest petals, with its range starting at 4.5cm, going up to 6.9cm. The boxplot shows us that the lower quartile is at 5.1cm, so we know that 75% of the virginica petals were longer than the maximum versicolour measurement. The median is at 5.5cm, and the upper quartile is at 6.9cm. This interquartile range is the largest of the three, at 1.8cm, and shows that there is a wider variation in virginica petal lengths, then there are for setosa or versicolor petal lengths, and we can see this by the more slender and consistent violin plot and cat plot points.
 
 #### Petal Width
 
@@ -266,11 +299,11 @@ As was shown in the histograms, Iris Virginica generally has the longest petals,
 ![petalwviolin](plots/boxViolinCat/petalwidthviolinplot.png)
 ![petalwcat](plots/boxViolinCat/petalwidthcatplot.png)
 
-Once again we can see the clear dipiction of Iris Setosa's thinner petals, and the small range of petal widths going from 0.1cm to 0.6cm. Interestingly here, the boxplot actually shows 0.4 cm as the maximum measurement, with the 0.5cm and 0.6cm measurements being shown as outliers (as depicted by the diamonds), likely because they sit relatively far beyond the 75th percentile which is 0.4 cm. The boxplot also shows us that the 25th percentile is at 0.3 cm, although we cannot see the median due to the tight interquartile range on this plot. Therefore we must look to the violin plot where we see a clear cocentration of points around 0.2cm, suggestion that this is the median. The violin plot also shows why the 0.5cm and 0.6cm measurements appear as outliers on the box plot, as we see that sharp point up to 0.6cm showing that it is in fact an outlier (although hopefully not an errorneous measurement).
+Once again we can see the clear representation of the thinner petals found on setosas, and the small range of petal widths going from 0.1cm to 0.6cm. Interestingly here, the boxplot actually shows 0.4cm as the maximum measurement, with the 0.5cm and 0.6cm measurements being shown as outliers (as depicted by the diamonds). This is likely because they sit relatively far beyond the upper quartile which is 0.4cm. The boxplot also shows us that the lower quartile is at 0.3cm, although we cannot see the median due to the tight interquartile range on this plot. Therefore we must look to the violin plot where we see a clear cocentration of points around 0.2cm, suggesting that this is the median. The violin plot also shows why the 0.5cm and 0.6cm measurements appear as outliers on the box plot, as we see the sharp point up to 0.6cm showing that it is in fact an outlier (although hopefully not an erroneous measurement).
 
-Iris Versicolor's petal width has a large range from 1cm to 1.7cm, with the three quartiles at 1.2cm, 1.3cm and 1.5cm. The violin plot for versicolor also shows that the maximum points are quite far from the bulk of the measurements, as decpiated by the sharp point at the top. Other than that the points are quite evenly spread from 1.2cm to 1.6cm, hence the quartile range of 1.2 to 1.5cm mentioned above. 
+The petal width of versicolors has a large range from 1cm to 1.7cm, with the three quartiles at 1.2cm, 1.3cm and 1.5cm, respectively. The violin plot for versicolor also shows that the maximum points are quite far from the bulk of the measurements, as illustrated by the sharp point at the top. Other than that the points are quite evenly spread from 1.2cm to 1.6cm, hence the quartile range of 1.2cm to 1.5cm mentioned above. 
 
-Iris Virginica has a wider total range and wider quartile range of measurements for petal widths than the other two species. The total range is from 1.4cm to 2.5cm, with the interquartile range going from 1.7cm to 2.3cm, with a median of 2cm. As with petal lengths, 75% of the petal widths of Iris Virginica are wider than the maximum measurement for Iris Versicolor, therefore we can assume that if the Iris has larger petals, its most likely a virginica. Meanwhile the distribution of measurements is fairly consistent across the range, as shown by the slender violin and the spread of points on the catplot.
+Virginicas have a wider total range and wider quartile range of measurements for petal widths than the other two iris types. The total range is from 1.4cm to 2.5cm, with the lower and upper quartiles at 1.7cm and 2.3cm respectively, with a median of 2cm. As with petal lengths, 75% of the petal widths found on virginicas are wider than the maximum measurement for versicolors. Therefore we can assume that if the iris has larger petals, it is most likely a virginica. Meanwhile the distribution of measurements is fairly consistent across the range, as shown by the slender violin and the spread of points on the catplot.
 
 #### Sepal Length
 
@@ -278,11 +311,11 @@ Iris Virginica has a wider total range and wider quartile range of measurements 
 ![sepallviolin](plots/boxViolinCat/sepallengthviolinplot.png)
 ![sepallcat](plots/boxViolinCat/sepallengthcatplot.png)
 
-Unlike the petal measurements, the sepal length of Iris Setosa has a wider range, going from 4.3cm to 5.9cm, with the three quartiles at 4.8cm, 5cm and 5.2cm respectively. This shows there's a bit more variation in the sepal lengths then we saw with the petal measurements, although the violin plot and cat plot display a concentration of points around the 5cm mark, which explains the tight interquartile range of 0.4cm.
+Unlike the petal measurements, the sepal length of setosas have a wider range, going from 4.3cm to 5.9cm, with the three quartiles at 4.8cm, 5cm and 5.2cm respectively. This shows there's a bit more variation in the sepal lengths then we saw with the petal measurements, although the violin plot and cat plot display a concentration of points around the 5cm mark, which explains the tight interquartile range of 0.4cm.
 
-Iris Versicolor has a range of 4.9cm to 7cm, with the three quartiles at 5.6cm, 6cm and 6.4cm. This wider interquartile range is also shown in the violin plot, has the width is less pronounced than that of the setosa, thus illustrating that there is more of a spread of measurements.
+Versicolors have a range of 4.9cm to 7cm, with the three quartiles at 5.6cm, 6cm and 6.4cm. This wider interquartile range is also shown in the violin plot, as the width is less pronounced than that of the setosa, thus illustrating that there is more of an even distribution of measurements.
 
-Iris Virginica has a range from 5.6cm to 7.9cm, with the quartiles at 6.4 cm, 6.5cm and 6.9cm. Whereas the minimum Virginica measurements for petal length and petal width were larger than 75% of versicolor and all setosa measurements, here the minimum virginica sepal length is larger than just 25% of versicolor sepal lengths. That said, there is one outlier measurement for virginica at just 5cm, and as this is so far away from the other measurements, the boxplot is flagging it as an outlier. Likewise the violin plot has a very sharp tip pointing towards it, and we can see it standing alone on the cat plot. Outside of this outlier, the spread of sepal lenth measurements is fairly evenly distributed along the range.
+Virginicas have a range from 5.6cm to 7.9cm, with the quartiles at 6.4cm, 6.5cm and 6.9cm, respectively. Whereas the minimum virginica measurements for petal length and petal width were larger than 75% of versicolor and all setosa measurements, here the minimum virginica sepal length is larger than just 25% of versicolor sepal lengths. That said, there is one outlier measurement for virginica at just 5cm, and as this is so far away from the other measurements, the boxplot is flagging it as an outlier. Likewise the violin plot has a very sharp tip pointing towards it, and we can see it standing alone on the cat plot. Outside of this outlier, the spread of sepal length measurements is fairly evenly distributed along the range.
 
 #### Sepal Width
 
@@ -290,9 +323,9 @@ Iris Virginica has a range from 5.6cm to 7.9cm, with the quartiles at 6.4 cm, 6.
 ![sepalwviolin](plots/boxViolinCat/sepalwidthviolinplot.png)
 ![sepalwcat](plots/boxViolinCat/sepalwidthcatplot.png)
 
-Due to the overlaps in the histograms earlier, it wasn't immediately clear that Iris Setosa tends to have the wider sepal widths, but we can see this quite plainly in these three plots. The boxplot tells us that the range for setosa sepal widths is from 2.3cm to 4.4cm, meaning that Setosa's also have the widest range of the three iris types - unlike the three other measurements where Setosa's were shown to be more consistent in their sizing. We can also see that the three quartiles for setosas are 3.1cm, 3.4cm and 3.7cm respectively, meaning that 75% of setosa sepals are wider than over 75% of virginica and versicolor sepals (versicolor's 75th percentile is at 3cm, meanwhile versicolor's 75th percentile is the same as setosa's 25th percentile on 3.1 cm). Therefore we now know that setosa's generally have the shortest and thinnest petals, with the shortest but widest sepals.
+Due to the overlaps in the histograms earlier, it wasn't immediately clear that setosas tend to have the wider sepal widths, but we can see this quite plainly in these three plots. The boxplot tells us that the range for setosa sepal widths is from 2.3cm to 4.4cm, meaning that setosas also have the widest range of the three iris types - unlike in the three other variables where setosas were shown to be more consistent in their sizing. We can also see that the three quartiles for setosas are 3.1cm, 3.4cm and 3.7cm respectively. This means that 75% of setosa sepals are wider than over 75% of virginica and versicolor sepals (the upper quartile for versicolors is 3cm, meanwhile the upper quartile for virginicas is 3.1 cm). Therefore we now know that setosas generally have the shortest and thinnest petals, with the shortest but widest sepals.
 
-As for versicolor and virginica, we see the same trends whereby virginica is just a bit bigger than versicolor again. Versicolor's range is from 2cm to 3.4 cm, whereas virginicas are at 2.5cm to 3.6cm (although it should be noted that here virginica has an outlier at either end, marked at 2.3cm and 3.8cm). As for their quartiles, versicolor's are at 2.5cm, 2.8cm and 3cm respectively, whereas the corresponding figures for virginica are 2.8cm, 3cm and 3.2cm. Thus the differences between virginica and versicolor measurements are a lot less pronounced, and both iris types have a similar spread of points along their ranges, as shown by the violint and cat plots.
+As for versicolor and virginica, we see the same trends whereby virginicas are just a bit bigger than versicolors again. The range for versicolors is from 2cm to 3.4 cm, whereas virginicas are at 2.5cm to 3.6cm (although it should be noted that virginica shows an outlier at either end, marked at 2.3cm and 3.8cm). As for their quartiles, versicolors are at 2.5cm, 2.8cm and 3cm respectively, whereas the corresponding figures for virginica are 2.8cm, 3cm and 3.2cm. Thus the differences between virginica and versicolor measurements are a lot less pronounced, and both iris types have a similar distribution of points along their ranges, as shown by the violin and cat plots.
 
 
 ## Summary and Conclusions
@@ -303,9 +336,9 @@ From all of these plots, we can make a few assumptions as to how to differentiat
 * An iris that comes up in the middle of each of these four measurements is likely to be a versicolor.
 
 We can also make some conclusions on the relationship between each measurement for each iris type:
-* For Setosas, the sepal width and petal width are closely related, where as one increases the other likely will too. The lengths of the petals and sepals have a much weaker influence on the other measurements of the Iris.
-* For Versicolors, all four measurements are strongly related with either moderate or strong relationships across the board. Thefore as any one measurement increases the others are likely to follow suit, especially in the case of petal width and petal length, and petal length and sepal length.
-* For Virginicas, as petal length increases, so does the sepal length and vice versa. Meanwhile the petal width and sepal width also share a moderately strong relationship. As these two pairings are separate (e.g. petal width and petal length have a much weaker correlation), that could mean a virginica with wide petals and sepals, that are also short, and vice versa. Unlike the versicolor that grows more consistently on all four measures at once.
+* For setosas, the sepal width and petal width are closely related, where as one increases the other likely will too. The lengths of the petals and sepals have a much weaker influence on the other measurements for this type of iris.
+* For versicolors, all four measurements are strongly related with either moderate or strong relationships across the board. Therefore as any one measurement increases the others are likely to follow suit, especially in the case of petal width and petal length, and petal length and sepal length.
+* For virginicas, as petal length increases, so does the sepal length and vice versa. Meanwhile the petal width and sepal width also share a moderately strong relationship. As these two pairings are separate (e.g. petal width and petal length have a much weaker correlation), that could mean a virginica with wide petals and sepals, that are also short, and vice versa. This is much different to versicolors that would appear to grow more consistently on all four measures at once.
 
 # External Research conducted by others
 

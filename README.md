@@ -72,65 +72,65 @@ While studying this data set, it became apparent that there is some mild controv
 
 For this project, I have used the following Python Libraries:
 
-* Pandas - Pandas is a library made specifically for creating and manipulating data frames in Python. These two dimensional data structures (i.e. they have rows as well as columns) allow data scientists to select and manipulate the data to their equirements. This allows for easier plotting, whether that be Panda's own plotting functionality, or via other libraries. In this project, Pandas has been used to create the iris_csv.csv file, and then structure the dataframe so that I could make the desired plots.
+* Pandas - Pandas is a library made specifically for creating and manipulating data frames in Python. These two dimensional data structures (i.e. they have rows as well as columns) allow data scientists to select and manipulate the data to their requirements. This allows for easier plotting, whether that be via Panda's own plotting functionality, or via other libraries. In this project, Pandas has been used to create a data frame from the iris_csv.csv file, and then structure the data frame so that I could make the desired plots.
 * Matplotlib.pyplot - Matplotlib is the most popular library for creating plots in Python, and in fact numerous other libraries for plotting are based off the functionality of Matplotlib. In this project I have used matplotlib.pyplot to create histograms and scatter plots for the various measurements in the data set.
-* Seaborn - Seaborn is another popular library for creating plots in Python, and is based on the functionality introduced by Matplotlib. Seaborn introduces a few new plot types, as well as some more aesthetically pleasing default settings for those plots. In this project I've used Seaborn for Cat Plots, Box Plots, Violin Plots and a Pair Plot.
+* Seaborn - Seaborn is another popular library for creating plots in Python, and is based on the functionality introduced by Matplotlib. Seaborn introduces a few new plot types, as well as some more aesthetically pleasing default settings for those plots. In this project I've used Seaborn for Cat Plots, Box Plots, Violin Plots, Heat Maps and a Pair Plot.
 
 
 
-## Plots Used in this Program
+## Plots Used in irisAnalysis.py
 
 ### Histograms 
-Histograms are used to show the frequency with which observations fall within specified ranges ("bins"). In the case of this data set, bins were specified at ever 0.25cm, and the number of measurements (the observations) that fell within a given range is counted. For example how many Petal Lengths are between 1.75 and 2 cm.
+Histograms are used to show the frequency with which observations fall within specified ranges (also known as "bins"). In the case of this data set, bins were specified at every 0.25cm, and the number of measurements (the observations) that fell within a given range is counted. For example how many Petal Lengths are between 1.75cm and 2cm.
 
-Initially I plotted the entire dataset into histograms, thus displaying the combined data for all three Iris types. I was then able to plot each Iris type onto its own separate histogram for each measurement, thus allowing us to see how the ranges of measurements in each Iris type differs. I have included the initial histograms in this program so as to highlight this evolution.
+Initially I plotted the entire dataset into histograms, thus displaying the combined data for all three iris types. I was then able to separately plot each iris type onto a histogram for each measurement, with different colours representing the three different types, thus allowing us to see how the ranges of measurements in each iris type differs. I have included the initial histograms in this program so as to highlight this evolution in my analysis.
 
-These Histograms are created by utilising a FOR loop, which will iterate through each of the four columns and plot them to a histogram. These were created with matplotlib, the documentation for which can be [found here](https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.hist.html).
+These histograms are created by utilising a FOR loop, which will iterate through each of the four columns and plot them to a histogram. These were created with matplotlib, the documentation for which can be [found here](https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.hist.html).
 
 ### Scatter Plot 
-Scatter Plots help to show relationships between two variables when plotted against each other. For example when Petal Length is plotted against Petal Width. 
+Scatter plots help to show relationships between two variables when plotted against each other. For example when Petal Length is plotted against Petal Width. 
 
-I was able to create a method of plotting each of the measurements against each other through the use While loop which would iterate through each column and perform a Scatter function that I had previously defined. Initially, the Scatter function plotted the data for all three Iris types together, with no way to differentiate which measumrent comes from which. 
+I was able to create a method of plotting each of the measurements against each other through the use of a  While loop which would iterate through each column and perform a Scatter function that I had previously defined. Initially, the Scatter function plotted the data for all three iris types together, with no way to differentiate which measurement came from which type. 
 
-This was improved upon with the Scatter2 function, which required slicing the full dataset into three smaller versions for each flower, and plotting on the same figure. I have left the initiall Scatter function in the program so as to highlight this evolution.
+This was improved upon with the Scatter2 function, which required slicing the full dataset into three smaller versions for each iris type, and plotting these separate slices onto the same figure. This allowed me to set a specific colour for each iris type, and thus allow us to see any trends more clearly. I have left the initial Scatter function in the program so as to highlight this evolution in my analysis.
 
-These Scatter Plots were created with matplotlib, the documention for which can be [found here](https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.scatter.html).
+These scatter plots were created with matplotlib, the documentation for which can be [found here](https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.scatter.html).
 
 ### Pair Plot
-A Pair Plot is actually a series of plots on one figure, whereby each variable is plotted against each other on Scatter Plots, alongside with Histrograms of the individual variables. 
+A pair plot is actually a series of plots on one figure, whereby each variable is plotted against each other on scatter plots, alongside histrograms of the individual variables. 
 
-Although the Pair Plot effectivelly does the work of all of my Histograms and Scatter Plots, I left them in so as to show that I wasn't fully reliant on Seaborn's Pairplot for this work. The documentation for Seaborn's pairplot can be [found here](https://seaborn.pydata.org/generated/seaborn.pairplot.html)
+Although the pair plot effectively does the work of all of my histograms and scatter plots in one figure, I left them my pre-existing code in the program so as to show that I wasn't fully reliant on Seaborn's pairplot for this analysis. The documentation for Seaborn's pairplot can be [found here](https://seaborn.pydata.org/generated/seaborn.pairplot.html)
 
 ### Box Plot
-A box plot allows us to see how measurements across various categories compare. The plot itself consists of a box with two "whiskers" either side of it. The limit of the top whisker shows the maximum measurement, while the limit of the bottom whisker shows the minimum measurement. Meanwhile the top edge of the box shows the 75th percentile, the bottom edge shows the 25 percentile, and the line intersecting the box shows the median. This means that in one simple illustration we can see the maximum, minimum, and the three quartile measurements in between.
+A box plot allows us to see how measurements across various categories compare. The plot itself consists of a box with two "whiskers" either side of it. The limit of the top whisker shows the maximum measurement, while the limit of the bottom whisker shows the minimum measurement. Meanwhile the top edge of the box shows the upper quartile, the bottom edge shows the lower quartile, and the line intersecting the box shows the median. This means that in one simple illustration we can see the maximum, minimum, and the three quartile measurements inbetween. Any outliers or suspected erroneous measurements will appear as diamonds, beyond the end of either whisker.
 
-For this data set I plotted each Iris type against each of the four variables - Sepal Length, Sepal Width, Petal Length and Petal Widt.
+For this data set I plotted each iris type against each of the four variables - Sepal Length, Sepal Width, Petal Length and Petal Width.
 
 These box plots are created by utilising a FOR loop, which will iterate through each of the four columns and plot them to a box plot. Seaborn was used to create these box plots, the documentation for which can be [found here](https://seaborn.pydata.org/generated/seaborn.boxplot.html).
 
 
 ### Violin Plot
-Violin Plots are similar to Box Plots in that they allow us to compare multiple categories against a variable. One key difference is that the width of the "violin" illustrates where the concentration of measurements fall in the range, with wider areas showing higher concentrations.
+Violin plots are similar to box plots in that they allow us to compare multiple categories against a variable. One key difference is that the width of the "violin" illustrates where the concentration of measurements fall in the range, with wider areas showing higher concentrations.
 
-For this data set I plotted each Iris type against each of the four measurements, just like with the Box Plots. My program also utilises a similar FOR loop to create the plots as is used for the box plots. Seaborn was used to create these violin plots, the documentation for which can be [found here](https://seaborn.pydata.org/generated/seaborn.violinplot.html).
+For this data set I plotted each iris type against each of the four measurements, just like with the box plots. My program also utilises a similar FOR loop to create the violin plots as is used for the box plots. Seaborn was used to create these violin plots, the documentation for which can be [found here](https://seaborn.pydata.org/generated/seaborn.violinplot.html).
 
 ### Cat Plot
-Cat Plots share similarities with Box Plots and Violin Plots in that they show different categories against a certain variable. The key difference here is that the information is shown as points on the plot, so each of the inidivudal measurements can be seen. 
+Cat Plots share similarities with box plots and violin plots in that they show different categories against a certain variable. The key difference here is that the information is shown as points on the plot, so each of the individual measurements can be seen. 
 
-The Catplots in this program involve the same categories and variables as the Box Plots and Violint Plots, and utilises a similar FOR loop to create the plots. Seaborn was used to create these cat plots, the documentaion for which can be [found here](https://seaborn.pydata.org/generated/seaborn.catplot.html).
+The cat plots in this program involve the same categories and variables as the box plots and violin plots, and utilises a similar FOR loop to create the plots. Seaborn was used to create these cat plots, the documentation for which can be [found here](https://seaborn.pydata.org/generated/seaborn.catplot.html).
 
 ### Heat Maps
-Heat Maps highlight whether two variables have a correlation (i.e. that one measurement influences the other). In the case of the heat maps created by my program, the paler the colour of the box, the more of a correlation there is, and thus the greater likelihood that the two variables influence each other. 
+Heat maps highlight whether two variables have a correlation (i.e. that one measurement influences the other). In the case of the heat maps created by my program, the paler the colour of the box, the more of a correlation there is, and thus the greater likelihood that the two variables influence each other. 
 
-For my heatmaps, I used Pearson's Correlation Coefficient ([you can find out about this here](https://www.spss-tutorials.com/pearson-correlation-coefficient/)) and so a coefficient close to 1 means that the two variables are positively related (i.e. as one increases, so does the other), whereas a coefficient closer to -1 would mean the two varaibles are negatively related (i.e. as one increase the other decreases). A coefficient closer to 0 suggests no correlation, and thus the two varialbes are not related.
+For my heat maps, I used Pearson's Correlation Coefficient ([you can find out about this here](https://www.spss-tutorials.com/pearson-correlation-coefficient/)) and so a coefficient close to 1 means that the two variables are positively related (i.e. as one increases, so does the other). Likewise, a coefficient closer to -1 would mean the two varaibles are negatively related (i.e. as one increase the other decreases). A coefficient closer to 0 suggests no correlation, and thus the two variables are not related.
 
-My program produces a heatmap for each of the three Iris types, with the heatmap showing the correlation coefficients for each variable against each other. Seaborn was used to create these heat maps, the documentation for which can be [found here](https://seaborn.pydata.org/generated/seaborn.heatmap.html).
+My program produces a heat map for each of the three iris types, with the heat map showing the correlation coefficients for each variable against each other. Seaborn was used to create these heat maps, the documentation for which can be [found here](https://seaborn.pydata.org/generated/seaborn.heatmap.html).
 
 
 ### Analysis.txt
-Along with the PNG files containing each of my plots, my program also creates the "analysis.txt" file. This file contains summary statistics for each of the four variables, as well as the Pearson's Correlation Coefficient matrix for each of the three Iris Types.
+Along with the PNG files containing each of my plots, my program also creates the "analysis.txt" file. This file contains summary statistics for each of the four variables for the data set as a whole, as well as for each iris type individually. I have also included the Pearson's Correlation Coefficient matrix for each of the three iris types, which is also illustrated on the heat maps (found in /plots/heatmaps).
 
-The summary statisics provided for each of the variables are the mean, median, minimum, maximum and standard deviation.
+The summary statistics provided for each of the variables are the mean, median, minimum, maximum and the standard deviation.
 
 # Analysis - Findings
 

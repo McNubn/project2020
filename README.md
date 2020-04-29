@@ -419,6 +419,12 @@ From this website, I just used one how-to guide regarding getting column names f
 
 * https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list
 
+### Git Connected
+
+From this website, I just used the how-to on calculating Pearson's Correlation Coefficient, and plotting it onto a heat map.
+
+* https://levelup.gitconnected.com/pearson-coefficient-of-correlation-using-pandas-ca68ce678c04
+
 ### Analysis by others
 
 * [The Use of Multiple Measurements in Taxonomic Problems by R.A. Fisher](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-1809.1936.tb02137.x)

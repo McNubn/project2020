@@ -37,12 +37,7 @@ GamePlan
         Consider other methods of plotting or analysing this data set - done
         Consider other libraries that might help here - done
     
-    Week 5 (ending Sunday April 12th) - Further analyses
+    Week 5 (ending Sunday April 12th) - Further analyses - done
         Utilise research from week 3 in new plots - done
         Ensure README accounts for this research. - done
         Ensure commenting in the files is descriptive and accurate. - done
-    
-    Week 6 & 7 (deadline April 30th) - Only cosmetic changes
-        Everything should be more or less complete by Sunday April 26th.
-        Anything done from here are minor or comestic changes, or additional features that won't take away from the quality of work.
-        

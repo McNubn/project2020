@@ -1,40 +1,23 @@
 # Brian Doheny
-# Three main parts:
-   # 1. Research the data set online and write a summary about it in the README (using markdown for formatting).
-  #  2. Download the data set and add it to the repo. - Done
-  #  3. Write a program called analysis.py that:
-      #  a. outputs a summary of each file to a single text file - done
-      #  b. saves a histogram of each variable to png files, - Done
-      #  c. outputs a scatter plot of each pair of variables. - Done
-
-# Minimum Viable Project:
-    # Standard repo that contains a README, a Python script, a summary text file and images. 
-    # The README should contain a summary of the data set and my investigations into it.
-    # It should also clearly document how to run the Python code and what the code does.
-    # Remember to referece everything - e.g. where I found a code snippet.
-
- #Week 4 (ending Sunday April 5th) - MVP achieved & next steps
-      #  Achieve the Minimum Viable Project conditions. - done
-     #   Research other analyses of this data set - started
-    
- #   Week 5 (ending Sunday April 12th) - Further analyses
-    #    Ensure README accounts for this research - done
+# This program is part of Brian Doheny's Programming and Scripting 2020 module at GMIT.
+# This program takes in Fisher's Iris Data Set (iris_csv.csv) and will generate various plots.
+# You can find the respective plots in the /plots folder in this repository.
 
 import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 import numpy as np
 
-# Setting csv to be a global variable, will mean program can be adapted to other files.
+# Setting the CSV to be a global variable. This means that the program could be adapted to other files more easily.
 csv = 'iris_csv.csv'
 
-# Save the csv to a pandas data frame. I'm setting the index to be the class column.
+# Saving the csv into a Pandas data frame. I'm setting the index to be the type column.
 # This is so that I can iterate over the other columns a bit more easily. 
-# I'll reset the index later for Seaborn.
+# I'll reset the index later for Seaborn plots, as the type can be used to influence the hue.
 df = pd.read_csv(csv, index_col = "type")
 
 # Creating a function to format the column names so that they can be used for titles etc. 
-# First word in each column ends with "l", so I can use that to separate the two words.
+# The first word in each column ends with "l", so I can use that to separate the two words.
 def nameFormat(name):
     """ Edits the name of the column so that it is properly formatted with a space between the words, and each word capitalized."""
     space = name.find("l") + 1
@@ -43,7 +26,11 @@ def nameFormat(name):
     name = firsthalf.capitalize() + " " + secondhalf.capitalize()
     return name
 
+
+# Plotting histograms onto 1 png file.
 fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
+# This n will be used to determine which on the figure each plot will be. 
+# The 0-4, with 0 being the upper left plot, and 4 the lower right.
 n = 0
 # Got the idea to iterate through column names from: 
 # https://www.marsja.se/how-to-get-the-column-names-from-a-pandas-dataframe-print-and-list/#3_Get_Column_Names_by_Iterating_of_the_Columns
@@ -70,15 +57,15 @@ iris_setosa=df.loc["Iris-setosa"]
 iris_virginica=df.loc["Iris-virginica"]
 iris_versicolor=df.loc["Iris-versicolor"]
 
-# Doing Histograms again, but now with different colours for each Iris type. 
+# Doing Histograms again, but now with different colours for each iris type. 
 # This will let us see the differences between each type and their respective trends.
 fig, ax = plt.subplots(2, 2, figsize = (8,8), sharex = True, sharey = True)
 n = 0
 for measurement in df.columns:
     binsizes = np.arange(0, 8, 0.25)
     ax = ax.flatten()
-    # Going to give each flower its own colour, add an edgecolor to make the boundaries clearer to see
-    # and used alpha to make them translucent so that we can see overlaps.
+    # Going to give each iris type its own colour, add an edgecolor to make the boundaries clearer to see.
+    # Also used alpha to make them translucent so that we can see overlaps.
     ax[n].hist(iris_setosa[measurement], facecolor='b', edgecolor = 'k', label='Setosa', alpha =0.3, bins=binsizes)
     ax[n].hist(iris_virginica[measurement], facecolor='g', edgecolor = 'k', label = 'Virginica', alpha = 0.3, bins = binsizes)
     ax[n].hist(iris_versicolor[measurement], facecolor='r', edgecolor = 'k', label = 'Versicolor', alpha = 0.3, bins = binsizes)
@@ -106,9 +93,8 @@ for measurement in df.columns:
         "The maximum measurement of " + name + " is " + str(df[measurement].max()) + ".\n"
         "The standard deviation of " + name + " is " + str(round(df[measurement].std(), 2)) + ".\n"
         "The mean of " + name + " is " + str(round(df[measurement].mean(),2)) + ".\n")
-# Idea to get summary statistics from each flower type:
+# Idea to get summary statistics from each iris type:
 # https://medium.com/analytics-vidhya/exploratory-data-analysis-uni-variate-analysis-of-iris-data-set-690c87a5cd40
-
 irisgrouped = df.groupby('type').agg(['median','min','max','std','mean'])
 f.write("\n Petal Length Summary Statistics by Iris Type\n" + 
         str(irisgrouped['petallength']) + "\n")
@@ -118,14 +104,15 @@ f.write("\n Sepal Length Summary Statistics by Iris Type\n" +
         str(irisgrouped['sepallength']) + "\n")
 f.write("\n Sepal Width Summary Statistics by Iris Type\n" + 
         str(irisgrouped['sepalwidth']) + "\n")
+# I'm also going to plot the Pearson's Correlation Coefficient matrix for each iris type.
 f.write("\nPearson Correlation Coefficients\n"
     "Iris Setosa\n" + str(iris_setosa.corr()))
 f.write("\n\nIris Veriscolor\n" + str(iris_versicolor.corr()))
 f.write("\n\nIris Virginica\n" + str(iris_virginica.corr()))
 f.close()
 
-#Since my while loop was reusing this code, I've made scatter into a function.
-#This means that at as x and y are changed in the next loop, it'll do a scatter plot of df.columns[x] vx df.columns[y].
+# I will use a While loop to generate the scatter plots. As such I'm definiting Scatter methods that the loop can use.
+# This means that at as x and y are changed in the next loop, it'll do a scatter plot of df.columns[x] vs df.columns[y].
 def scatter(x,y):
     """ Plots the columns x and y onto a scatter plot, while adding text to the axis and title."""
     fig, ax = plt.subplots()
@@ -140,6 +127,8 @@ def scatter(x,y):
     fig.savefig('plots/scatterplots/' + xaxis + "Vs" + yaxis + ".png")
     fig.clf()
 
+
+# Similar to the histograms, the program will now plot each iris type separately with its own corresponding colour.
 def scatter2(x,y):
     """ Like Scatter above, but separate colours for the 3 types of Iris"""
     fig, ax = plt.subplots()
@@ -164,17 +153,15 @@ def scatter2(x,y):
     plt.clf()
     plt.close()
 
-# I'll now be doing scatter plots with each measurement plotted against each other.
-# To do this, I've devised a WHILE loop with IF conditions.
-# First I'll need to define three variables for the the above mentioned loop.
+# These three variables are to be used in the While loop. 
+# x and/or y will increase after each call of the scatter and scatter2 methods.
 x = 0
 y = 1
 z = len(df.columns)
 
-#I was getting an error because y was becoming greater than the number of columns. 
+# You can see the planning for this loop in planning/2columns.txt
+# I was getting an error because y was becoming greater than the number of columns. 
 # For now I will use a try and except to get past this, as its expected.
-#Learned about using pass in the except section here: 
-# https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
 try:
     while x < z:
         if y < z:
@@ -187,11 +174,13 @@ try:
             scatter(x,y)
             scatter2(x,y)
             y += 1
+# Learned about using pass in the except section here: 
+# https://stackoverflow.com/questions/574730/python-how-to-ignore-an-exception-and-proceed
 except:
     pass
 
-# I'll now be trying some Seaborn plots.
-# I was encountering errors with some of the seaborn plots as I was attempting to plot against the index - "type".
+# I'll now be trying some Seaborn plots. As such I'm making a new dataframe with the index reset. 
+# This will let me use the "type" column to determine hue.
 # df2 workaround bassed off of: 
 # https://stackoverflow.com/questions/49834883/scatter-plot-form-dataframe-with-index-on-x-axis
 df2 = df.reset_index()
@@ -199,9 +188,11 @@ df2 = df.reset_index()
 
 # Using seaborn documentation to create catplots 
 # https://seaborn.pydata.org/tutorial/distributions.html
+# This is mostly the sam as the histogram FOR loop from before.
+# Key difference is the IF statement to ensure that "type" isn't attempted.
 for measurement in df2.columns:
     name = df2[measurement].name
-    # The "type" column was causing errors, so will only plot if its not "type"
+    # The "type" column was causing errors, so this will now only plot if the column is not "type"
     if name != "type":
         measurementname = nameFormat(measurement)
         sns_plot = sns.catplot(x="type", y=measurement, data=df2)
@@ -216,15 +207,16 @@ for measurement in df2.columns:
         plt.close()
 
 # Seaborn pairplot shows histograms as well as scatter plots.
-# Recreates my first 100 or so lines of code much more efficiently.
+# Recreates my first 181 lines of code much more efficiently.
 # Will keep in my original plotting as well in order to highlight that I can do it.
 sns_plot2 = sns.pairplot(df2, hue = "type")
 sns_plot2.savefig("plots/seabornpairplot.png")
 plt.clf()
 plt.close()
 
-
 # Seaborn Boxplots to show the range, median and quartiles for each iris type against each measurement type.
+# https://seaborn.pydata.org/generated/seaborn.boxplot.html
+# FOR loop is mostly the same as the catplots from line 193.
 for measurement in df2.columns:
     name = df2[measurement].name
     if name != "type":
@@ -240,6 +232,7 @@ for measurement in df2.columns:
 
 # Adding Seaborn Violin plot by using their documentation: 
 # https://seaborn.pydata.org/generated/seaborn.violinplot.html#seaborn.violinplot
+# FOR loop is same as catplots and boxplots.
 for measurement in df2.columns:
     name = df2[measurement].name
     measurementname = nameFormat(measurement)
@@ -253,11 +246,9 @@ for measurement in df2.columns:
         plt.clf()
         plt.close()
 
-
-
-
 # Heatmap idea from https://levelup.gitconnected.com/pearson-coefficient-of-correlation-using-pandas-ca68ce678c04
 # https://seaborn.pydata.org/generated/seaborn.heatmap.html
+# As this is a late addition to the program, for now I will create these one by one, rather than tinkering with loops.
 fig, ax = plt.subplots(figsize = (8,8))
 ax = sns.heatmap(iris_setosa.corr(), annot=True, ax = ax)
 # Seems matplotlib introduced an issue for heatmaps whereby half the y axis can get cut off.
